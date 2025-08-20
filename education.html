@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Education | Hrushikesh</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <!-- Header (reused) -->
+  <header class="site-header">
+    <nav class="nav container">
+      <div class="brand"><div class="logo"><img src="assets/profile.jpg" alt=""/></div><div>Hrushikesh U.</div></div>
+      <div class="menu">
+        <a href="index.html">Home</a><a href="education.html">Education</a><a href="projects.html">Projects</a><a href="experience.html">Experience</a><a href="skills.html">Skills</a><a href="certifications.html">Certifications</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <h2>Education</h2>
+      <div class="grid cols-2">
+        <!-- Undergraduate -->
+        <div class="flip card" data-flip>
+          <div class="inner">
+            <div class="face">
+              <h3 style="margin:0 0 6px">B.Tech, CSE (AI)</h3>
+              <p class="muted">Vellore Institute of Technology</p>
+              <p>Tap/Click to see relevant coursework</p>
+            </div>
+            <div class="face back">
+              <h4 style="margin:0 0 8px">Relevant Coursework</h4>
+              <ul>
+                <li>Data Structures & Algorithms</li>
+                <li>Database Systems</li>
+                <li>Machine Learning</li>
+                <li>Computer Vision</li>
+                <li>Distributed Systems</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Masters -->
+        <div class="flip card" data-flip>
+          <div class="inner">
+            <div class="face">
+              <h3 style="margin:0 0 6px">M.S., Data Science</h3>
+              <p class="muted">George Washington University</p>
+              <p>Tap/Click to see relevant coursework</p>
+            </div>
+            <div class="face back">
+              <h4 style="margin:0 0 8px">Relevant Coursework</h4>
+              <ul>
+                <li>Advanced Machine Learning</li>
+                <li>Data Visualization</li>
+                <li>Big Data & Cloud</li>
+                <li>Statistical Inference</li>
+                <li>Databases for Analytics</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">© <span id="y"></span> Hrushikesh</footer>
+  <script src="script.js"></script>
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
