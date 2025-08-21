@@ -220,15 +220,101 @@ header.site-header{
 @media (max-width:900px){.cert-grid{grid-template-columns:repeat(2, minmax(0,1fr))}}
 @media (max-width:600px){.cert-grid{grid-template-columns:1fr}}
 
-/* Footer */
-.footer{
-  padding:30px 24px;
-  border-top:1px solid #e7dcc6;
-  text-align:center;
-  background:var(--bg-2);
-  font-size:14px;
-  opacity:.8;
+/* ----- Education flip cards ----- */
+.edu-grid { align-items: stretch; }
+
+.flip.edu-flip { height: 300px; } /* a bit taller to fit your stacked front */
+.flip.edu-flip .face {
+  /* center all content on the front */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  padding: 22px;
 }
+
+/* Front-specific bits reused from your earlier request */
+.edu-card,
+.edu-flip { text-align: center; }
+
+.edu-logo{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin-bottom: 14px;
+}
+.edu-logo img{
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 50%;
+  border: 1px solid #eadfc9;
+  padding: 8px;
+  box-shadow: 0 6px 14px var(--shadow);
+}
+
+.edu-level{
+  margin: 6px 0 6px;
+  font-size: 18px;
+  opacity: .9;
+}
+.edu-degree{
+  margin: 4px 0 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* 30px gap between degree and school */
+.edu-spacer{ height: 30px; }
+
+.edu-school{
+  margin: 0;
+  font-size: 15px;
+  opacity: .9;
+}
+.edu-years{
+  margin: 6px 0 0;
+  font-size: 14px;
+  color: #6d5f4b;
+}
+
+/* Back side centered content */
+.edu-back{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;  /* vertical centering */
+  text-align:center;
+  gap: 8px;
+  padding: 24px;
+}
+.edu-back-title{
+  margin: 6px 0 0;
+  font-size: 15px;
+  letter-spacing: .2px;
+  color: #6d5f4b;
+  text-transform: uppercase;
+}
+.edu-back-text{
+  margin: 4px 0 10px;
+  font-size: 15px;
+  max-width: 85%;
+}
+
+/* Subtle hover to hint interactivity (optional) */
+.flip.edu-flip:hover .face{
+  box-shadow: 0 10px 22px var(--shadow);
+}
+
+/* Keep two columns until truly narrow */
+@media (max-width: 720px){
+  .flip.edu-flip { height: 320px; }
+  .edu-logo img{ width:56px; height:56px; }
+}
+
+
 
 
 
