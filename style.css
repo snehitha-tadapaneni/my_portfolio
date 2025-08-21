@@ -247,7 +247,7 @@ header.site-header{
 
 .edu-logo{
   width: 36px; height: 36px;          /* outer badge */
-  padding: 6px;                        /* inner ring space */
+  padding: 8px;                        /* inner ring space */
   border: 1px solid #eadfc9;
   border-radius: 50%;
   background: #fff;
@@ -308,6 +308,52 @@ header.site-header{
   max-width: 85%;
 }
 
+/* Flip container: provide perspective (3D space) */
+.flip{
+  position: relative;
+  perspective: 1200px;             /* 3D context */
+  -webkit-perspective: 1200px;     /* Safari */
+  height: 300px;                    /* your desired card height */
+  overflow: hidden;
+}
+
+/* Rotating inner wrapper */
+.flip .inner{
+  position: absolute; inset: 0;
+  transform-style: preserve-3d;     /* keep children in 3D */
+  -webkit-transform-style: preserve-3d;
+  transition: transform .6s ease;
+  will-change: transform;
+  border-radius: 14px;
+}
+
+/* When flipped, rotate the inner by 180deg */
+.flip.is-flipped .inner{
+  transform: rotateY(180deg);
+}
+
+/* Faces */
+.flip .face{
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 22px;
+  backface-visibility: hidden;      /* hide mirror side */
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);         /* avoid z-fighting */
+  background: var(--card);
+  border: 1px solid #eadfc9;
+  border-radius: 14px;
+}
+
+/* The back panel is rotated 180deg so it reads normally when the inner flips */
+.flip .face.back{
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+
 /* Subtle hover to hint interactivity (optional) */
 .flip.edu-flip:hover .face{
   box-shadow: 0 10px 22px var(--shadow);
@@ -318,6 +364,7 @@ header.site-header{
   .flip.edu-flip { height: 320px; }
   .edu-logo img{ width:56px; height:56px; }
 }
+
 
 
 
