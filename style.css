@@ -69,20 +69,37 @@ header.site-header{
   max-width: 320px;
 }
 
-.about-box .hero-text h1 {
-  font-size: 36px;
-  margin-bottom: 12px;
-  flex:1;
+/* Make the About card the positioning context and leave room for the photo */
+.about-box{
+  position: relative;
+  display: flex;
+  align-items: center;
+  /* 180px image + 24px gap + 4px border ≈ 208 → give a little extra */
+  padding-right: 220px;
+  min-height: 220px; /* so the image can center vertically */
 }
 
-.about-box .hero-image {
+/* Text column should take the remaining space */
+.about-box .hero-text{
+  flex: 1;
+}
+
+/* Heading style (optional tweak) */
+.about-box .hero-text h1{
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+
+/* Right–center the image inside the card */
+.about-box .hero-image{
   position: absolute;
-  right: 30px;
+  right: 24px;
   top: 50%;
   transform: translateY(-50%);
 }
 
-.about-box .hero-image img {
+/* Circular image */
+.about-box .hero-image img{
   width: 180px;
   height: 180px;
   border-radius: 50%;
@@ -90,6 +107,21 @@ header.site-header{
   border: 4px solid var(--bg);
   box-shadow: 0 6px 14px rgba(0,0,0,0.15);
 }
+
+/* Mobile: stack image below text */
+@media (max-width: 720px){
+  .about-box{
+    padding-right: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .about-box .hero-image{
+    position: static;
+    transform: none;
+    margin-top: 16px;
+  }
+}
+
 .badges { 
   display:flex;
   flex-wrap:wrap;
@@ -188,6 +220,7 @@ header.site-header{
   font-size:14px;
   opacity:.8;
 }
+
 
 
 
