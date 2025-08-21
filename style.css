@@ -27,7 +27,7 @@ header.site-header{
   position:sticky;top:0;z-index:1000;
   background:var(--bg);
   box-shadow:0 2px 8px var(--shadow);
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 .nav{
   display:flex;align-items:center;justify-content:space-between;
@@ -76,11 +76,12 @@ header.site-header{
 }
 
 .about-box .hero-image {
-  flex: 0 0 auto;
-  margin-top: 20px;
-  display: flex;
-  justify-content: flex-start;
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
 }
+
 .about-box .hero-image img {
   width: 180px;
   height: 180px;
@@ -187,6 +188,7 @@ header.site-header{
   font-size:14px;
   opacity:.8;
 }
+
 
 
 
