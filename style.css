@@ -84,8 +84,8 @@ header.site-header{
   display: flex;
   align-items: center;      /* vertically center text & image */
   justify-content: space-between;
-  gap: 40px;                /* space between text and image */
-  padding: 50px;
+  gap: 30px;                /* space between text and image */
+  padding: 80px;
   margin-top: 60px;         /* adds spacing below header */
 }
 
@@ -93,13 +93,13 @@ header.site-header{
 .about-box .hero-text {
   flex: 1;                  /* take remaining space */
   max-width: 80%;           /* keep text from sliding under the image */
-  text-align: justify;
 }
 
 /* Heading style */
 .about-box .hero-text h1 {
   font-size: 36px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
+  text-align: justify;
 }
 
 /* Profile image stays on right side */
@@ -229,6 +229,7 @@ header.site-header{
   font-size:14px;
   opacity:.8;
 }
+
 
 
 
