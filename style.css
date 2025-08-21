@@ -306,45 +306,57 @@ header.site-header{
   max-width: 90%;
 }
 
-/* ==== FLIP CORE ==== */
+/* ==== FLIP CORE (bulletproof) ==== */
 .flip{
   position: relative;
-  height: 340px;                      /* match the larger layout */
+  height: 340px;                     /* adjust to your layout */
   perspective: 1200px;
   -webkit-perspective: 1200px;
-  overflow: hidden;
   cursor: pointer;
+  overflow: hidden;
 }
+
+/* Rotating inner wrapper (3D space) */
 .flip .inner{
   position: absolute; inset: 0;
-  transition: transform .6s ease;
   transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
+  transition: transform .6s ease;
   will-change: transform;
   border-radius: 14px;
 }
-.flip.is-flipped .inner{
-  transform: rotateY(180deg);
-}
+
+/* We’ll rotate the FACES individually instead of rotating the whole inner
+   This avoids Safari/iOS “mirror text” glitches */
 .flip .face{
   position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center;
+
   background: var(--card);
   border: 1px solid #eadfc9;
   border-radius: 14px;
+
+  /* CRITICAL: hide backface in all engines */
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+
+  /* ensure GPU layer, reduces flicker */
   transform: translateZ(0);
 }
-.flip .face.back{
-  transform: rotateY(180deg);
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-}
 
-/* Hover cue (optional) */
-.flip.edu-flip:hover .face{
-  box-shadow: 0 10px 22px var(--shadow);
-}
+/* Orient faces */
+.flip .face.front { transform: rotateY(0deg); }
+.flip .face.back  { transform: rotateY(180deg); }
+
+/* On flip, rotate the faces the other way so text is never mirrored */
+.flip.is-flipped .face.front { transform: rotateY(-180deg); }
+.flip.is-flipped .face.back  { transform: rotateY(0deg); }
+
+/* Optional cue */
+.flip.edu-flip:hover .face{ box-shadow: 0 10px 22px var(--shadow); }
+  
 
 /* Responsive: keep comfortable sizing but slightly shorten height */
 @media (max-width: 720px){
@@ -353,6 +365,7 @@ header.site-header{
   .edu-level { font-size: 30px; }
   .edu-degree { font-size: 24px; }
 }
+
 
 
 
