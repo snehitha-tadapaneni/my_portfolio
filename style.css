@@ -66,7 +66,7 @@ header.site-header{
 .contact-box {
   flex: 1;
   text-align: left;
-  margin: 6px 0;
+  margin: 10px 0;
   max-width: 320px;
   margin-top: 60px;  
 }
@@ -85,20 +85,21 @@ header.site-header{
   align-items: center;      /* vertically center text & image */
   justify-content: space-between;
   gap: 40px;                /* space between text and image */
-  padding: 30px;
+  padding: 50px;
   margin-top: 60px;         /* adds spacing below header */
 }
 
 /* Text area stays only on left */
 .about-box .hero-text {
   flex: 1;                  /* take remaining space */
-  max-width: 60%;           /* keep text from sliding under the image */
+  max-width: 80%;           /* keep text from sliding under the image */
+  text-align: justify;
 }
 
 /* Heading style */
 .about-box .hero-text h1 {
   font-size: 36px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 /* Profile image stays on right side */
@@ -228,6 +229,7 @@ header.site-header{
   font-size:14px;
   opacity:.8;
 }
+
 
 
 
