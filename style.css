@@ -310,7 +310,7 @@ header.site-header{
 .flip {
   perspective: 1200px;
   position: relative;
-  height: 340px; /* or whatever height you need */
+  height: 340px;
   cursor: pointer;
 }
 
@@ -339,7 +339,7 @@ header.site-header{
   border: 1px solid #eadfc9;
   border-radius: 14px;
 
-  /* critical: prevents mirrored text */
+  /* prevents mirrored text */
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
@@ -362,6 +362,7 @@ header.site-header{
   .edu-level { font-size: 30px; }
   .edu-degree { font-size: 24px; }
 }
+
 
 
 
