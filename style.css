@@ -79,27 +79,34 @@ header.site-header{
   min-height: 220px; /* so the image can center vertically */
 }
 
-/* Text column should take the remaining space */
-.about-box .hero-text{
-  flex: 1;
+/* About box as flex container */
+.about-box {
+  display: flex;
+  align-items: center;      /* vertically center text & image */
+  justify-content: space-between;
+  gap: 40px;                /* space between text and image */
+  padding: 24px;
+  margin-top: 40px;         /* adds spacing below header */
 }
 
-/* Heading style (optional tweak) */
-.about-box .hero-text h1{
+/* Text area stays only on left */
+.about-box .hero-text {
+  flex: 1;                  /* take remaining space */
+  max-width: 65%;           /* keep text from sliding under the image */
+}
+
+/* Heading style */
+.about-box .hero-text h1 {
   font-size: 36px;
   margin-bottom: 12px;
 }
 
-/* Right–center the image inside the card */
-.about-box .hero-image{
-  position: absolute;
-  right: 24px;
-  top: 50%;
-  transform: translateY(-50%);
+/* Profile image stays on right side */
+.about-box .hero-image {
+  flex-shrink: 0;           /* don’t let image shrink */
 }
 
-/* Circular image */
-.about-box .hero-image img{
+.about-box .hero-image img {
   width: 180px;
   height: 180px;
   border-radius: 50%;
@@ -108,17 +115,18 @@ header.site-header{
   box-shadow: 0 6px 14px rgba(0,0,0,0.15);
 }
 
-/* Mobile: stack image below text */
-@media (max-width: 720px){
-  .about-box{
-    padding-right: 24px;
+/* On small screens: wrap image neatly below text */
+@media (max-width: 768px) {
+  .about-box {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
   }
-  .about-box .hero-image{
-    position: static;
-    transform: none;
-    margin-top: 16px;
+  .about-box .hero-text {
+    max-width: 100%;
+  }
+  .about-box .hero-image {
+    margin-top: 20px;
   }
 }
 
@@ -220,6 +228,7 @@ header.site-header{
   font-size:14px;
   opacity:.8;
 }
+
 
 
 
