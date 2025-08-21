@@ -246,12 +246,16 @@ header.site-header{
   padding: 12px 14px;                 /* smaller left/right breadth */
 }
 
-.edu-logo img{
-  width: 150%; 
-  height: 150%; 
+.edu-logo img {
+  width: 120px;     /* increase size if you want bigger logos */
+  height: auto;     /* keep aspect ratio */
   object-fit: contain;
-  border-radius: 50%;
+  border: none;     /* remove border */
+  box-shadow: none; /* remove shadow */
+  background: none; /* no background */
+  border-radius: 0; /* no rounding */
 }
+
 
 /* Headings bigger */
 .edu-level{
@@ -349,6 +353,7 @@ header.site-header{
   .edu-level { font-size: 30px; }
   .edu-degree { font-size: 24px; }
 }
+
 
 
 
