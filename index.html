@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Snehitha Tadapaneni | Portfolio</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <nav class="nav container">
+      <div class="brand">
+        <div class="logo"><img src="assets/profile.jpg" alt="Profile"/></div>
+        <div>Snehitha Tadapaneni</div>
+      </div>
+      <div class="menu">
+        <a href="index.html">Home</a>
+        <a href="education.html">Education</a>
+        <a href="projects.html">Projects</a>
+        <a href="experience.html">Experience</a>
+        <a href="skills.html">Skills</a>
+        <a href="certifications.html">Certifications</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="card">
+        <h1>👋 Hey, I'm Hrushikesh!</h1>
+        <p>Data Science • Machine Learning • Analytics enthusiast. MS in Data Science at GWU; B.Tech (CSE-AI) from VIT. I love turning data into stories and building ML apps that matter.</p>
+        <div class="badges">
+          <span class="badge">Python</span>
+          <span class="badge">SQL</span>
+          <span class="badge">ML & MLOps</span>
+          <span class="badge">Viz & Dashboards</span>
+        </div>
+      </div>
+
+      <aside class="card">
+        <h3 style="margin-top:0">Contact</h3>
+        <p class="muted">hrushikeshu.14@gmail.com<br/>+1 (571) 397-6775<br/>Seattle, WA</p>
+        <div class="badges">
+          <a class="badge" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="badge" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="badge" href="#resume">Resume ↓</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Resume Preview (scroll down to view) -->
+  <section id="resume" class="section">
+    <div class="container">
+      <h2>Resume</h2>
+      <p class="muted">Inline PDF preview (with an image fallback). Click inside to scroll / download.</p>
+      <div class="resume-box">
+        <!-- Try to render PDF -->
+        <iframe id="resume-embed" class="resume-frame" src="assets/resume.pdf#view=FitH"></iframe>
+
+        <!-- Fallback image if PDF can't embed -->
+        <div id="resume-fallback" class="resume-fallback" style="display:none">
+          <img src="assets/resume-page1.png" alt="Resume preview"/>
+          <a class="badge" href="assets/resume.pdf" download>Download PDF</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">© <span id="y"></span> Hrushikesh • Built with love and light browns</footer>
+
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('y').textContent=new Date().getFullYear();
+    showResumeFallback();
+  </script>
+</body>
+</html>
