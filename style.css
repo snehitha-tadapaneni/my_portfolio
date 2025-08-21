@@ -67,15 +67,15 @@ header.site-header{
   flex: 1;
   text-align: left;
   max-width: 320px;
+  margin-top: 60px;  
 }
 
-/* Make the About card the positioning context and leave room for the photo */
 .about-box{
   position: relative;
   display: flex;
   align-items: center;
   padding-right: 220px;
-  min-height: 280px; /* so the image can center vertically */
+  min-height: 280px; 
 }
 
 /* About box as flex container */
@@ -227,6 +227,7 @@ header.site-header{
   font-size:14px;
   opacity:.8;
 }
+
 
 
 
