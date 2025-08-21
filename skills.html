@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Skills | Hrushikesh</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <nav class="nav container">
+      <div class="brand"><div class="logo"><img src="assets/profile.jpg" alt=""/></div><div>Hrushikesh U.</div></div>
+      <div class="menu">
+        <a href="index.html">Home</a><a href="education.html">Education</a><a href="projects.html">Projects</a><a href="experience.html">Experience</a><a href="skills.html">Skills</a><a href="certifications.html">Certifications</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <h2>Skills</h2>
+
+      <div class="zoom-list" id="skill-links">
+        <a href="#languages">Languages</a>
+        <a href="#devtools">Developer Tools</a>
+        <a href="#frameworks">Frameworks & Tools</a>
+        <a href="#cloud">Cloud & Big Data</a>
+      </div>
+
+      <div class="section">
+        <div id="languages" class="card"><h3>Languages</h3><p>Python, R, SQL, C/C++, HTML/CSS</p></div>
+        <div id="devtools" class="card"><h3>Developer Tools</h3><p>Git, Docker, VS Code, Jupyter, Airflow</p></div>
+        <div id="frameworks" class="card"><h3>Frameworks & Tools</h3><p>scikit-learn, PyTorch, TensorFlow, Pandas, NumPy, Streamlit, FastAPI</p></div>
+        <div id="cloud" class="card"><h3>Cloud & Big Data</h3><p>AWS, GCP, Azure, Databricks, Spark, Snowflake</p></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">© <span id="y"></span> Hrushikesh</footer>
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('y').textContent=new Date().getFullYear();
+    // Smooth jump with slight zoom on target
+    document.querySelectorAll('#skill-links a').forEach(a=>{
+      a.addEventListener('mouseover', ()=> a.style.transform='scale(1.06)');
+      a.addEventListener('mouseout', ()=> a.style.transform='scale(1.0)');
+      a.addEventListener('click', (e)=>{
+        const id = a.getAttribute('href');
+        const target = document.querySelector(id);
+        if (target){
+          e.preventDefault();
+          target.scrollIntoView({behavior:'smooth', block:'center'});
+          target.style.transform='scale(1.01)';
+          target.style.transition='transform .2s ease';
+          setTimeout(()=> target.style.transform='scale(1)', 400);
+          history.pushState(null, '', id);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
