@@ -306,28 +306,26 @@ header.site-header{
   max-width: 90%;
 }
 
-/* ==== FLIP CORE (bulletproof) ==== */
+/* ==== FLIP (faces-only rotation; prevents mirrored text) ==== */
 .flip{
   position: relative;
-  height: 340px;                     /* adjust to your layout */
+  height: 340px;                 /* adjust to taste */
   perspective: 1200px;
   -webkit-perspective: 1200px;
-  cursor: pointer;
   overflow: hidden;
+  cursor: pointer;
+  isolation: isolate;            /* avoids ancestor transform bleed */
 }
 
-/* Rotating inner wrapper (3D space) */
 .flip .inner{
   position: absolute; inset: 0;
   transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
-  transition: transform .6s ease;
-  will-change: transform;
+  transition: transform .6s ease; /* kept for smoothness (we don't rotate .inner) */
   border-radius: 14px;
 }
 
-/* We’ll rotate the FACES individually instead of rotating the whole inner
-   This avoids Safari/iOS “mirror text” glitches */
+/* Faces */
 .flip .face{
   position: absolute; inset: 0;
   display: flex; flex-direction: column;
@@ -342,21 +340,20 @@ header.site-header{
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 
-  /* ensure GPU layer, reduces flicker */
+  /* Force GPU layer to reduce flicker on Safari/iOS */
   transform: translateZ(0);
 }
 
-/* Orient faces */
 .flip .face.front { transform: rotateY(0deg); }
 .flip .face.back  { transform: rotateY(180deg); }
 
-/* On flip, rotate the faces the other way so text is never mirrored */
+/* Flip state: rotate faces (NOT the .inner) */
 .flip.is-flipped .face.front { transform: rotateY(-180deg); }
 .flip.is-flipped .face.back  { transform: rotateY(0deg); }
 
-/* Optional cue */
+/* Optional hover cue */
 .flip.edu-flip:hover .face{ box-shadow: 0 10px 22px var(--shadow); }
-  
+
 
 /* Responsive: keep comfortable sizing but slightly shorten height */
 @media (max-width: 720px){
@@ -365,6 +362,7 @@ header.site-header{
   .edu-level { font-size: 30px; }
   .edu-degree { font-size: 24px; }
 }
+
 
 
 
