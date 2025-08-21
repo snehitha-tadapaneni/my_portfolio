@@ -244,16 +244,21 @@ header.site-header{
   align-items:center;
   margin-bottom: 14px;
 }
-.edu-logo img{
-  width: 20px;
-  height: 20px;
-  object-fit: contain;
-  background: #fff;
-  border-radius: 50%;
+
+.edu-logo{
+  width: 36px; height: 36px;          /* outer badge */
+  padding: 6px;                        /* inner ring space */
   border: 1px solid #eadfc9;
-  padding: 30px;
+  border-radius: 50%;
+  background: #fff;
   box-shadow: 0 6px 14px var(--shadow);
+  display:flex; align-items:center; justify-content:center;
 }
+.edu-logo img{
+  width: 24px; height: 24px;           /* actual logo graphic */
+  object-fit: contain;
+}
+
 
 .edu-level{
   margin: 6px 0 6px;
@@ -313,6 +318,7 @@ header.site-header{
   .flip.edu-flip { height: 320px; }
   .edu-logo img{ width:56px; height:56px; }
 }
+
 
 
 
