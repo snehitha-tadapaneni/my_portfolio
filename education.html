@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <!-- Header (reused) -->
+  <!-- Header -->
   <header class="site-header">
     <nav class="nav container">
       <div class="brand">
@@ -30,41 +30,70 @@
 
       <div class="grid cols-2 edu-grid">
         <!-- Graduate -->
-        <div class="card edu-card">
-          <div class="edu-logo">
-            <!-- Put your GW logo here -->
-            <img src="gwu_logo.png" alt="George Washington University logo">
+        <div class="flip card edu-flip" data-flip>
+          <div class="inner">
+            <!-- FRONT -->
+            <div class="face">
+              <div class="edu-logo">
+                <img src="gwu_logo.png" alt="George Washington University logo">
+              </div>
+              <h3 class="edu-level">Graduate Education</h3>
+              <h5 class="edu-degree">Master of Science in Data Science</h5>
+              <div class="edu-spacer"></div>
+              <p class="edu-school">George Washington University, US</p>
+              <p class="edu-years">2024 – 2026</p>
+            </div>
+
+            <!-- BACK -->
+            <div class="face back edu-back">
+              <h4 class="edu-back-title">Institute</h4>
+              <p class="edu-back-text">George Washington University</p>
+
+              <h4 class="edu-back-title">GPA</h4>
+              <p class="edu-back-text">4 / 4</p>
+
+              <h4 class="edu-back-title">Relevant Coursework</h4>
+              <p class="edu-back-text">
+                Advanced Machine Learning • Data Visualization • Big Data & Cloud • Statistical Inference • Databases for Analytics
+              </p>
+            </div>
           </div>
-
-          <h3 class="edu-level">Graduate Education</h3>
-          <h5 class="edu-degree">Master of Science in Data Science</h5>
-
-          <div class="edu-spacer"></div>
-
-          <p class="edu-school">George Washington University, US</p>
-          <p class="edu-years">2024 – 2026</p>
         </div>
 
         <!-- Undergraduate -->
-        <div class="card edu-card">
-          <div class="edu-logo">
-            <!-- Put your VIT logo here -->
-            <img src="vit_logo.jpg" alt="Vellore Institute of Technology logo">
+        <div class="flip card edu-flip" data-flip>
+          <div class="inner">
+            <!-- FRONT -->
+            <div class="face">
+              <div class="edu-logo">
+                <img src="vit_logo.jpg" alt="Vellore Institute of Technology logo">
+              </div>
+              <h3 class="edu-level">Undergraduate Education</h3>
+              <h5 class="edu-degree">Bachelor of Technology in Computer Science</h5>
+              <div class="edu-spacer"></div>
+              <p class="edu-school">Vellore Institute of Technology, India</p>
+              <p class="edu-years">2020 – 2024</p>
+            </div>
+
+            <!-- BACK -->
+            <div class="face back edu-back">
+              <h4 class="edu-back-title">Institute</h4>
+              <p class="edu-back-text">Vellore Institute of Technology</p>
+
+              <h4 class="edu-back-title">GPA</h4>
+              <p class="edu-back-text">8.8 / 9</p>
+
+              <h4 class="edu-back-title">Relevant Coursework</h4>
+              <p class="edu-back-text">
+                Data Structures & Algorithms • Database Systems • Machine Learning • Computer Vision • Distributed Systems
+              </p>
+            </div>
           </div>
-
-          <h3 class="edu-level">Undergraduate Education</h3>
-          <h5 class="edu-degree">Bachelor of Technology in Computer Science</h5>
-
-          <div class="edu-spacer"></div>
-
-          <p class="edu-school">Vellore Institute of Technology, India</p>
-          <p class="edu-years">2020 – 2024</p>
         </div>
-      </div>
+      </div> <!-- /edu-grid -->
     </div>
   </section>
 
   <script src="script.js"></script>
 </body>
 </html>
-
