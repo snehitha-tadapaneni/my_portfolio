@@ -1,40 +1,75 @@
-// Flip card toggles
-document.addEventListener('click', (e) => {
-  const t = e.target.closest('[data-flip]');
-  if (t) {
-    t.classList.toggle('is-flipped');
-  }
+// ==============================
+// Flip card toggles (robust + accessible)
+// ==============================
+document.addEventListener('DOMContentLoaded', () => {
+  const cards = document.querySelectorAll('.flip[data-flip]');
+
+  cards.forEach((card) => {
+    // Make the whole card operable
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('role', 'button');
+    card.setAttribute('aria-pressed', 'false');
+
+    // Click / tap
+    card.addEventListener('click', (e) => {
+      // If a link or button was clicked inside, don't navigate away
+      const clickable = e.target.closest('a, button');
+      if (clickable) e.preventDefault();
+
+      const flipped = card.classList.toggle('is-flipped');
+      card.setAttribute('aria-pressed', String(flipped));
+    });
+
+    // Keyboard (Enter / Space)
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const flipped = card.classList.toggle('is-flipped');
+        card.setAttribute('aria-pressed', String(flipped));
+      }
+    });
+  });
 });
 
+// ==============================
 // Mark active nav item if present
-(function(){
-  const path = location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.menu a').forEach(a=>{
-    const href = a.getAttribute('href');
+// ==============================
+(function () {
+  const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  document.querySelectorAll('.menu a').forEach((a) => {
+    const href = (a.getAttribute('href') || '').toLowerCase();
     if ((path === '' && href.endsWith('index.html')) || href.endsWith(path)) {
       a.classList.add('active');
     }
   });
 })();
 
+// ==============================
 // Home: show fallback image if PDF can’t load
-function showResumeFallback(){
+// ==============================
+function showResumeFallback() {
   const holder = document.querySelector('#resume-fallback');
   const iframe = document.querySelector('#resume-embed');
   if (!holder || !iframe) return;
-  let handled = false;
+
+  let swapped = false;
 
   const swap = () => {
-    if (handled) return;
-    handled = true;
-    iframe.remove();
+    if (swapped) return;
+    swapped = true;
+    try { iframe.remove(); } catch {}
     holder.style.display = 'flex';
   };
 
+  // If the PDF fails to load
   iframe.addEventListener('error', swap);
-  // If PDF blocked by browser, use a timeout to swap
-  setTimeout(()=>{
-    // crude check: if iframe hasn't painted height, show fallback
-    if (iframe.contentDocument == null) swap();
+
+  // If browser blocks inline PDF, fallback after a short delay
+  // Also attempt a 'load' check; some browsers fire 'load' without rendering, so keep timeout guard.
+  let loaded = false;
+  iframe.addEventListener('load', () => { loaded = true; });
+
+  setTimeout(() => {
+    if (!loaded || !iframe.contentDocument) swap();
   }, 2500);
 }
