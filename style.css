@@ -245,13 +245,13 @@ header.site-header{
   margin-bottom: 14px;
 }
 .edu-logo img{
-  width: 64px;
-  height: 64px;
+  width: 20px;
+  height: 20px;
   object-fit: contain;
   background: #fff;
   border-radius: 50%;
   border: 1px solid #eadfc9;
-  padding: 8px;
+  padding: 30px;
   box-shadow: 0 6px 14px var(--shadow);
 }
 
@@ -313,6 +313,7 @@ header.site-header{
   .flip.edu-flip { height: 320px; }
   .edu-logo img{ width:56px; height:56px; }
 }
+
 
 
 
