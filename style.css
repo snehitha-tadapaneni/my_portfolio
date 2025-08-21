@@ -27,6 +27,7 @@ header.site-header{
   position:sticky;top:0;z-index:1000;
   background:var(--bg);
   box-shadow:0 2px 8px var(--shadow);
+  margin-bottom: 20px;
 }
 .nav{
   display:flex;align-items:center;justify-content:space-between;
@@ -71,16 +72,18 @@ header.site-header{
 .about-box .hero-text h1 {
   font-size: 36px;
   margin-bottom: 12px;
+  flex:1;
 }
 
 .about-box .hero-image {
+  flex: 0 0 auto;
   margin-top: 20px;
   display: flex;
   justify-content: flex-start;
 }
 .about-box .hero-image img {
-  width: 160px;
-  height: 160px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid var(--bg);
@@ -173,4 +176,5 @@ header.site-header{
   font-size:14px;
   opacity:.8;
 }
+
 
