@@ -85,7 +85,7 @@ header.site-header{
   align-items: center;      /* vertically center text & image */
   justify-content: space-between;
   gap: 40px;                /* space between text and image */
-  padding: 24px;
+  padding: 30px;
   margin-top: 60px;         /* adds spacing below header */
 }
 
@@ -228,6 +228,7 @@ header.site-header{
   font-size:14px;
   opacity:.8;
 }
+
 
 
 
