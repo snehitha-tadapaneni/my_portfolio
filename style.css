@@ -371,20 +371,22 @@ header.site-header{
   align-items: center;       /* center horizontally */
   justify-content: center;   /* center vertically */
   text-align: center;
-  gap: 9px;                 /* space between text blocks */
-  padding: 12px  10px;             /* balanced breathing space */
+  gap: 5px;                 /* space between text blocks */
+  margin-top: 20px
 }
 
 .edu-back-title {
+  margin:40px;
   font-size: 22px;           /* slightly larger */
   font-weight: 700;
   color: #5a4937;
-  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: .5px;
 }
 
 .edu-back-text {
   font-size: 17px;           /* bigger for readability */
-  line-height: 1.4;
+  line-height: 1;
   max-width: 90%;
 }
 
@@ -546,6 +548,7 @@ body{
 
 /* Optional tiny typography polish */
 .hero-text p, .muted{ color: var(--ink-soft); }
+
 
 
 
