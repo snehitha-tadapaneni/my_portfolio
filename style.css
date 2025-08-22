@@ -256,7 +256,6 @@ header.site-header{
   border-radius: 0; /* no rounding */
 }
 
-
 /* Headings bigger */
 .edu-level{
   margin: 6px 0 6px;
@@ -292,8 +291,7 @@ header.site-header{
   justify-content: center;  /* vertical centering */
   text-align: center;       /* center-align text lines */
   gap: 14px;                /* space between lines/blocks */
-  padding: 20px;
-  padding-top: 30px;
+  padding: 60px 20px 20px;
 }
 
 /* Section headings on the back */
@@ -364,6 +362,7 @@ header.site-header{
   .edu-level { font-size: 30px; }
   .edu-degree { font-size: 24px; }
 }
+
 
 
 
