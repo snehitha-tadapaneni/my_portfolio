@@ -307,48 +307,45 @@ header.site-header{
 }
 
 /* ==== FLIP (faces-only rotation; prevents mirrored text) ==== */
-.flip {
-  position: relative;
-  height: 320px;              /* adjust height if you need more/less */
-  perspective: 1000px;
-  cursor: pointer;
-  overflow: hidden;
-}
+/* ===== MIRROR FIX (paste at END of style.css) ===== */
 
-/* We keep .inner only as a container; we do NOT rotate it */
-.flip .inner {
-  position: absolute;
-  inset: 0;
-}
-
+/* 1) Never rotate the inner container */
 .flip.is-flipped .inner {
   transform: none !important;            /* kills any old rotateY on inner */
 }
 
-/* Faces (front/back) */
+/* 2) Core flip (faces-only) */
+.flip {
+  position: relative;
+  height: 320px;                          /* adjust if you need more space */
+  perspective: 1000px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.flip .inner { position: absolute; inset: 0; }
+
 .flip .face {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
   text-align: center;
+
   background: var(--card);
   border: 1px solid #eadfc9;
   border-radius: 14px;
+
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
 
-/* Orient faces */
-.flip .face.front { transform: rotateY(0deg); }
-.flip .face.back  { transform: rotateY(180deg); }
+/* 3) Orient faces */
+.flip .face.front { transform: rotateY(0deg) !important; }
+.flip .face.back  { transform: rotateY(180deg) !important; }
 
-/* Flip state: rotate faces (NOT the .inner) */
-.flip.is-flipped .face.front { transform: rotateY(180deg); }
-.flip.is-flipped .face.back  { transform: rotateY(0deg); }
-
+/* 4) Flip state: rotate faces (NOT .inner) */
+.flip.is-flipped .face.front { transform: rotateY(-180deg) !important; }
+.flip.is-flipped .face.back  { transform: rotateY(0deg) !important; }
 
   
 /* Responsive: keep comfortable sizing but slightly shorten height */
@@ -358,6 +355,7 @@ header.site-header{
   .edu-level { font-size: 30px; }
   .edu-degree { font-size: 24px; }
 }
+
 
 
 
