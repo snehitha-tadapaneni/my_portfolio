@@ -469,20 +469,10 @@ body{
 }
 .section h2::after{
   content:"";
-  position:absolute;  transform:translateX(-50%);
-  bottom:4px; width:82px; height:3px;
+  position:absolute; left:50%; transform:translateX(-50%);
+  bottom:0; width:82px; height:3px;
   background: linear-gradient(90deg,var(--accent-2),var(--accent));
   border-radius:3px;
-
-  text-align: center;
-  margin-top: 0;        /* remove excess space above */
-  margin-bottom: 24px;  /* tighten gap below (adjust as you like) */
-  font-size: 32px;
-  letter-spacing: .3px;
-  position: relative;
-  display: inline-block;
-  padding-bottom: 10px;
-}
 }
 
 /* Cards: softer, floaty */
@@ -521,9 +511,7 @@ body{
 }
 
 /* Section spacing tighter & balanced */
-.section{ padding:40px 24px; 
-        }
-
+.section{ padding:56px 24px; }
 .container{ padding: 22px; }
 
 /* Project/Experience list blocks enhancement */
@@ -561,6 +549,7 @@ body{
 
 /* Optional tiny typography polish */
 .hero-text p, .muted{ color: var(--ink-soft); }
+
 
 
 
