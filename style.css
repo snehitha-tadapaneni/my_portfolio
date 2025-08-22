@@ -399,7 +399,7 @@ header.site-header{
 .edu-degree{                        /* "Master of Science in Data Science" */
   grid-row: 3;
   margin: 4px 0 0;
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 700;
   line-height: 1.25;
 }
@@ -582,6 +582,7 @@ body{
 
 /* Optional tiny typography polish */
 .hero-text p, .muted{ color: var(--ink-soft); }
+
 
 
 
