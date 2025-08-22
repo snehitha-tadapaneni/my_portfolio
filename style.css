@@ -158,7 +158,7 @@ header.site-header{
 }
 
 /* Sections */
-.section{padding:40px 24px}
+.section{padding:60px 24px}
 .section h2{font-size:30px;text-align:center;margin:0 0 20px}
 .muted{opacity:.8;text-align:center}
 
@@ -302,149 +302,146 @@ header.site-header{
 @media (max-width:600px){.cert-grid{grid-template-columns:1fr}}
 
 /* ----- Education flip cards (refined) ----- */
-.edu-grid { 
-  align-items: stretch; 
-  gap: 16px; /* slightly tighter column gap */
+/* ================================
+   FLIP CARDS — Single Clean Block
+   ================================ */
+
+/* Base card */
+.flip{
+  --flip-h: 340px;                 /* change height here */
+  position: relative;
+  height: var(--flip-h);
+  perspective: 1000px;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 14px;             /* keeps faces rounded */
 }
 
-/* Make each edu card a bit taller to fit larger logo + bigger text */
-.flip.edu-flip { 
-  height: 340px; 
+/* Inner container (not rotated) */
+.flip .inner{
+  position: absolute;
+  inset: 0;
 }
 
-/* FRONT/BACK shared face styles: reduce side padding for less empty space */
-.flip.edu-flip .face {
+/* Faces (front/back) */
+.flip .face{
+  position: absolute;
+  inset: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;        /* stacked layout */
-  text-align: center;
-  padding: 16px 14px;                 /* reduced from 22px */
-}
-
-/* Also tighten the card's inner padding just for education cards */
-.edu-grid .card {
-  padding: 12px 14px;                 /* smaller left/right breadth */
-}
-
-.edu-logo img {
-  width: 120px;     /* increase size if you want bigger logos */
-  height: auto;     /* keep aspect ratio */
-  object-fit: contain;
-  border: none;     /* remove border */
-  box-shadow: none; /* remove shadow */
-  background: none; /* no background */
-  border-radius: 0; /* no rounding */
-}
-
-/* Headings bigger */
-.edu-level{
-  margin: 6px 0 6px;
-  font-size: 36px;                    /* was 32px */
-  opacity: .9;
-}
-.edu-degree{
-  margin: 2px 0 0;
-  font-size: 30px;                    /* was 28px */
-  font-weight: 700;
-}
-
-/* 30px gap between degree and school */
-.edu-spacer{ height: 30px; }
-
-.edu-school{
-  margin: 0;
-  font-size: 20px;
-  opacity: .9;
-}
-.edu-years{
-  margin: 6px 0 0;
-  font-size: 19px;
-  color: #6d5f4b;
-}
-
-/* Back side centered content (reduce padding a little too) */
-/* Back side centered content */
-.edu-back {
-  display: flex;
-  flex-direction: column;
-  align-items: center;       /* center horizontally */
-  justify-content: flex-start;   /* center vertically */
-  text-align: center;
-  gap: 5px;                 /* space between text blocks */
-  margin-top: 8px;
-  margin-bottom: 8px;
-}
-
-.edu-back-title {
-  margin-top: 10px;
-  margin-bottom: 0px;
-  font-size: 22px;           /* slightly larger */
-  font-weight: 700;
-  color: #5a4937;
-  text-transform: uppercase;
-  letter-spacing: .5px;
-}
-
-.edu-back-text {
-  font-size: 17px;           /* bigger for readability */
-  line-height: 1;
-  max-width: 90%;
-  margin-top: 3px;
-  margin-bottom: 0px;
-}
-
-
-
-/* ==== FLIP (faces-only rotation; prevents mirrored text) ==== */
-/* ===== MIRROR FIX (paste at END of style.css) ===== */
-
-/* 1) Never rotate the inner container */
-.flip.is-flipped .inner {
-  transform: none !important;            /* kills any old rotateY on inner */
-}
-
-/* 2) Core flip (faces-only) */
-.flip {
-  position: relative;
-  height: 320px;                          /* adjust if you need more space */
-  perspective: 1000px;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-.flip .inner { position: absolute; inset: 0; }
-
-.flip .face {
-  position: absolute; inset: 0;
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
+  justify-content: center;         /* vertical centering by default */
   text-align: center;
 
   background: var(--card);
   border: 1px solid #eadfc9;
   border-radius: 14px;
+  box-sizing: border-box;
+  padding: 16px 14px;
 
+  /* critical for no mirror text */
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
 
-/* 3) Orient faces */
-.flip .face.front { transform: rotateY(0deg) !important; }
-.flip .face.back  { transform: rotateY(180deg) !important; }
+/* Orient faces */
+.flip .face.front { transform: rotateY(0deg); }
+.flip .face.back  { transform: rotateY(180deg); overflow: auto; -webkit-overflow-scrolling: touch; }
 
-/* 4) Flip state: rotate faces (NOT .inner) */
-.flip.is-flipped .face.front { transform: rotateY(-180deg) !important; }
-.flip.is-flipped .face.back  { transform: rotateY(0deg) !important; }
+/* Flip state: rotate faces (NOT the inner) */
+.flip.is-flipped .face.front { transform: rotateY(-180deg); }
+.flip.is-flipped .face.back  { transform: rotateY(0deg); }
 
-  
-/* Responsive: keep comfortable sizing but slightly shorten height */
-@media (max-width: 720px){
-  .flip.edu-flip, .flip { height: 360px; }
-  .edu-logo { width: 100px; height: 100px; padding: 8px; }
-  .edu-level { font-size: 30px; }
-  .edu-degree { font-size: 24px; }
+/* Safety: never rotate inner (kills legacy rules) */
+.flip.is-flipped .inner { transform: none !important; }
+
+/* Optional: subtle hover cue */
+.flip:hover .face { box-shadow: 0 10px 22px var(--shadow); }
+
+/* Scrollbar cosmetics (optional) */
+.flip .face.back::-webkit-scrollbar{ width: 6px; }
+.flip .face.back::-webkit-scrollbar-thumb{ background: #e3d7c3; border-radius: 6px; }
+.flip .face.back{ scrollbar-width: thin; scrollbar-color: #e3d7c3 transparent; }
+
+/* ================================
+   EDUCATION-SPECIFIC POLISH
+   ================================ */
+
+.flip.edu-flip{ --flip-h: 340px; }   /* adjust if you want a taller card */
+
+/* FRONT (logo + titles) */
+.edu-logo img{
+  width: 120px;
+  height: auto;
+  object-fit: contain;
+  border: none; box-shadow: none; background: none; border-radius: 0;
+  margin-bottom: 10px;
 }
+
+.edu-level{
+  margin: 4px 0;
+  font-size: 36px;                   /* section title on the card */
+  opacity: .9;
+}
+.edu-degree{
+  margin: 2px 0 0;
+  font-size: 30px;
+  font-weight: 700;
+}
+.edu-spacer{ height: 24px; }
+.edu-school{
+  margin: 0; font-size: 20px; opacity: .9;
+}
+.edu-years{
+  margin: 6px 0 0; font-size: 19px; color: #6d5f4b;
+}
+
+/* BACK (institute, GPA, coursework) */
+.edu-back{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;           /* centered vertically by default */
+  text-align: center;
+  gap: 10px;
+  padding: 14px 12px;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+}
+
+.edu-back > *{ margin: 3px 0; }      /* tight, uniform spacing */
+
+.edu-back-title{
+  font-size: 20px;
+  font-weight: 700;
+  color: #5a4937;
+  text-transform: uppercase;
+  letter-spacing: .4px;
+  margin: 0;
+}
+
+.edu-back-text{
+  font-size: 16.5px;                 /* slightly larger text */
+  line-height: 1.4;
+  max-width: 92%;
+  margin: 0;
+}
+
+/* If you want the back content closer to the TOP (not centered),
+   add `top` to the back face: <div class="face back edu-back top">… */
+.edu-back.top{
+  justify-content: flex-start !important;
+  padding-top: 22px;
+}
+
+/* Responsive tweak */
+@media (max-width: 720px){
+  .flip{ --flip-h: 360px; }
+  .edu-level{ font-size: 30px; }
+  .edu-degree{ font-size: 24px; }
+  .edu-logo img{ width: 100px; }
+}
+
 
 /* new */
 /* ---- Global polish ---- */
@@ -552,6 +549,7 @@ body{
 
 /* Optional tiny typography polish */
 .hero-text p, .muted{ color: var(--ink-soft); }
+
 
 
 
