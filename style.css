@@ -406,11 +406,9 @@ header.site-header{
   text-align: center;
   gap: 10px;
   padding: 20px 12px;
-  word-wrap: break-word;
-  overflow-wrap: anywhere;
 }
 
-.edu-back > *{ margin: 3px 0; }      /* tight, uniform spacing */
+.edu-back > *{ margin: 6px; }      /* tight, uniform spacing */
 
 .edu-back-title{
   font-size: 20px;
@@ -568,6 +566,7 @@ body{
 
 /* Optional tiny typography polish */
 .hero-text p, .muted{ color: var(--ink-soft); }
+
 
 
 
