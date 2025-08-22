@@ -369,7 +369,7 @@ header.site-header{
   display: flex;
   flex-direction: column;
   align-items: center;       /* center horizontally */
-  justify-content: center;   /* center vertically */
+  justify-content: flex-start;   /* center vertically */
   text-align: center;
   gap: 5px;                 /* space between text blocks */
   margin-top: 8px;
@@ -377,7 +377,7 @@ header.site-header{
 }
 
 .edu-back-title {
-  margin-top: 6px;
+  margin-top: 10px;
   margin-bottom: 0px;
   font-size: 22px;           /* slightly larger */
   font-weight: 700;
@@ -466,9 +466,9 @@ body{
 .section h2{
   font-size: 32px;
   letter-spacing:.3px;
-  position: centre;
+  position: relative;
   display: inline-block;
-  padding-bottom: 20px;
+  padding-bottom: 8px;
 }
 .section h2::after{
   content:"";
@@ -552,6 +552,8 @@ body{
 
 /* Optional tiny typography polish */
 .hero-text p, .muted{ color: var(--ink-soft); }
+
+
 
 
 
