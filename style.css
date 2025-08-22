@@ -291,7 +291,7 @@ header.site-header{
   justify-content: center;  /* vertical centering */
   text-align: center;       /* center-align text lines */
   gap: 14px;                /* space between lines/blocks */
-  padding: 60px 20px 20px;
+  padding: 40px 10px 10px;
 }
 
 /* Section headings on the back */
@@ -306,7 +306,7 @@ header.site-header{
 
 /* Values like Institute name, GPA, courses */
 .edu-back-text {
-  margin-top: 30px;
+  margin-top: 20px;
   font-size: 18px;          /* increase font size */
   line-height: 1.5;         /* more breathing room */
   max-width: 90%;
@@ -362,6 +362,7 @@ header.site-header{
   .edu-level { font-size: 30px; }
   .edu-degree { font-size: 24px; }
 }
+
 
 
 
