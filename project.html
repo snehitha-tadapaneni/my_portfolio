@@ -10,9 +10,17 @@
   <!-- Header -->
   <header class="site-header">
     <nav class="nav container">
-      <div class="brand"><div class="logo"><img src="assets/profile.jpg" alt=""/></div><div>Hrushikesh U.</div></div>
+      <div class="brand">
+        <div class="logo"><img src="assets/profile.jpg" alt=""/></div>
+        <div>Snehitha Tadapaneni</div>
+      </div>
       <div class="menu">
-        <a href="index.html">Home</a><a href="education.html">Education</a><a href="project.html">Projects</a><a href="experience.html">Experience</a><a href="skills.html">Skills</a><a href="certifications.html">Certifications</a>
+        <a href="index.html">Home</a>
+        <a href="education.html">Education</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="experience.html">Experience</a>
+        <a href="skills.html">Skills</a>
+        <a href="certifications.html">Certifications</a>
       </div>
     </nav>
   </header>
@@ -20,44 +28,64 @@
   <section class="section">
     <div class="container">
       <h2>Projects</h2>
-      <div class="grid cols-3">
-        <!-- Repeat 8 cards -->
+
+      <div class="projects-list">
         <!-- Project 1 -->
-        <div class="flip" data-flip>
-          <div class="inner">
-            <div class="face">
-              <img src="assets/projects/p1.jpg" alt="Project 1 cover" style="width:100%;height:100%;object-fit:cover"/>
-            </div>
-            <div class="face back">
-              <h4 style="margin:0 0 8px">Project 1 Title</h4>
-              <ul class="muted">
-                <li>Brief result/impact</li>
-                <li>Tech: Python, scikit-learn</li>
-              </ul>
-              <div class="badges">
-                <a class="badge" href="#" target="_blank">GitHub</a>
-                <a class="badge" href="#" target="_blank">Demo</a>
-              </div>
-            </div>
-          </div>
+        <div class="project-block">
+          <h3>Analysis of crime rates on residential property in Washington DC (2014–18)</h3>
+          <p><strong>Tech:</strong> Python | <strong>Duration:</strong> Oct – Dec 2024</p>
+          <ul>
+            <li>Conducted in-depth analysis on 46,252 records and 30 attributes.</li>
+            <li>Applied regression models (Random Forest, LightGBM) to uncover patterns.</li>
+            <li>Developed classification models (RF, XGBoost) to categorize neighborhoods.</li>
+            <li>Integrated data from Open DC Data and Kaggle across census tracts and years.</li>
+          </ul>
         </div>
 
-        <!-- Duplicate and edit for p2..p8 -->
-        <div class="flip" data-flip><div class="inner"><div class="face"><img src="assets/projects/p2.jpg" alt="Project 2"/></div><div class="face back"><h4>Project 2</h4><ul class="muted"><li>Outcome highlight</li><li>Tech: PyTorch</li></ul><div class="badges"><a class="badge" href="#">GitHub</a><a class="badge" href="#">Demo</a></div></div></div></div>
-        <div class="flip" data-flip><div class="inner"><div class="face"><img src="assets/projects/p3.jpg" alt="Project 3"/></div><div class="face back"><h4>Project 3</h4><ul class="muted"><li>Outcome highlight</li><li>Tech: NLP</li></ul><div class="badges"><a class="badge" href="#">GitHub</a><a class="badge" href="#">Demo</a></div></div></div></div>
-        <div class="flip" data-flip><div class="inner"><div class="face"><img src="assets/projects/p4.jpg" alt="Project 4"/></div><div class="face back"><h4>Project 4</h4><ul class="muted"><li>Outcome highlight</li><li>Tech: CV</li></ul><div class="badges"><a class="badge" href="#">GitHub</a><a class="badge" href="#">Demo</a></div></div></div></div>
-        <div class="flip" data-flip><div class="inner"><div class="face"><img src="assets/projects/p5.jpg" alt="Project 5"/></div><div class="face back"><h4>Project 5</h4><ul class="muted"><li>Outcome highlight</li><li>Tech: SQL</li></ul><div class="badges"><a class="badge" href="#">GitHub</a><a class="badge" href="#">Demo</a></div></div></div></div>
-        <div class="flip" data-flip><div class="inner"><div class="face"><img src="assets/projects/p6.jpg" alt="Project 6"/></div><div class="face back"><h4>Project 6</h4><ul class="muted"><li>Outcome highlight</li><li>Tech: Streamlit</li></ul><div class="badges"><a class="badge" href="#">GitHub</a><a class="badge" href="#">Demo</a></div></div></div></div>
-        <div class="flip" data-flip><div class="inner"><div class="face"><img src="assets/projects/p7.jpg" alt="Project 7"/></div><div class="face back"><h4>Project 7</h4><ul class="muted"><li>Outcome highlight</li><li>Tech: GCP</li></ul><div class="badges"><a class="badge" href="#">GitHub</a><a class="badge" href="#">Demo</a></div></div></div></div>
-        <div class="flip" data-flip><div class="inner"><div class="face"><img src="assets/projects/p8.jpg" alt="Project 8"/></div><div class="face back"><h4>Project 8</h4><ul class="muted"><li>Outcome highlight</li><li>Tech: Databricks</li></ul><div class="badges"><a class="badge" href="#">GitHub</a><a class="badge" href="#">Demo</a></div></div></div></div>
+        <!-- Project 2 -->
+        <div class="project-block">
+          <h3>The Power of Data: ML in Cyber Attack Classification</h3>
+          <p><strong>Tech:</strong> Python, HTML, CSS | <strong>Duration:</strong> Jan – May 2024</p>
+          <ul>
+            <li>Implemented supervised ML models to classify malware, phishing, and DDoS attacks.</li>
+            <li>Curated diverse datasets for robust model accuracy.</li>
+            <li>Published in IJNRD International Journal (ISSN: 2456-4184).</li>
+          </ul>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-block">
+          <h3>Web App for Text Extraction and Summarization using GPT-3</h3>
+          <p><strong>Tech:</strong> Python | <strong>Duration:</strong> Jul – Dec 2023</p>
+          <ul>
+            <li>Developed a web app that automates text summarization using GPT-3.</li>
+          </ul>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-block">
+          <h3>Deep Learning Model for Eye Diseases Prediction</h3>
+          <p><strong>Tech:</strong> Python, Flask, HTML, CSS, JS | <strong>Duration:</strong> May – Jul 2023</p>
+          <ul>
+            <li>Built AI-powered app to predict eye diseases with REST API (Flask + React).</li>
+            <li>Published in Sensors Imaging System and Techniques, CRC PRESS (SIST-5010).</li>
+          </ul>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project-block">
+          <h3>Data Hiding using Steganography and Visual Cryptography</h3>
+          <p><strong>Tech:</strong> Python | <strong>Duration:</strong> Jul – Dec 2023</p>
+          <ul>
+            <li>Optimized image recognition for extracting text from low-quality images.</li>
+            <li>Enabled natural language generation to summarize extracted content.</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
-  <footer class="footer">© <span id="y"></span> Hrushikesh</footer>
-  <script src="script.js"></script>
+  <footer class="footer">© <span id="y"></span> Snehitha Tadapaneni</footer>
   <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
 </html>
-
-
