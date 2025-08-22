@@ -368,29 +368,26 @@ header.site-header{
 .edu-back {
   display: flex;
   flex-direction: column;
-  align-items: center;      /* horizontal centering */
-  justify-content: center;  /* vertical centering */
-  text-align: center;       /* center-align text lines */
-  gap: 14px;                /* space between lines/blocks */
-  margin-top: 20px;
+  align-items: center;       /* center horizontally */
+  justify-content: center;   /* center vertically */
+  text-align: center;
+  gap: 16px;                 /* space between text blocks */
+  padding: 20px;             /* balanced breathing space */
 }
 
-/* Section headings on the back */
 .edu-back-title {
-  margin: 0;
-  font-size: 20px;          /* larger than before */
+  font-size: 22px;           /* slightly larger */
   font-weight: 700;
-  color: #6d5f4b;
-  text-transform: uppercase;
-  letter-spacing: .5px;
+  color: #5a4937;
+  margin-bottom: 6px;
 }
 
-/* Values like Institute name, GPA, courses */
 .edu-back-text {
-  font-size: 15px;          /* increase font size */
-  line-height: 1;         /* more breathing room */
+  font-size: 17px;           /* bigger for readability */
+  line-height: 1.4;
   max-width: 90%;
 }
+
 
 
 /* ==== FLIP (faces-only rotation; prevents mirrored text) ==== */
@@ -549,6 +546,7 @@ body{
 
 /* Optional tiny typography polish */
 .hero-text p, .muted{ color: var(--ink-soft); }
+
 
 
 
