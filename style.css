@@ -321,6 +321,10 @@ header.site-header{
   inset: 0;
 }
 
+.flip.is-flipped .inner {
+  transform: none !important;            /* kills any old rotateY on inner */
+}
+
 /* Faces (front/back) */
 .flip .face {
   position: absolute;
@@ -330,13 +334,9 @@ header.site-header{
   align-items: center;
   justify-content: center;
   text-align: center;
-
-  /* your card look */
   background: var(--card);
   border: 1px solid #eadfc9;
   border-radius: 14px;
-
-  /* hide the reverse side */
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
@@ -358,6 +358,7 @@ header.site-header{
   .edu-level { font-size: 30px; }
   .edu-degree { font-size: 24px; }
 }
+
 
 
 
