@@ -443,6 +443,115 @@ header.site-header{
   .edu-degree { font-size: 24px; }
 }
 
+/* new */
+/* ---- Global polish ---- */
+:root{
+  --radius: 16px;
+  --shadow-lg: 0 12px 28px rgba(0,0,0,.12);
+  --shadow-md: 0 8px 20px rgba(0,0,0,.10);
+  --ink-soft:#5c5143;
+}
+
+body{
+  background:
+    radial-gradient(800px 200px at 80% -50%, rgba(201,176,134,.18), transparent 70%),
+    radial-gradient(700px 240px at 10% -30%, rgba(201,176,134,.12), transparent 70%),
+    var(--bg);
+}
+
+/* Headings styling */
+.section h2{
+  font-size: 32px;
+  letter-spacing:.3px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 8px;
+}
+.section h2::after{
+  content:"";
+  position:absolute; left:50%; transform:translateX(-50%);
+  bottom:0; width:82px; height:3px;
+  background: linear-gradient(90deg,var(--accent-2),var(--accent));
+  border-radius:3px;
+}
+
+/* Cards: softer, floaty */
+.card{
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .2s ease;
+}
+.card:hover{
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Menu underline on hover */
+.menu a{
+  position:relative;
+}
+.menu a::after{
+  content:"";
+  position:absolute; left:10px; right:10px; bottom:6px;
+  height:2px; background: var(--accent); opacity:0; transform: scaleX(.4);
+  transition: transform .2s ease, opacity .2s ease;
+}
+.menu a:hover::after, .menu a.active::after{
+  opacity:1; transform: scaleX(1);
+}
+
+/* Badges – pill sheen */
+.badge{
+  position:relative; overflow:hidden;
+}
+.badge::before{
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(180deg, rgba(255,255,255,.35), transparent 60%);
+  pointer-events:none;
+}
+
+/* Section spacing tighter & balanced */
+.section{ padding:56px 24px; }
+.container{ padding: 22px; }
+
+/* Project/Experience list blocks enhancement */
+.project-block, .exp-block{
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, rgba(255,255,255,.9), rgba(255,255,255,.85));
+  border:1px solid #eadfc9;
+  box-shadow: var(--shadow-md);
+}
+.project-block:hover, .exp-block:hover{
+  box-shadow: var(--shadow-lg);
+}
+
+/* Certifications: hover pop + tidy text */
+.cert{
+  border-radius: var(--radius);
+  background:#fffdf9;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.cert:hover{ transform: translateY(-4px); box-shadow: var(--shadow-md); }
+
+/* ---- Scroll reveal ---- */
+.reveal{ opacity:0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.is-visible{ opacity:1; transform:none; }
+
+/* ---- Subtle float for hero image (fun!) ---- */
+.hero-image img{
+  animation: floaty 6s ease-in-out infinite;
+}
+@keyframes floaty{
+  0%{ transform: translateY(0) }
+  50%{ transform: translateY(-6px) }
+  100%{ transform: translateY(0) }
+}
+
+/* Optional tiny typography polish */
+.hero-text p, .muted{ color: var(--ink-soft); }
+
+
+
 
 
 
