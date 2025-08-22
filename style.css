@@ -371,8 +371,8 @@ header.site-header{
   align-items: center;       /* center horizontally */
   justify-content: center;   /* center vertically */
   text-align: center;
-  gap: 16px;                 /* space between text blocks */
-  padding: 20px;             /* balanced breathing space */
+  gap: 9px;                 /* space between text blocks */
+  padding: 15px;             /* balanced breathing space */
 }
 
 .edu-back-title {
@@ -546,6 +546,7 @@ body{
 
 /* Optional tiny typography polish */
 .hero-text p, .muted{ color: var(--ink-soft); }
+
 
 
 
