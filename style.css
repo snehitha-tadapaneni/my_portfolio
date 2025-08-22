@@ -307,51 +307,52 @@ header.site-header{
 }
 
 /* ==== FLIP (faces-only rotation; prevents mirrored text) ==== */
-.flip {
-  perspective: 1200px;
+.flip{
   position: relative;
-  height: 340px; /* or whatever height you need */
+  height: 340px;                 /* adjust to taste */
+  perspective: 1200px;
+  -webkit-perspective: 1200px;
+  overflow: hidden;
   cursor: pointer;
+  isolation: isolate;            /* avoids ancestor transform bleed */
 }
 
-.flip .inner {
-  position: absolute;
-  inset: 0;
-  transition: transform 0.6s ease;
+.flip .inner{
+  position: absolute; inset: 0;
   transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transition: transform .6s ease; /* kept for smoothness (we don't rotate .inner) */
   border-radius: 14px;
 }
 
-.flip.is-flipped .inner {
-  transform: rotateY(180deg);
-}
-
-.flip .face {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+/* Faces */
+.flip .face{
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
   text-align: center;
 
   background: var(--card);
   border: 1px solid #eadfc9;
   border-radius: 14px;
 
-  /* critical: prevents mirrored text */
+  /* CRITICAL: hide backface in all engines */
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+
+  /* Force GPU layer to reduce flicker on Safari/iOS */
+  transform: translateZ(0);
 }
 
-.flip .face.front {
-  transform: rotateY(0deg);
-}
+.flip .face.front { transform: rotateY(0deg); }
+.flip .face.back  { transform: rotateY(180deg); }
 
-.flip .face.back {
-  transform: rotateY(180deg);
-}
+/* Flip state: rotate faces (NOT the .inner) */
+.flip.is-flipped .face.front { transform: rotateY(-180deg); }
+.flip.is-flipped .face.back  { transform: rotateY(0deg); }
 
+/* Optional hover cue */
+.flip.edu-flip:hover .face{ box-shadow: 0 10px 22px var(--shadow); }
 
 
 
@@ -363,6 +364,7 @@ header.site-header{
   .edu-level { font-size: 30px; }
   .edu-degree { font-size: 24px; }
 }
+
 
 
 
