@@ -293,6 +293,7 @@ header.site-header{
   text-align: center;       /* center-align text lines */
   gap: 14px;                /* space between lines/blocks */
   padding: 20px;
+  padding-top: 30px;
 }
 
 /* Section headings on the back */
@@ -363,6 +364,7 @@ header.site-header{
   .edu-level { font-size: 30px; }
   .edu-degree { font-size: 24px; }
 }
+
 
 
 
