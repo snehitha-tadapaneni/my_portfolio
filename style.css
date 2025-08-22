@@ -247,6 +247,29 @@ header.site-header{
   line-height: 1.4;
 }
 
+/*Experience*/
+/* One column grid (full-width blocks stacked) */
+.grid.cols-1 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+/* Experience blocks look like project blocks */
+.exp-block {
+  padding: 20px;
+  border: 1px solid #eadfc9;
+  border-radius: 10px;
+  background: var(--card, #fff);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+/* Hover effect */
+.exp-block:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
 
 /* Skills */
 .zoom-list{display:grid;grid-template-columns:repeat(4, minmax(0,1fr));gap:16px}
@@ -405,6 +428,7 @@ header.site-header{
   .edu-level { font-size: 30px; }
   .edu-degree { font-size: 24px; }
 }
+
 
 
 
