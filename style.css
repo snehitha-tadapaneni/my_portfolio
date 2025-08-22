@@ -273,12 +273,25 @@ header.site-header{
 
 
 /* Skills */
-.zoom-list{display:grid;grid-template-columns:repeat(4, minmax(0,1fr));gap:16px}
-.zoom-list a{
-  display:block;padding:18px;border-radius:14px;border:1px solid #eadfc9;background:var(--card);
-  text-align:center;font-weight:600;transition:transform .15s ease, box-shadow .2s ease
+.zoom-list{
+  display:grid;
+  grid-template-columns:repeat(4, minmax(0,1fr));
+  gap:16px
 }
-.zoom-list a:hover{transform:scale(1.06);box-shadow:0 8px 18px var(--shadow)}
+.zoom-list a{
+  display:block;
+  padding:18px;
+  border-radius:14px;
+  border:1px solid #eadfc9;
+  background:var(--card);
+  text-align:center;
+  font-weight:600;
+  transition:transform .15s ease, box-shadow .2s ease;
+}
+.zoom-list a:hover{
+  transform:scale(1.06);
+  box-shadow:0 8px 18px var(--shadow)
+}
 
 /* Certifications */
 .cert-grid{display:grid;grid-template-columns:repeat(3, minmax(0,1fr));gap:16px}
@@ -429,6 +442,7 @@ header.site-header{
   .edu-level { font-size: 30px; }
   .edu-degree { font-size: 24px; }
 }
+
 
 
 
