@@ -304,12 +304,12 @@ header.site-header{
 /* ----- Education flip cards (refined) ----- */
 
 /* ================================
-   FLIP CARD BASE
+   FLIP CARDS — Single Clean Block
    ================================ */
 
 /* Base card */
 .flip{
-  --flip-h: 340px;                 /* change height here if needed */
+  --flip-h: 340px;                 /* change height here */
   position: relative;
   height: var(--flip-h);
   perspective: 1000px;
@@ -328,26 +328,17 @@ header.site-header{
 .flip .face{
   position: absolute;
   inset: 0;
-
-  /* ⬇️ GRID ensures identical vertical alignment across cards */
-  display: grid;
-  grid-template-rows:
-    auto      /* 1: logo */
-    auto      /* 2: level (Graduate/Undergraduate) */
-    auto      /* 3: degree line */
-    auto      /* 4: school name */
-    1fr       /* 5: flexible spacer to equalize heights */
-    auto;     /* 6: years at the bottom */
-
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-items: center;
+  justify-content: center;         /* vertical centering by default */
   text-align: center;
 
   background: var(--card);
   border: 1px solid #eadfc9;
   border-radius: 14px;
   box-sizing: border-box;
-  padding: 18px 16px;
+  padding: 16px 14px;
 
   /* critical for no mirror text */
   backface-visibility: hidden;
@@ -380,83 +371,78 @@ header.site-header{
 .flip.edu-flip{ --flip-h: 340px; }   /* adjust if you want a taller card */
 
 /* FRONT (logo + titles) */
-.edu-logo { grid-row: 1; }
 .edu-logo img{
-  width: auto;
-  max-height: 100px;               /* same visual height across cards */
+  width: 120px;
+  height: auto;
   object-fit: contain;
   border: none; box-shadow: none; background: none; border-radius: 0;
+  margin-bottom: 10px;
 }
 
-.edu-level{                         /* "Graduate Education" etc. */
-  grid-row: 2;
-  margin: 6px 0 0;
-  font-size: 32px;
-  line-height: 1.2;
+.edu-level{
+  margin: 4px 0;
+  font-size: 36px;                   /* section title on the card */
   opacity: .9;
 }
-
-.edu-degree{                        /* "Master of Science in Data Science" */
-  grid-row: 3;
-  margin: 4px 0 0;
-  font-size: 24px;
+.edu-degree{
+  margin: 2px 0 0;
+  font-size: 30px;
   font-weight: 700;
-  line-height: 1.25;
 }
-
-.edu-school{                        /* "George Washington University, US" */
-  grid-row: 4;
-  margin: 8px 0 0;
-  font-size: 19px;
-  opacity: .95;
+.edu-spacer{ height: 24px; }
+.edu-school{
+  margin: 0; font-size: 20px; opacity: .9;
 }
-
-/* row 5 is the flexible spacer—no element needed */
-
-/* Years pinned to bottom across all cards */
 .edu-years{
-  grid-row: 6;
-  margin: 10px 0 0;
-  font-size: 18px;
-  color: #6d5f4b;
+  margin: 6px 0 0; font-size: 19px; color: #6d5f4b;
 }
 
 /* BACK (institute, GPA, coursework) */
-.face.back.edu-back{
-  /* Keep same grid so headings/blocks look consistent */
-  grid-template-rows:
-    auto
-    auto
-    1fr;
+.edu-back{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;           /* centered vertically by default */
+  text-align: center;
   gap: 10px;
-  padding: 16px 14px;
+  padding: 20px 12px;
   word-wrap: break-word;
   overflow-wrap: anywhere;
 }
 
+.edu-back > *{ margin: 3px 0; }      /* tight, uniform spacing */
+
 .edu-back-title{
-  grid-row: 1;
   font-size: 20px;
   font-weight: 700;
   color: #5a4937;
   text-transform: uppercase;
   letter-spacing: .4px;
-  margin: 0;
+  margin: 10px;
 }
 
 .edu-back-text{
-  grid-row: 2;
-  font-size: 16.5px;
-  line-height: 1.45;
+  font-size: 16.5px;                 /* slightly larger text */
+  line-height: 1.4;
   max-width: 92%;
-  margin: 0;
+  margin: 8px;
 }
 
-/* Optional variant: back content aligned to top */
+/* If you want the back content closer to the TOP (not centered),
+   add `top` to the back face: <div class="face back edu-back top">… */
 .edu-back.top{
-  align-content: start;
+  justify-content: flex-start !important;
   padding-top: 22px;
 }
+
+/* Responsive tweak */
+@media (max-width: 720px){
+  .flip{ --flip-h: 360px; }
+  .edu-level{ font-size: 30px; }
+  .edu-degree{ font-size: 24px; }
+  .edu-logo img{ width: 100px; }
+}
+
 
 /* Responsive niceties */
 @media (max-width: 640px){
@@ -582,6 +568,7 @@ body{
 
 /* Optional tiny typography polish */
 .hero-text p, .muted{ color: var(--ink-soft); }
+
 
 
 
