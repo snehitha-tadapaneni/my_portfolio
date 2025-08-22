@@ -306,7 +306,7 @@ header.site-header{
 
 /* Values like Institute name, GPA, courses */
 .edu-back-text {
-  margin: 0;
+  margin-top: 30px;
   font-size: 18px;          /* increase font size */
   line-height: 1.5;         /* more breathing room */
   max-width: 90%;
@@ -362,6 +362,7 @@ header.site-header{
   .edu-level { font-size: 30px; }
   .edu-degree { font-size: 24px; }
 }
+
 
 
 
