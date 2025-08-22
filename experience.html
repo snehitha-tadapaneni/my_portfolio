@@ -3,16 +3,21 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Experience | Hrushikesh</title>
+  <title>Experience | Snehitha</title>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
   <!-- Header -->
   <header class="site-header">
     <nav class="nav container">
-      <div class="brand"><div class="logo"><img src="assets/profile.jpg" alt=""/></div><div>Hrushikesh U.</div></div>
+      <div class="brand"><div>Snehitha Tadapaneni</div></div>
       <div class="menu">
-        <a href="index.html">Home</a><a href="education.html">Education</a><a href="project.html">Projects</a><a href="experience.html">Experience</a><a href="skills.html">Skills</a><a href="certifications.html">Certifications</a>
+        <a href="index.html">Home</a>
+        <a href="education.html">Education</a>
+        <a href="projects.html">Projects</a>
+        <a href="experience.html" class="active">Experience</a>
+        <a href="skills.html">Skills</a>
+        <a href="certifications.html">Certifications</a>
       </div>
     </nav>
   </header>
@@ -20,34 +25,38 @@
   <section class="section">
     <div class="container">
       <h2>Experience</h2>
+
       <div class="grid cols-2">
+        <!-- Innomatics Research Labs -->
         <div class="card">
-          <h3 style="margin-top:0">Data Science Intern — Company A</h3>
-          <p class="muted">Jun 2024 – Aug 2024 • Seattle, WA</p>
+          <h3 style="margin-top:0">Data Science Intern — Innomatics Research Labs</h3>
+          <p class="muted">Jan – Mar 2024 • Hyderabad, India</p>
           <ul>
-            <li>Built X that improved Y by Z%.</li>
-            <li>Developed ML pipeline (Python, scikit-learn, Airflow).</li>
-            <li>Deployed dashboard (Streamlit) used by N stakeholders.</li>
+            <li>Analyzed a dataset of thousands of internship applications to understand intern demographics.</li>
+            <li>Examined recovered chat data to identify misconduct around sharing unique Zoom meeting links.</li>
+            <li>Analyzed historical order-arrival and delivery-time data for a Domino’s Pizza store.</li>
+            <li>Performed open-ended EDA on the AMCAT dataset using data visualization and statistical techniques; compiled and presented findings.</li>
+            <li>Applied statistical tests to validate hypotheses (e.g., relationship between education and earning potential).</li>
+            <li>Reviewed backend codebase of a Note Taking Application to identify improvements and bugs.</li>
           </ul>
         </div>
 
+        <!-- Smart Bridge -->
         <div class="card">
-          <h3 style="margin-top:0">ML Engineer Intern — Company B</h3>
-          <p class="muted">Jan 2024 – May 2024 • Remote</p>
+          <h3 style="margin-top:0">Artificial Intelligence Extern — Smart Bridge</h3>
+          <p class="muted">May – Jul 2023 • Remote</p>
           <ul>
-            <li>Fine-tuned transformer model for ABC use-case.</li>
-            <li>Optimized inference cost with batching & quantization.</li>
-            <li>Wrote unit tests & CI/CD for model serving.</li>
+            <li>Completed comprehensive training across AI development tools and workflows.</li>
+            <li>Tackled multiple AI use cases from data prep to modeling and evaluation.</li>
+            <li>Delivered a healthcare project leveraging deep learning techniques.</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <footer class="footer">© <span id="y"></span> Hrushikesh</footer>
+  <footer class="footer">© <span id="y"></span> Snehitha Tadapaneni</footer>
   <script src="script.js"></script>
   <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
 </html>
-
-
