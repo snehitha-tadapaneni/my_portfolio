@@ -1,35 +1,24 @@
 // ==============================
 // Flip card toggles (robust + accessible)
 // ==============================
+
 document.addEventListener('DOMContentLoaded', () => {
-  const cards = document.querySelectorAll('.flip[data-flip]');
-
-  cards.forEach((card) => {
-    // Make the whole card operable
-    card.setAttribute('tabindex', '0');
-    card.setAttribute('role', 'button');
-    card.setAttribute('aria-pressed', 'false');
-
-    // Click / tap
+  document.querySelectorAll('.flip[data-flip]').forEach(card => {
+    card.setAttribute('tabindex', '0'); // keyboard friendly
     card.addEventListener('click', (e) => {
-      // If a link or button was clicked inside, don't navigate away
-      const clickable = e.target.closest('a, button');
+      const clickable = e.target.closest('a,button');
       if (clickable) e.preventDefault();
-
-      const flipped = card.classList.toggle('is-flipped');
-      card.setAttribute('aria-pressed', String(flipped));
+      card.classList.toggle('is-flipped');
     });
-
-    // Keyboard (Enter / Space)
     card.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
-        const flipped = card.classList.toggle('is-flipped');
-        card.setAttribute('aria-pressed', String(flipped));
+        card.classList.toggle('is-flipped');
       }
     });
   });
 });
+
 
 // ==============================
 // Mark active nav item if present
@@ -73,3 +62,6 @@ function showResumeFallback() {
     if (!loaded || !iframe.contentDocument) swap();
   }, 2500);
 }
+
+
+
