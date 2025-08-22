@@ -376,7 +376,7 @@ header.site-header{
 }
 
 .edu-back-title {
-  margin:40px;
+  margin: 2px 0;
   font-size: 22px;           /* slightly larger */
   font-weight: 700;
   color: #5a4937;
@@ -388,6 +388,7 @@ header.site-header{
   font-size: 17px;           /* bigger for readability */
   line-height: 1;
   max-width: 90%;
+  margin: 2px 0;
 }
 
 
@@ -548,6 +549,7 @@ body{
 
 /* Optional tiny typography polish */
 .hero-text p, .muted{ color: var(--ink-soft); }
+
 
 
 
