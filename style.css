@@ -494,32 +494,31 @@ header.site-header{
    FLIP CARDS */
 
 /* Base card */
+/* ===== Flip cards (faces rotate; inner stays still) ===== */
 .flip{
-  --flip-h: 340px;               
+  --flip-h: 340px;
   position: relative;
   height: var(--flip-h);
   perspective: 1000px;
   cursor: pointer;
   overflow: hidden;
-  border-radius: 14px;          
+  border-radius: 14px;
 }
 
-/* Inner container (not rotated) */
 .flip .inner{
   position: absolute;
   inset: 0;
+  transform-style: preserve-3d;   /* keeps 3D for the faces */
 }
 
-/* Faces (front/back) */
 .flip .face{
   position: absolute;
   inset: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;        
+  justify-content: center;
   text-align: center;
-
   background: var(--card);
   border: 1px solid #eadfc9;
   border-radius: 14px;
@@ -531,12 +530,15 @@ header.site-header{
   -webkit-backface-visibility: hidden;
 }
 
-/* Orient faces */
+/* Faces orientation */
 .flip .face.front { transform: rotateY(0deg); }
-.flip .face.back  { transform: rotateY(180deg); overflow: auto; -webkit-overflow-scrolling: touch; }
+.flip .face.back  { transform: rotateY(180deg); }
+
+/* Flipped state (rotate faces, NOT .inner) */
 .flip.is-flipped .face.front { transform: rotateY(-180deg); }
 .flip.is-flipped .face.back  { transform: rotateY(0deg); }
-.flip.is-flipped .inner { transform: none !important; }
+
+/* Nice-to-have */
 .flip:hover .face { box-shadow: 0 10px 22px var(--shadow); }
 
 /* Scrollbar cosmetics (optional) */
@@ -544,10 +546,9 @@ header.site-header{
 .flip .face.back::-webkit-scrollbar-thumb{ background: #e3d7c3; border-radius: 6px; }
 .flip .face.back{ scrollbar-width: thin; scrollbar-color: #e3d7c3 transparent; }
 
-/* ================================
-   EDUCATION-SPECIFIC POLISH*/
+/* Education size tweak (optional) */
+.flip.edu-flip{ --flip-h: 340px; }
 
-.flip.edu-flip{ --flip-h: 340px; }   
 
 /* FRONT (logo + titles) */
 .edu-logo img{
@@ -813,6 +814,7 @@ body{
 }
 
 /* ===== Scroll reveal (you already have .reveal styles; keep them) ===== */
+
 
 
 
