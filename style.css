@@ -295,76 +295,90 @@ header.site-header{
 .projects-list .project-block:hover h3 a{ color: var(--accent-2); }
 
 
-/* =========================
-   EXPERIENCE (1-column list)
-   ========================= */
-.grid.cols-1{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:20px;
+/* ================================
+   EXPERIENCE BLOCKS (styled like Projects)
+   ================================ */
+
+/* One column grid (stacked blocks) */
+.grid.cols-1 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px; /* same gap as projects */
 }
 
-/* Base card */
-.exp-block{
+/* Base block */
+.exp-block {
+  background: var(--card, #fff);
+  border: 1px solid #eadfc9;
+  border-radius: 14px;              /* same rounded corners */
+  padding: 22px;
+  transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-  padding: 22px;
-  border: 1px solid #eadfc9;
-  border-radius: 14px;                /* match projects */
-  background: var(--card, #fff);
-  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
 }
 
-/* Hover: lift + stronger shadow + border accent */
-.exp-block:hover{
+/* Gradient background + lift on hover */
+.exp-block:hover {
   transform: translateY(-6px) scale(1.01);
-  box-shadow: 0 14px 28px rgba(0,0,0,.18);
-  border-color: var(--accent-2);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.15);
+  background: linear-gradient(180deg, #fffdf8, #f7f1e3);
+  border-color: var(--accent);
 }
 
-/* Hover tint overlay (guaranteed visible) */
-.exp-block::before{
-  content:"";
-  position:absolute; inset:0;
-  border-radius: inherit;             /* keep rounded corners */
-  background:#f0e6d6;                 /* darker cream tint */
-  opacity:0; transition: opacity .25s ease;
-  z-index:0;
+/* Animated left border highlight */
+.exp-block::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  height: 100%;
+  width: 0;
+  background: var(--accent-2);
+  transition: width 0.3s ease;
+  border-radius: 14px 0 0 14px;
 }
-.exp-block:hover::before{ opacity:1; }
-
-/* Keep content above overlay */
-.exp-block > *{ position: relative; z-index: 1; }
-
-/* Title color shift on hover (works for plain h3 or linked h3) */
-.exp-block h3,
-.exp-block h3 a{
-  color:#2f2a24;
-  font-weight:700;
-  transition: color .2s ease;
-  text-decoration:none;
+.exp-block:hover::before {
+  width: 6px; /* thickness of highlight bar */
 }
-.exp-block:hover h3,
-.exp-block:hover h3 a{
+
+/* Title */
+.exp-block h3 {
+  margin: 0 0 8px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #2f2a24;
+  transition: color .25s ease;
+}
+.exp-block h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+.exp-block h3 a:hover {
   color: var(--accent-2);
 }
 
-/* Bullets + text */
-.exp-block ul{
-  padding-left:18px;
-  margin:0;
-}
-.exp-block ul li{
-  margin-bottom:6px;
-  line-height:1.5;
-  transition: color .2s ease, transform .18s ease;
+/* Metadata line (time, location, role) */
+.exp-block p.muted {
+  margin: 4px 0 12px;
+  font-size: 15px;
+  color: #6a5f50;
 }
 
-/* On block hover: ALL bullet text goes accent */
-.exp-block:hover ul li{ color: var(--accent-2); }
+/* Bullet points */
+.exp-block ul {
+  padding-left: 18px;
+  margin: 0;
+}
+.exp-block ul li {
+  margin-bottom: 6px;
+  line-height: 1.5;
+  transition: transform .2s ease, color .2s ease;
+}
 
-/* On bullet hover: subtle nudge */
-.exp-block ul li:hover{ transform: translateX(4px); }
+/* Text effect: accent + nudge on hover */
+.exp-block ul li:hover {
+  transform: translateX(4px);
+  color: var(--accent-2);
+}
 
 
 
@@ -666,6 +680,7 @@ body{
 
 /* Optional tiny typography polish */
 .hero-text p, .muted{ color: var(--ink-soft); }
+
 
 
 
