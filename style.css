@@ -383,12 +383,15 @@ header.site-header{
 
 
 /* Skills */
+/* ===== Skills: hover/click polish like Projects/Experience ===== */
 .zoom-list{
   display:grid;
   grid-template-columns:repeat(4, minmax(0,1fr));
-  gap:16px
+  gap:16px;
 }
+
 .zoom-list a{
+  position: relative;
   display:block;
   padding:18px;
   border-radius:14px;
@@ -396,12 +399,51 @@ header.site-header{
   background:var(--card);
   text-align:center;
   font-weight:600;
-  transition:transform .15s ease, box-shadow .2s ease;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, color .2s ease;
+  overflow: hidden;                 /* for the overlay */
+  color: #2f2a24;
 }
-.zoom-list a:hover{
-  transform:scale(1.06);
-  box-shadow:0 8px 18px var(--shadow)
+
+/* Hover/focus: lift + shadow + border accent */
+.zoom-list a:hover,
+.zoom-list a:focus-visible{
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 26px rgba(0,0,0,.16);
+  border-color: var(--accent);
 }
+
+/* Tint overlay (guaranteed visible color change) */
+.zoom-list a::before{
+  content:"";
+  position:absolute; inset:0;
+  border-radius: inherit;
+  background: linear-gradient(180deg, #fffdf8, #f7f1e3); /* same tone as projects */
+  opacity:0; transition: opacity .25s ease;
+  z-index:0;
+}
+.zoom-list a:hover::before,
+.zoom-list a:focus-visible::before{ opacity:1; }
+
+/* Keep text above overlay */
+.zoom-list a > * { position: relative; z-index: 1; }
+
+/* Text color shift on hover/focus */
+.zoom-list a:hover,
+.zoom-list a:focus-visible{
+  color: var(--accent-2);
+}
+
+/* Press feedback */
+.zoom-list a:active{
+  transform: translateY(-2px) scale(0.99);
+}
+
+/* Optional: persistent “selected” state (add class="is-active" on an item) */
+.zoom-list a.is-active{
+  border-color: var(--accent-2);
+  color: var(--accent-2);
+}
+.zoom-list a.is-active::before{ opacity:1; }
 
 /* Certifications */
 .cert-grid{display:grid;grid-template-columns:repeat(3, minmax(0,1fr));gap:16px}
@@ -680,6 +722,7 @@ body{
 
 /* Optional tiny typography polish */
 .hero-text p, .muted{ color: var(--ink-soft); }
+
 
 
 
