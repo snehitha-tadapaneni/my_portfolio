@@ -205,20 +205,6 @@ header.site-header{
 }
 .card:hover{transform:translateY(-4px);box-shadow:0 12px 22px var(--shadow)}
 
-/* Flip cards */
-.flip{
-  perspective:1200px;position:relative;height:240px
-}
-.flip .inner{
-  position:absolute;inset:0;transition:transform .6s;transform-style:preserve-3d;border-radius:14px;overflow:hidden
-}
-.flip.is-flipped .inner{transform:rotateY(180deg)}
-.flip .face{
-  position:absolute;inset:0;padding:18px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;
-  backface-visibility:hidden;background:var(--card);border:1px solid #eadfc9
-}
-.flip .face.back{transform:rotateY(180deg);background:#fffaf5}
-
 
 /* Projects */
 .projects-list {
@@ -814,6 +800,7 @@ body{
 }
 
 /* ===== Scroll reveal (you already have .reveal styles; keep them) ===== */
+
 
 
 
