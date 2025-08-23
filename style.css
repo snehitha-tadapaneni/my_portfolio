@@ -215,7 +215,7 @@ header.site-header{
 .projects-list {
   display: flex;
   flex-direction: column;
-  gap: 36px;
+  gap: 20px;
 }
 
 .project-block {
@@ -290,22 +290,6 @@ header.site-header{
 }
 
   /*/ bg color/*/
-
-.projects-list {
-  display: flex;
-  flex-direction: column;
-  gap: 22px; /* restores the gap between blocks */
-}
-  
-.projects-list .project-block{
-  position: relative;
-  overflow: hidden;
-  border-radius: 20px;        /* rounded corners */
-  padding: 22px;
-  border: 1px solid #eadfc9;
-  background: var(--card, #fff);
-  transition: transform .25s ease, box-shadow .25s ease;
-}
 
 /* Lift + show tint on hover */
 .projects-list .project-block:hover{
@@ -644,6 +628,7 @@ body{
 
 /* Optional tiny typography polish */
 .hero-text p, .muted{ color: var(--ink-soft); }
+
 
 
 
