@@ -62,18 +62,3 @@ function showResumeFallback() {
     if (!loaded || !iframe.contentDocument) swap();
   }, 2500);
 }
-
-<script>
-document.addEventListener('click', (e)=>{
-  const btn = e.target.closest('.zoom-list a');
-  if(!btn) return;
-  // If your links navigate to other pages, remove the next line.
-  e.preventDefault(); 
-  btn.classList.toggle('is-active');
-});
-</script>
-
-
-
-
-
