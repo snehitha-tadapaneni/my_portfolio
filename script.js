@@ -195,7 +195,6 @@ function initTiltCards() {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  initFooterYear();
   initFlipCards();
   markActiveNav();
   initSkillsTabs();
@@ -203,6 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeroTypewriter();
   initTiltCards();
 });
+
 
 
 
