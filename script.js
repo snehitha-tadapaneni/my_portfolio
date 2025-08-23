@@ -199,6 +199,11 @@ document.addEventListener('DOMContentLoaded', () => {
   initFlipCards();
   markActiveNav();
   initSkillsTabs();
+  initScrollReveal();
+  initHeroTypewriter();
+  initTiltCards();
 });
+
+
 
 
