@@ -1,20 +1,8 @@
-// ==============================
 // Utilities
-// ==============================
 function $(sel, root = document) { return root.querySelector(sel); }
 function $all(sel, root = document) { return Array.from(root.querySelectorAll(sel)); }
 
-// ==============================
-// Footer year (safe if #y missing)
-// ==============================
-function initFooterYear() {
-  const yearEl = $('#y');
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
-}
-
-// ==============================
-// Flip card toggles (accessible)
-// ==============================
+// Flip card toggles 
 function initFlipCards() {
   $all('.flip[data-flip]').forEach(card => {
     card.setAttribute('tabindex', '0');
@@ -26,14 +14,14 @@ function initFlipCards() {
       card.setAttribute('aria-pressed', card.classList.contains('is-flipped') ? 'true' : 'false');
     };
 
-    // Click anywhere on card to flip — BUT allow inner links/buttons to behave normally
+    // Click anywhere on card to flip 
     card.addEventListener('click', (e) => {
       const clickable = e.target.closest('a,button');
       if (clickable) return; // don't hijack real links/buttons
       toggle();
     });
 
-    // Keyboard: Enter / Space flip
+    // Space flip
     card.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar' || e.code === 'Space') {
         e.preventDefault();
@@ -43,9 +31,7 @@ function initFlipCards() {
   });
 }
 
-// ==============================
 // Mark active nav item if present
-// ==============================
 function markActiveNav() {
   const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
   $all('.menu a').forEach(a => {
@@ -56,10 +42,7 @@ function markActiveNav() {
   });
 }
 
-// ==============================
-// Home: show fallback image if PDF can’t load
-// Call this yourself on pages where #resume-embed exists.
-// ==============================
+// Home
 function showResumeFallback() {
   const holder = $('#resume-fallback');
   const iframe = $('#resume-embed');
@@ -80,19 +63,14 @@ function showResumeFallback() {
 
   setTimeout(() => {
     try {
-      // If blocked or not actually rendered, fallback
       if (!loaded || !iframe.contentDocument) swap();
     } catch {
-      // Cross-origin access throws — fallback
       swap();
     }
   }, 2500);
 }
 
-// ==============================
-// Skills page: tiles + smooth scroll + active highlight
-// Only runs if #skill-links exists
-// ==============================
+// Skills page
 function initSkillsTabs() {
   const skillLinksWrap = $('#skill-links');
   const cards = $all('.skill-card');
@@ -101,7 +79,7 @@ function initSkillsTabs() {
   const links = $all('a', skillLinksWrap);
   const clearActive = () => $all('a.is-active', skillLinksWrap).forEach(a => a.classList.remove('is-active'));
 
-  // click → tint tab, smooth scroll, tiny pop, update hash
+  // click → tint 
   links.forEach(a => {
     a.addEventListener('click', (e) => {
       const id = a.getAttribute('href');
@@ -132,7 +110,6 @@ function initSkillsTabs() {
     });
   }, {
     threshold: 0.6,
-    // If you have a sticky header, adjust top margin (e.g., '80px 0px -20% 0px')
     rootMargin: '0px 0px -10% 0px'
   });
 
@@ -140,14 +117,11 @@ function initSkillsTabs() {
   window.addEventListener('beforeunload', () => io.disconnect());
 }
 
-// ==============================
-// Boot
-// ==============================
+
 document.addEventListener('DOMContentLoaded', () => {
   initFooterYear();
   initFlipCards();
   markActiveNav();
   initSkillsTabs();
-  // Call showResumeFallback() only on the page that has the resume iframe:
-  // showResumeFallback();
 });
+
