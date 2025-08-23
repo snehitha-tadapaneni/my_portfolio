@@ -215,7 +215,7 @@ header.site-header{
 .projects-list {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 50px;
 }
 
 .project-block {
@@ -290,18 +290,7 @@ header.site-header{
 }
 
   /*/ bg color/*/
-
-/* Lift + show tint on hover */
-.projects-list .project-block:hover{
-  transform: translateY(-8px) scale(1.01);
-  box-shadow: 0 14px 30px rgba(0,0,0,.18);
-  border-color: var(--accent-2);
-}
-.projects-list .project-block:hover::before{
-  opacity: 1;                        /* tint fades in */
-}
-
-/* (Optional) title color shift on hover */
+/* title color shift on hover */
 .projects-list .project-block h3 a{ color: inherit; text-decoration: none; transition: color .2s ease; }
 .projects-list .project-block:hover h3 a{ color: var(--accent-2); }
 
@@ -628,6 +617,7 @@ body{
 
 /* Optional tiny typography polish */
 .hero-text p, .muted{ color: var(--ink-soft); }
+
 
 
 
