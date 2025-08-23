@@ -293,18 +293,29 @@ header.site-header{
 
   /*/ bg color
   /* ===== Projects: guaranteed color change on hover (overlay method) ===== */
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px; /* restores the gap between blocks */
+}
+  
 .projects-list .project-block{
   position: relative;
   overflow: hidden;
-  border-radius: 14px;
+  border-radius: 14px;        /* rounded corners */
+  padding: 22px;
+  border: 1px solid #eadfc9;
+  background: var(--card, #fff);
+  transition: transform .25s ease, box-shadow .25s ease;
 }
 
 .projects-list .project-block::before{
   content: "";
   position: absolute;
   inset: 0;
-  background: #f0e6d6;              /* the darker cream hover color */
-  opacity: 0;                        /* hidden by default */
+  border-radius: inherit;      /* keeps same rounded shape */
+  background: #f0e6d6;
+  opacity: 0;
   transition: opacity .25s ease;
   z-index: 0;
 }
@@ -652,6 +663,7 @@ body{
 
 /* Optional tiny typography polish */
 .hero-text p, .muted{ color: var(--ink-soft); }
+
 
 
 
