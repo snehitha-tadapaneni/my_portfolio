@@ -69,7 +69,7 @@ function showResumeFallback() {
     }
   }, 2500);
 }
-
+/*
 function initSkillsTabs() {
   const skillLinksWrap = document.querySelector('#skill-links');
   const cards = document.querySelectorAll('.skill-card');
@@ -113,6 +113,73 @@ function initSkillsTabs() {
   }, { threshold: 0.6 });
 
   cards.forEach(c => io.observe(c));
+}
+*/
+/* new skills*/
+function initSkillsTabs() {
+  const wrap = document.querySelector('#skill-links');
+  const cards = document.querySelectorAll('.skill-card');
+  if (!wrap || !cards.length) return;
+
+  const links = wrap.querySelectorAll('a');
+
+  const clearActiveTabs = () =>
+    wrap.querySelectorAll('a.is-active').forEach(a => a.classList.remove('is-active'));
+  const clearActiveCards = () =>
+    document.querySelectorAll('.skill-card.is-active').forEach(c => c.classList.remove('is-active'));
+
+  links.forEach(a => {
+    a.addEventListener('click', (e) => {
+      const id = a.getAttribute('href');           // e.g. "#frameworks"
+      const target = document.querySelector(id);
+      if (!target) return;
+
+      e.preventDefault();
+
+      // highlight tab
+      clearActiveTabs();
+      a.classList.add('is-active');
+
+      // highlight card (persist)
+      clearActiveCards();
+      target.classList.add('is-active');
+
+      // scroll and update hash
+      target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      history.pushState(null, '', id);
+    });
+  });
+
+  // Highlight while scrolling into sections
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = '#' + entry.target.id;
+
+        // active tab
+        clearActiveTabs();
+        const match = wrap.querySelector(`a[href="${id}"]`);
+        if (match) match.classList.add('is-active');
+
+        // active card
+        clearActiveCards();
+        entry.target.classList.add('is-active');
+      }
+    });
+  }, { threshold: 0.6 });
+
+  cards.forEach(c => io.observe(c));
+
+  // On load with a hash, highlight the right card/tab
+  if (location.hash) {
+    const initial = document.querySelector(location.hash);
+    if (initial && initial.classList.contains('skill-card')) {
+      clearActiveCards(); initial.classList.add('is-active');
+      clearActiveTabs();
+      const t = wrap.querySelector(`a[href="${location.hash}"]`);
+      if (t) t.classList.add('is-active');
+    }
+  }
 }
 
 
@@ -201,6 +268,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeroTypewriter();
   initTiltCards();
 });
+
 
 
 
