@@ -384,10 +384,14 @@ header.site-header{
 
 /* Skills */
 /* ===== Skills: hover/click polish like Projects/Experience ===== */
+/* =========================
+   SKILLS (tiles like Projects)
+   ========================= */
 .zoom-list{
   display:grid;
   grid-template-columns:repeat(4, minmax(0,1fr));
   gap:16px;
+  margin-bottom: 22px;
 }
 
 .zoom-list a{
@@ -396,28 +400,29 @@ header.site-header{
   padding:18px;
   border-radius:14px;
   border:1px solid #eadfc9;
-  background:var(--card);
+  background: var(--card, #fff);
   text-align:center;
-  font-weight:600;
-  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, color .2s ease;
-  overflow: hidden;                 /* for the overlay */
-  color: #2f2a24;
+  font-weight:700;
+  color:#2f2a24;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, color .2s ease, background .25s ease;
+  overflow: hidden;                 /* for overlay tint */
 }
 
-/* Hover/focus: lift + shadow + border accent */
+/* Hover/focus: lift + gradient tint + border accent (match Projects) */
 .zoom-list a:hover,
 .zoom-list a:focus-visible{
-  transform: translateY(-4px) scale(1.02);
+  transform: translateY(-6px) scale(1.02);
   box-shadow: 0 12px 26px rgba(0,0,0,.16);
   border-color: var(--accent);
+  color: var(--accent-2);
 }
 
-/* Tint overlay (guaranteed visible color change) */
+/* Overlay tint (guaranteed visible even if other bg rules exist) */
 .zoom-list a::before{
   content:"";
   position:absolute; inset:0;
   border-radius: inherit;
-  background: linear-gradient(180deg, #fffdf8, #f7f1e3); /* same tone as projects */
+  background: linear-gradient(180deg, #fffdf8, #f7f1e3);
   opacity:0; transition: opacity .25s ease;
   z-index:0;
 }
@@ -425,25 +430,42 @@ header.site-header{
 .zoom-list a:focus-visible::before{ opacity:1; }
 
 /* Keep text above overlay */
-.zoom-list a > * { position: relative; z-index: 1; }
+.zoom-list a > *{ position:relative; z-index:1; }
 
-/* Text color shift on hover/focus */
-.zoom-list a:hover,
-.zoom-list a:focus-visible{
-  color: var(--accent-2);
-}
-
-/* Press feedback */
-.zoom-list a:active{
-  transform: translateY(-2px) scale(0.99);
-}
-
-/* Optional: persistent “selected” state (add class="is-active" on an item) */
+/* Active (clicked) tile stays tinted */
 .zoom-list a.is-active{
   border-color: var(--accent-2);
   color: var(--accent-2);
 }
 .zoom-list a.is-active::before{ opacity:1; }
+
+/* Press feedback */
+.zoom-list a:active{
+  transform: translateY(-3px) scale(.99);
+}
+
+/* Skill cards below the tiles */
+.skills-sections{
+  display: grid;
+  gap: 16px;
+}
+.skill-card{
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease, background .2s ease;
+}
+
+/* Subtle “pop” when navigated into view */
+.skill-card.pop{
+  transform: scale(1.01);
+  box-shadow: 0 10px 22px rgba(0,0,0,.12);
+  border-color: var(--accent);
+  background: linear-gradient(180deg, #ffffff, #fffaf2);
+}
+
+/* Optional: center h3 inside skill cards and tighten spacing */
+.skill-card h3{
+  margin-top: 0;
+  text-align: left;
+}
 
 /* Certifications */
 .cert-grid{display:grid;grid-template-columns:repeat(3, minmax(0,1fr));gap:16px}
@@ -722,6 +744,7 @@ body{
 
 /* Optional tiny typography polish */
 .hero-text p, .muted{ color: var(--ink-soft); }
+
 
 
 
