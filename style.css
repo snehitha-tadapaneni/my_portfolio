@@ -318,6 +318,48 @@ header.site-header{
   box-shadow: 0 6px 16px rgba(0,0,0,0.12);
 }
 
+/* ===== Experience: same hover tint + title color shift as Projects ===== */
+.grid.cols-1 .exp-block{
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;                 /* match projects rounded corners */
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+/* hover lift + stronger shadow */
+.grid.cols-1 .exp-block:hover{
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 14px 28px rgba(0,0,0,.18);
+  border-color: var(--accent-2);
+}
+
+/* overlay tint so color ALWAYS changes (even if other backgrounds exist) */
+.grid.cols-1 .exp-block::before{
+  content:"";
+  position:absolute; inset:0;
+  border-radius: inherit;
+  background:#f0e6d6;                 /* darker cream tint (same vibe as projects) */
+  opacity:0;
+  transition: opacity .25s ease;
+  z-index:0;
+}
+.grid.cols-1 .exp-block:hover::before{ opacity:1; }
+
+/* keep content above overlay */
+.grid.cols-1 .exp-block > *{ position: relative; z-index: 1; }
+
+/* title color shift on hover (works whether it's a link or plain text) */
+.grid.cols-1 .exp-block h3,
+.grid.cols-1 .exp-block h3 a{
+  color:#2f2a24;
+  transition: color .2s ease;
+  text-decoration: none;
+}
+.grid.cols-1 .exp-block:hover h3,
+.grid.cols-1 .exp-block:hover h3 a{
+  color: var(--accent-2);
+}
+
 
 /* Skills */
 .zoom-list{
@@ -617,5 +659,6 @@ body{
 
 /* Optional tiny typography polish */
 .hero-text p, .muted{ color: var(--ink-soft); }
+
 
 
