@@ -204,13 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-document.addEventListener('DOMContentLoaded', () => {
-  const test = document.querySelector('.flip');
-  if (test) {
-    test.classList.add('is-flipped');
-    setTimeout(()=> test.classList.remove('is-flipped'), 1500);
-  }
-});
+
 
 
 
