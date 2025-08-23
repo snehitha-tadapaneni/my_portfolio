@@ -421,7 +421,11 @@ header.site-header{
   color: #5a4937;
   text-transform: uppercase;
   letter-spacing: .4px;
-  margin: 10px;
+  margin: 6px;
+}
+
+.edu-back-text h6{
+  font-size: 18px;
 }
 
 .edu-back-text{
@@ -571,6 +575,7 @@ body{
 
 /* Optional tiny typography polish */
 .hero-text p, .muted{ color: var(--ink-soft); }
+
 
 
 
