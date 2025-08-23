@@ -30,7 +30,7 @@ header.site-header{
   margin-bottom: 50px;
 }
 .name{
-  font-size: 20px;}
+  font-size: 28px;}
 .nav{
   display:flex;align-items:center;justify-content:space-between;
   padding:14px 24px
@@ -89,6 +89,7 @@ header.site-header{
   gap: 30px;                /* space between text and image */
   padding: 80px;
   margin-top: 60px;         /* adds spacing below header */
+  margin-bottom: 60px;
 }
 
 /* Text area stays only on left */
@@ -96,6 +97,7 @@ header.site-header{
   flex: 1;                  /* take remaining space */
   max-width: 80%;           /* keep text from sliding under the image */
   text-align: justify;
+  margin-bottom: 10px;
 }
 
 /* Heading style */
@@ -569,6 +571,7 @@ body{
 
 /* Optional tiny typography polish */
 .hero-text p, .muted{ color: var(--ink-soft); }
+
 
 
 
