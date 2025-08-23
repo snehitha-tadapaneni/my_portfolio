@@ -295,70 +295,77 @@ header.site-header{
 .projects-list .project-block:hover h3 a{ color: var(--accent-2); }
 
 
-/*Experience*/
-/* One column grid (full-width blocks stacked) */
-.grid.cols-1 {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
+/* =========================
+   EXPERIENCE (1-column list)
+   ========================= */
+.grid.cols-1{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:20px;
 }
 
-/* Experience blocks look like project blocks */
-.exp-block {
-  padding: 20px;
-  border: 1px solid #eadfc9;
-  border-radius: 10px;
-  background: var(--card, #fff);
-  transition: transform .2s ease, box-shadow .2s ease;
-}
-
-/* Hover effect */
-.exp-block:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
-}
-
-/* ===== Experience: same hover tint + title color shift as Projects ===== */
-.grid.cols-1 .exp-block{
+/* Base card */
+.exp-block{
   position: relative;
   overflow: hidden;
-  border-radius: 14px;                 /* match projects rounded corners */
+  padding: 22px;
+  border: 1px solid #eadfc9;
+  border-radius: 14px;                /* match projects */
+  background: var(--card, #fff);
   transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
 }
 
-/* hover lift + stronger shadow */
-.grid.cols-1 .exp-block:hover{
+/* Hover: lift + stronger shadow + border accent */
+.exp-block:hover{
   transform: translateY(-6px) scale(1.01);
   box-shadow: 0 14px 28px rgba(0,0,0,.18);
   border-color: var(--accent-2);
 }
 
-/* overlay tint so color ALWAYS changes (even if other backgrounds exist) */
-.grid.cols-1 .exp-block::before{
+/* Hover tint overlay (guaranteed visible) */
+.exp-block::before{
   content:"";
   position:absolute; inset:0;
-  border-radius: inherit;
-  background:#f0e6d6;                 /* darker cream tint (same vibe as projects) */
-  opacity:0;
-  transition: opacity .25s ease;
+  border-radius: inherit;             /* keep rounded corners */
+  background:#f0e6d6;                 /* darker cream tint */
+  opacity:0; transition: opacity .25s ease;
   z-index:0;
 }
-.grid.cols-1 .exp-block:hover::before{ opacity:1; }
+.exp-block:hover::before{ opacity:1; }
 
-/* keep content above overlay */
-.grid.cols-1 .exp-block > *{ position: relative; z-index: 1; }
+/* Keep content above overlay */
+.exp-block > *{ position: relative; z-index: 1; }
 
-/* title color shift on hover (works whether it's a link or plain text) */
-.grid.cols-1 .exp-block h3,
-.grid.cols-1 .exp-block h3 a{
+/* Title color shift on hover (works for plain h3 or linked h3) */
+.exp-block h3,
+.exp-block h3 a{
   color:#2f2a24;
+  font-weight:700;
   transition: color .2s ease;
-  text-decoration: none;
+  text-decoration:none;
 }
-.grid.cols-1 .exp-block:hover h3,
-.grid.cols-1 .exp-block:hover h3 a{
+.exp-block:hover h3,
+.exp-block:hover h3 a{
   color: var(--accent-2);
 }
+
+/* Bullets + text */
+.exp-block ul{
+  padding-left:18px;
+  margin:0;
+}
+.exp-block ul li{
+  margin-bottom:6px;
+  line-height:1.5;
+  transition: color .2s ease, transform .18s ease;
+}
+
+/* On block hover: ALL bullet text goes accent */
+.exp-block:hover ul li{ color: var(--accent-2); }
+
+/* On bullet hover: subtle nudge */
+.exp-block ul li:hover{ transform: translateX(4px); }
+
 
 
 /* Skills */
@@ -659,6 +666,7 @@ body{
 
 /* Optional tiny typography polish */
 .hero-text p, .muted{ color: var(--ink-soft); }
+
 
 
 
