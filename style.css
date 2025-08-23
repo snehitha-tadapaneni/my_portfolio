@@ -29,6 +29,8 @@ header.site-header{
   box-shadow:0 2px 8px var(--shadow);
   margin-bottom: 50px;
 }
+.name{
+  font-size: 20px;}
 .nav{
   display:flex;align-items:center;justify-content:space-between;
   padding:14px 24px
@@ -567,6 +569,7 @@ body{
 
 /* Optional tiny typography polish */
 .hero-text p, .muted{ color: var(--ink-soft); }
+
 
 
 
