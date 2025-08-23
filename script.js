@@ -117,6 +117,82 @@ function initSkillsTabs() {
   window.addEventListener('beforeunload', () => io.disconnect());
 }
 
+/* ---------- Scroll reveal (reuse your .reveal CSS) ---------- */
+function initScrollReveal() {
+  const items = document.querySelectorAll('.reveal');
+  if (!items.length) return;
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('is-visible'); });
+  }, { threshold: 0.15, rootMargin: '40px 0px -10% 0px' });
+  items.forEach(el => io.observe(el));
+}
+
+/* ---------- Typewriter for hero title (runs once per session) ---------- */
+function initHeroTypewriter() {
+  const el = document.getElementById('hero-title');
+  if (!el) return;
+
+  // Run once per session
+  if (sessionStorage.getItem('typedOnce')) return;
+  sessionStorage.setItem('typedOnce', '1');
+
+  const full = el.dataset.text || el.textContent.trim();
+  el.textContent = "";            // clear
+  el.classList.add('typewriter'); // caret
+  let i = 0;
+
+  const step = () => {
+    if (i <= full.length) {
+      el.textContent = full.slice(0, i);
+      i++;
+      setTimeout(step, i < 8 ? 60 : 38); // slightly faster over time
+    } else {
+      // stop caret after a bit
+      setTimeout(() => el.classList.remove('typewriter'), 1500);
+    }
+  };
+  step();
+}
+
+/* ---------- Subtle 3D tilt on hover (desktop only) ---------- */
+function initTiltCards() {
+  if (!window.matchMedia('(hover:hover) and (pointer:fine)').matches) return;
+  const tiles = document.querySelectorAll('.project-block, .exp-block, .card.tilt');
+  if (!tiles.length) return;
+
+  const damp = 18; // lower = stronger tilt
+  tiles.forEach(tile => {
+    let rq = null;
+
+    const onMove = (e) => {
+      const r = tile.getBoundingClientRect();
+      const cx = r.left + r.width / 2;
+      const cy = r.top + r.height / 2;
+      const dx = (e.clientX - cx) / r.width;
+      const dy = (e.clientY - cy) / r.height;
+      const rx = (+dy * 12);
+      const ry = (-dx * 12);
+
+      if (!rq) {
+        rq = requestAnimationFrame(() => {
+          tile.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg) translateY(-4px)`;
+          tile.classList.add('is-tilting');
+          rq = null;
+        });
+      }
+    };
+
+    const onLeave = () => {
+      tile.style.transform = '';
+      tile.classList.remove('is-tilting');
+    };
+
+    tile.addEventListener('mousemove', onMove);
+    tile.addEventListener('mouseleave', onLeave);
+  });
+}
+
+
 
 document.addEventListener('DOMContentLoaded', () => {
   initFooterYear();
@@ -124,4 +200,5 @@ document.addEventListener('DOMContentLoaded', () => {
   markActiveNav();
   initSkillsTabs();
 });
+
 
