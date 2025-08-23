@@ -4,7 +4,7 @@ function $all(sel, root = document) { return Array.from(root.querySelectorAll(se
 
 // Flip card toggles 
 function initFlipCards() {
-  $all('.flip[data-flip]').forEach(card => {
+  document.querySelectorAll('.flip[data-flip]').forEach(card => {
     card.setAttribute('tabindex', '0');
     card.setAttribute('role', 'button');
     card.setAttribute('aria-pressed', 'false');
@@ -14,14 +14,13 @@ function initFlipCards() {
       card.setAttribute('aria-pressed', card.classList.contains('is-flipped') ? 'true' : 'false');
     };
 
-    // Click anywhere on card to flip 
+    // IMPORTANT: still flip even if you clicked a link/button
     card.addEventListener('click', (e) => {
       const clickable = e.target.closest('a,button');
-      if (clickable) return; // don't hijack real links/buttons
+      if (clickable) e.preventDefault();  // stop navigation
       toggle();
     });
 
-    // Space flip
     card.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar' || e.code === 'Space') {
         e.preventDefault();
@@ -30,6 +29,7 @@ function initFlipCards() {
     });
   });
 }
+
 
 // Mark active nav item if present
 function markActiveNav() {
@@ -203,6 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeroTypewriter();
   initTiltCards();
 });
+
 
 
 
