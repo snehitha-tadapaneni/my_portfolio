@@ -103,4 +103,47 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    (function(){
+      const links = document.querySelectorAll('#skill-links a');
+      const cards = document.querySelectorAll('.skill-card');
+
+      function clearActive(){
+        document.querySelectorAll('#skill-links a.is-active').forEach(a=>a.classList.remove('is-active'));
+      }
+
+      links.forEach(a=>{
+        a.addEventListener('click', (e)=>{
+          const id = a.getAttribute('href');
+          const target = document.querySelector(id);
+          if(!target) return;
+
+          e.preventDefault();
+          clearActive();
+          a.classList.add('is-active');
+
+          target.scrollIntoView({behavior:'smooth', block:'center'});
+          target.classList.add('pop');
+          setTimeout(()=> target.classList.remove('pop'), 450);
+
+          history.pushState(null, '', id);
+        });
+      });
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(entry=>{
+          if(entry.isIntersecting){
+            const id = '#' + entry.target.id;
+            clearActive();
+            const match = document.querySelector(`#skill-links a[href="${id}"]`);
+            if(match) match.classList.add('is-active');
+          }
+        });
+      }, {threshold: 0.6});
+      cards.forEach(c=>io.observe(c));
+    })();
+  </script>
+
+
 
