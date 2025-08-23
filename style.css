@@ -99,7 +99,7 @@ header.site-header{
 /* Heading style */
 .about-box .hero-text h1 {
   font-size: 36px;
-  margin-bottom: 36px;
+  margin-bottom: 30px;
   text-align: justify;
 }
 
@@ -567,6 +567,7 @@ body{
 
 /* Optional tiny typography polish */
 .hero-text p, .muted{ color: var(--ink-soft); }
+
 
 
 
