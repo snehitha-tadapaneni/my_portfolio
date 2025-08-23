@@ -57,7 +57,7 @@ header.site-header{
   gap: 28px;
   max-width: 1100px;
   margin: 0 auto;
-  flex-wrap: wrap; /* responsive stacking */
+  flex-wrap: wrap; 
 }
 
 .about-box {
@@ -84,18 +84,18 @@ header.site-header{
 /* About box as flex container */
 .about-box {
   display: flex;
-  align-items: center;      /* vertically center text & image */
+  align-items: center;     
   justify-content: space-between;
-  gap: 30px;                /* space between text and image */
+  gap: 30px;        
   padding: 80px;
-  margin-top: 60px;         /* adds spacing below header */
+  margin-top: 60px;         
   margin-bottom: 60px;
 }
 
 /* Text area stays only on left */
 .about-box .hero-text {
-  flex: 1;                  /* take remaining space */
-  max-width: 80%;           /* keep text from sliding under the image */
+  flex: 1;                  
+  max-width: 80%;          
   text-align: justify;
   margin-bottom: 10px;
 }
@@ -109,7 +109,7 @@ header.site-header{
 
 /* Profile image stays on right side */
 .about-box .hero-image {
-  flex-shrink: 0;           /* don’t let image shrink */
+  flex-shrink: 0;         
 }
 
 .about-box .hero-image img {
@@ -248,7 +248,7 @@ header.site-header{
   border-radius: 14px 0 0 14px;
 }
 .project-block:hover::before {
-  width: 6px;   /* thickness of highlight bar */
+  width: 6px;  
 }
 
 /* Headings inside */
@@ -290,27 +290,25 @@ header.site-header{
 }
 
   /*/ bg color/*/
-/* title color shift on hover */
 .projects-list .project-block h3 a{ color: inherit; text-decoration: none; transition: color .2s ease; }
 .projects-list .project-block:hover h3 a{ color: var(--accent-2); }
 
 
 /* ================================
-   EXPERIENCE BLOCKS (styled like Projects)
-   ================================ */
+   EXPERIENCE BLOCKS
 
 /* One column grid (stacked blocks) */
 .grid.cols-1 {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 15px; /* same gap as projects */
+  gap: 15px; 
 }
 
 /* Base block */
 .exp-block {
   background: var(--card, #fff);
   border: 1px solid #eadfc9;
-  border-radius: 14px;              /* same rounded corners */
+  border-radius: 14px;             
   padding: 22px;
   transition: all 0.3s ease;
   position: relative;
@@ -337,7 +335,7 @@ header.site-header{
   border-radius: 14px 0 0 14px;
 }
 .exp-block:hover::before {
-  width: 6px; /* thickness of highlight bar */
+  width: 6px; 
 }
 
 /* Title */
@@ -381,7 +379,7 @@ header.site-header{
 }
 
 
-
+/*========================*/
 /* Skills */
 
 .zoom-list{
@@ -413,13 +411,13 @@ header.site-header{
   border-radius: inherit;
   background: linear-gradient(180deg, #fffdf8, #f7f1e3);
   opacity:0; transition: opacity .25s ease;
-  z-index:-1;                        /* overlay layer */
+  z-index:-1;                      
 }
 
 /* Keep text above overlay */
 .zoom-list a > *{
   position: relative;
-  z-index: 1;                       /* text layer */
+  z-index: 1;                   
 }
 
 /* Hover/focus: lift + shadow + border accent + text color shift */
@@ -481,21 +479,20 @@ header.site-header{
 @media (max-width:900px){.cert-grid{grid-template-columns:repeat(2, minmax(0,1fr))}}
 @media (max-width:600px){.cert-grid{grid-template-columns:1fr}}
 
-/* ----- Education flip cards (refined) ----- */
+
 
 /* ================================
-   FLIP CARDS — Single Clean Block
-   ================================ */
+   FLIP CARDS */
 
 /* Base card */
 .flip{
-  --flip-h: 340px;                 /* change height here */
+  --flip-h: 340px;               
   position: relative;
   height: var(--flip-h);
   perspective: 1000px;
   cursor: pointer;
   overflow: hidden;
-  border-radius: 14px;             /* keeps faces rounded */
+  border-radius: 14px;          
 }
 
 /* Inner container (not rotated) */
@@ -511,7 +508,7 @@ header.site-header{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;         /* vertical centering by default */
+  justify-content: center;        
   text-align: center;
 
   background: var(--card);
@@ -528,15 +525,9 @@ header.site-header{
 /* Orient faces */
 .flip .face.front { transform: rotateY(0deg); }
 .flip .face.back  { transform: rotateY(180deg); overflow: auto; -webkit-overflow-scrolling: touch; }
-
-/* Flip state: rotate faces (NOT the inner) */
 .flip.is-flipped .face.front { transform: rotateY(-180deg); }
 .flip.is-flipped .face.back  { transform: rotateY(0deg); }
-
-/* Safety: never rotate inner (kills legacy rules) */
 .flip.is-flipped .inner { transform: none !important; }
-
-/* Optional: subtle hover cue */
 .flip:hover .face { box-shadow: 0 10px 22px var(--shadow); }
 
 /* Scrollbar cosmetics (optional) */
@@ -545,10 +536,9 @@ header.site-header{
 .flip .face.back{ scrollbar-width: thin; scrollbar-color: #e3d7c3 transparent; }
 
 /* ================================
-   EDUCATION-SPECIFIC POLISH
-   ================================ */
+   EDUCATION-SPECIFIC POLISH*/
 
-.flip.edu-flip{ --flip-h: 340px; }   /* adjust if you want a taller card */
+.flip.edu-flip{ --flip-h: 340px; }   
 
 /* FRONT (logo + titles) */
 .edu-logo img{
@@ -561,7 +551,7 @@ header.site-header{
 
 .edu-level{
   margin: 4px 0;
-  font-size: 36px;                   /* section title on the card */
+  font-size: 36px;                  
   opacity: .9;
 }
 .edu-degree{
@@ -582,13 +572,13 @@ header.site-header{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;           /* centered vertically by default */
+  justify-content: center;         
   text-align: center;
   gap: 10px;
   padding: 20px 12px;
 }
 
-.edu-back > *{ margin: 6px; }      /* tight, uniform spacing */
+.edu-back > *{ margin: 6px; }     
 
 .edu-back-title{
   font-size: 20px;
@@ -604,14 +594,12 @@ header.site-header{
 }
 
 .edu-back-text{
-  font-size: 16.5px;                 /* slightly larger text */
+  font-size: 16.5px;               
   line-height: 1.4;
   max-width: 92%;
   margin: 8px;
 }
 
-/* If you want the back content closer to the TOP (not centered),
-   add `top` to the back face: <div class="face back edu-back top">… */
 .edu-back.top{
   justify-content: flex-start !important;
   padding-top: 22px;
@@ -645,7 +633,6 @@ header.site-header{
 
 
 /* new */
-/* ---- Global polish ---- */
 :root{
   --radius: 16px;
   --shadow-lg: 0 12px 28px rgba(0,0,0,.12);
@@ -748,8 +735,9 @@ body{
   100%{ transform: translateY(0) }
 }
 
-/* Optional tiny typography polish */
+
 .hero-text p, .muted{ color: var(--ink-soft); }
+
 
 
 
