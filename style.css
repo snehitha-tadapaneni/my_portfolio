@@ -396,7 +396,6 @@ header.site-header{
   color:#2f2a24;
   transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, color .2s ease, background .25s ease;
   overflow: hidden;                 /* for overlay */
-  z-index: -0;
 }
 
 /* Overlay tint sits ABOVE background but BELOW text */
@@ -406,7 +405,7 @@ header.site-header{
   border-radius: inherit;
   background: linear-gradient(180deg, #fffdf8, #f7f1e3);
   opacity:0; transition: opacity .25s ease;
-  z-index:-1;                      
+  z-index:0;                      
 }
 
 /* Keep text above overlay */
@@ -832,6 +831,7 @@ body{
 }
 
 /* ===== Scroll reveal (you already have .reveal styles; keep them) ===== */
+
 
 
 
