@@ -93,12 +93,13 @@ header.site-header{
 .about-box .hero-text {
   flex: 1;                  /* take remaining space */
   max-width: 80%;           /* keep text from sliding under the image */
+  text-align: justify;
 }
 
 /* Heading style */
 .about-box .hero-text h1 {
   font-size: 36px;
-  margin-bottom: 40px;
+  margin-bottom: 36px;
   text-align: justify;
 }
 
@@ -566,6 +567,7 @@ body{
 
 /* Optional tiny typography polish */
 .hero-text p, .muted{ color: var(--ink-soft); }
+
 
 
 
