@@ -79,13 +79,10 @@
     </div>
   </section>
 
-  <footer class="footer">© <span id="y"></span> Snehitha Tadapaneni</footer>
 
   <script src="script.js"></script>
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
-
-    // Skills: hover/click behavior + smooth scroll + active state
     (function(){
       const links = document.querySelectorAll('#skill-links a');
       const cards = document.querySelectorAll('.skill-card');
@@ -101,21 +98,16 @@
           if(!target) return;
 
           e.preventDefault();
-          // active tint on tile
           clearActive();
           a.classList.add('is-active');
 
-          // smooth scroll to card + tiny pop
           target.scrollIntoView({behavior:'smooth', block:'center'});
           target.classList.add('pop');
           setTimeout(()=> target.classList.remove('pop'), 450);
 
-          // update URL hash (no jump)
           history.pushState(null, '', id);
         });
       });
-
-      // Optional: highlight tile on scroll into its section
       const io = new IntersectionObserver((entries)=>{
         entries.forEach(entry=>{
           if(entry.isIntersecting){
@@ -131,4 +123,5 @@
   </script>
 </body>
 </html>
+
 
