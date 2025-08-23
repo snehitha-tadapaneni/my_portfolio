@@ -403,6 +403,7 @@ header.site-header{
   color:#2f2a24;
   transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, color .2s ease, background .25s ease;
   overflow: hidden;                 /* for overlay */
+  z-index: -0;
 }
 
 /* Overlay tint sits ABOVE background but BELOW text */
@@ -445,6 +446,8 @@ header.site-header{
 .zoom-list a:active{
   transform: translateY(-3px) scale(.99);
 }
+
+.zoom-list a:empty{ display:none; }
 
 
 /* Skill cards below the tiles */
@@ -747,6 +750,7 @@ body{
 
 /* Optional tiny typography polish */
 .hero-text p, .muted{ color: var(--ink-soft); }
+
 
 
 
