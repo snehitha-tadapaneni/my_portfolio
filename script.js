@@ -70,20 +70,22 @@ function showResumeFallback() {
   }, 2500);
 }
 
-// Skills page
 function initSkillsTabs() {
-  const skillLinksWrap = $('#skill-links');
-  const cards = $all('.skill-card');
+  const skillLinksWrap = document.querySelector('#skill-links');
+  const cards = document.querySelectorAll('.skill-card');
   if (!skillLinksWrap || !cards.length) return;
 
-  const links = $all('a', skillLinksWrap);
-  const clearActive = () => $all('a.is-active', skillLinksWrap).forEach(a => a.classList.remove('is-active'));
+  const links = skillLinksWrap.querySelectorAll('a');
 
-  // click → tint 
+  function clearActive() {
+    skillLinksWrap.querySelectorAll('a.is-active').forEach(a => a.classList.remove('is-active'));
+  }
+
+  // Click handler
   links.forEach(a => {
     a.addEventListener('click', (e) => {
       const id = a.getAttribute('href');
-      const target = $(id);
+      const target = document.querySelector(id);
       if (!target) return;
 
       e.preventDefault();
@@ -98,7 +100,7 @@ function initSkillsTabs() {
     });
   });
 
-  // highlight tab during scroll
+  // Highlight correct tab while scrolling
   const io = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -108,14 +110,11 @@ function initSkillsTabs() {
         if (match) match.classList.add('is-active');
       }
     });
-  }, {
-    threshold: 0.6,
-    rootMargin: '0px 0px -10% 0px'
-  });
+  }, { threshold: 0.6 });
 
   cards.forEach(c => io.observe(c));
-  window.addEventListener('beforeunload', () => io.disconnect());
 }
+
 
 /* ---------- Scroll reveal (reuse your .reveal CSS) ---------- */
 function initScrollReveal() {
@@ -202,6 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeroTypewriter();
   initTiltCards();
 });
+
 
 
 
