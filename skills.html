@@ -12,7 +12,12 @@
     <nav class="nav container">
       <div class="brand"><div class="name">Snehitha Tadapaneni</div></div>
       <div class="menu">
-        <a href="index.html">Home</a><a href="education.html">Education</a><a href="project.html">Projects</a><a href="experience.html">Experience</a><a href="skills.html">Skills</a><a href="certifications.html">Certifications</a>
+        <a href="index.html">Home</a>
+        <a href="education.html">Education</a>
+        <a href="project.html">Projects</a>
+        <a href="experience.html">Experience</a>
+        <a href="skills.html" class="active">Skills</a>
+        <a href="certifications.html">Certifications</a>
       </div>
     </nav>
   </header>
@@ -21,47 +26,88 @@
     <div class="container">
       <h2>Skills</h2>
 
+      <!-- Clickable tiles -->
       <div class="zoom-list" id="skill-links">
         <a href="#languages">Languages</a>
         <a href="#devtools">Developer Tools</a>
-        <a href="#frameworks">Frameworks & Tools</a>
-        <a href="#cloud">Cloud & Big Data</a>
+        <a href="#frameworks">Frameworks &amp; Tools</a>
+        <a href="#cloud">Cloud &amp; Big Data</a>
       </div>
 
-      <div class="section">
-        <div id="languages" class="card"><h3>Languages</h3><p>Python, R, SQL, C/C++, HTML/CSS</p></div>
-        <div id="devtools" class="card"><h3>Developer Tools</h3><p>Git, Docker, VS Code, Jupyter, Airflow</p></div>
-        <div id="frameworks" class="card"><h3>Frameworks & Tools</h3><p>scikit-learn, PyTorch, TensorFlow, Pandas, NumPy, Streamlit, FastAPI</p></div>
-        <div id="cloud" class="card"><h3>Cloud & Big Data</h3><p>AWS, GCP, Azure, Databricks, Spark, Snowflake</p></div>
+      <!-- Target sections -->
+      <div class="skills-sections">
+        <div id="languages" class="card skill-card">
+          <h3>Languages</h3>
+          <p>Python, R, SQL, C/C++, HTML/CSS</p>
+        </div>
+
+        <div id="devtools" class="card skill-card">
+          <h3>Developer Tools</h3>
+          <p>Git, Docker, VS Code, Jupyter, Airflow</p>
+        </div>
+
+        <div id="frameworks" class="card skill-card">
+          <h3>Frameworks &amp; Tools</h3>
+          <p>scikit-learn, PyTorch, TensorFlow, Pandas, NumPy, Streamlit, FastAPI</p>
+        </div>
+
+        <div id="cloud" class="card skill-card">
+          <h3>Cloud &amp; Big Data</h3>
+          <p>AWS, GCP, Azure, Databricks, Spark, Snowflake</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <footer class="footer">© <span id="y"></span> Hrushikesh</footer>
+  <footer class="footer">© <span id="y"></span> Snehitha Tadapaneni</footer>
+
   <script src="script.js"></script>
   <script>
-    document.getElementById('y').textContent=new Date().getFullYear();
-    // Smooth jump with slight zoom on target
-    document.querySelectorAll('#skill-links a').forEach(a=>{
-      a.addEventListener('mouseover', ()=> a.style.transform='scale(1.06)');
-      a.addEventListener('mouseout', ()=> a.style.transform='scale(1.0)');
-      a.addEventListener('click', (e)=>{
-        const id = a.getAttribute('href');
-        const target = document.querySelector(id);
-        if (target){
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Skills: hover/click behavior + smooth scroll + active state
+    (function(){
+      const links = document.querySelectorAll('#skill-links a');
+      const cards = document.querySelectorAll('.skill-card');
+
+      function clearActive(){
+        document.querySelectorAll('#skill-links a.is-active').forEach(a=>a.classList.remove('is-active'));
+      }
+
+      links.forEach(a=>{
+        a.addEventListener('click', (e)=>{
+          const id = a.getAttribute('href');
+          const target = document.querySelector(id);
+          if(!target) return;
+
           e.preventDefault();
+          // active tint on tile
+          clearActive();
+          a.classList.add('is-active');
+
+          // smooth scroll to card + tiny pop
           target.scrollIntoView({behavior:'smooth', block:'center'});
-          target.style.transform='scale(1.01)';
-          target.style.transition='transform .2s ease';
-          setTimeout(()=> target.style.transform='scale(1)', 400);
+          target.classList.add('pop');
+          setTimeout(()=> target.classList.remove('pop'), 450);
+
+          // update URL hash (no jump)
           history.pushState(null, '', id);
-        }
+        });
       });
-    });
+
+      // Optional: highlight tile on scroll into its section
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(entry=>{
+          if(entry.isIntersecting){
+            const id = '#' + entry.target.id;
+            clearActive();
+            const match = document.querySelector(`#skill-links a[href="${id}"]`);
+            if(match) match.classList.add('is-active');
+          }
+        });
+      }, {threshold: 0.6});
+      cards.forEach(c=>io.observe(c));
+    })();
   </script>
 </body>
 </html>
-
-
-
-
