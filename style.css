@@ -383,11 +383,7 @@ header.site-header{
 
 
 /* Skills */
-/* ===== Skills: hover/click polish like Projects/Experience ===== */
-/* =========================
-   SKILLS (tiles like Projects)
-   ========================= */
-/* ===== Skills: hover/click like Projects/Experience (fixed stacking) ===== */
+
 .zoom-list{
   display:grid;
   grid-template-columns:repeat(4, minmax(0,1fr));
@@ -407,7 +403,6 @@ header.site-header{
   color:#2f2a24;
   transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, color .2s ease, background .25s ease;
   overflow: hidden;                 /* for overlay */
-  /* IMPORTANT: no z-index here */
 }
 
 /* Overlay tint sits ABOVE background but BELOW text */
@@ -417,7 +412,7 @@ header.site-header{
   border-radius: inherit;
   background: linear-gradient(180deg, #fffdf8, #f7f1e3);
   opacity:0; transition: opacity .25s ease;
-  z-index:0;                        /* overlay layer */
+  z-index:-1;                        /* overlay layer */
 }
 
 /* Keep text above overlay */
@@ -752,6 +747,7 @@ body{
 
 /* Optional tiny typography polish */
 .hero-text p, .muted{ color: var(--ink-soft); }
+
 
 
 
