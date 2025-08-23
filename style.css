@@ -387,13 +387,6 @@ header.site-header{
 /* =========================
    SKILLS (tiles like Projects)
    ========================= */
-.zoom-list{
-  display:grid;
-  grid-template-columns:repeat(4, minmax(0,1fr));
-  gap:16px;
-  margin-bottom: 22px;
-}
-
 .zoom-list a{
   position: relative;
   display:block;
@@ -405,10 +398,22 @@ header.site-header{
   font-weight:700;
   color:#2f2a24;
   transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, color .2s ease, background .25s ease;
-  overflow: hidden;                 /* for overlay tint */
+  overflow: hidden;
+  z-index: 0;               /* base layer */
 }
 
-/* Hover/focus: lift + gradient tint + border accent (match Projects) */
+/* Overlay tint */
+.zoom-list a::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius: inherit;
+  background: linear-gradient(180deg, #fffdf8, #f7f1e3);
+  opacity:0;
+  transition: opacity .25s ease;
+  z-index:-1;                /* <<< push overlay BEHIND text */
+}
+
 .zoom-list a:hover,
 .zoom-list a:focus-visible{
   transform: translateY(-6px) scale(1.02);
@@ -417,17 +422,11 @@ header.site-header{
   color: var(--accent-2);
 }
 
-/* Overlay tint (guaranteed visible even if other bg rules exist) */
-.zoom-list a::before{
-  content:"";
-  position:absolute; inset:0;
-  border-radius: inherit;
-  background: linear-gradient(180deg, #fffdf8, #f7f1e3);
-  opacity:0; transition: opacity .25s ease;
-  z-index:0;
-}
 .zoom-list a:hover::before,
-.zoom-list a:focus-visible::before{ opacity:1; }
+.zoom-list a:focus-visible::before{
+  opacity:1;
+}
+
 
 /* Keep text above overlay */
 .zoom-list a > *{ position:relative; z-index:1; }
@@ -744,6 +743,7 @@ body{
 
 /* Optional tiny typography polish */
 .hero-text p, .muted{ color: var(--ink-soft); }
+
 
 
 
