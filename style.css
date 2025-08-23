@@ -387,6 +387,14 @@ header.site-header{
 /* =========================
    SKILLS (tiles like Projects)
    ========================= */
+/* ===== Skills: hover/click like Projects/Experience (fixed stacking) ===== */
+.zoom-list{
+  display:grid;
+  grid-template-columns:repeat(4, minmax(0,1fr));
+  gap:16px;
+  margin-bottom:22px;
+}
+
 .zoom-list a{
   position: relative;
   display:block;
@@ -398,22 +406,27 @@ header.site-header{
   font-weight:700;
   color:#2f2a24;
   transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, color .2s ease, background .25s ease;
-  overflow: hidden;
-  z-index: 0;               /* base layer */
+  overflow: hidden;                 /* for overlay */
+  /* IMPORTANT: no z-index here */
 }
 
-/* Overlay tint */
+/* Overlay tint sits ABOVE background but BELOW text */
 .zoom-list a::before{
   content:"";
-  position:absolute;
-  inset:0;
+  position:absolute; inset:0;
   border-radius: inherit;
   background: linear-gradient(180deg, #fffdf8, #f7f1e3);
-  opacity:0;
-  transition: opacity .25s ease;
-  z-index:-1;                /* <<< push overlay BEHIND text */
+  opacity:0; transition: opacity .25s ease;
+  z-index:0;                        /* overlay layer */
 }
 
+/* Keep text above overlay */
+.zoom-list a > *{
+  position: relative;
+  z-index: 1;                       /* text layer */
+}
+
+/* Hover/focus: lift + shadow + border accent + text color shift */
 .zoom-list a:hover,
 .zoom-list a:focus-visible{
   transform: translateY(-6px) scale(1.02);
@@ -421,15 +434,10 @@ header.site-header{
   border-color: var(--accent);
   color: var(--accent-2);
 }
-
 .zoom-list a:hover::before,
 .zoom-list a:focus-visible::before{
   opacity:1;
 }
-
-
-/* Keep text above overlay */
-.zoom-list a > *{ position:relative; z-index:1; }
 
 /* Active (clicked) tile stays tinted */
 .zoom-list a.is-active{
@@ -442,6 +450,7 @@ header.site-header{
 .zoom-list a:active{
   transform: translateY(-3px) scale(.99);
 }
+
 
 /* Skill cards below the tiles */
 .skills-sections{
@@ -743,6 +752,7 @@ body{
 
 /* Optional tiny typography polish */
 .hero-text p, .muted{ color: var(--ink-soft); }
+
 
 
 
