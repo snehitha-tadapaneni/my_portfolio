@@ -211,13 +211,11 @@ header.site-header{
 .flip .face.back{transform:rotateY(180deg);background:#fffaf5}
 
 
-/*Projects*/
-.projects-list {
 /* Projects */
 .projects-list {
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: 36px;
 }
 
 .project-block {
@@ -291,8 +289,8 @@ header.site-header{
   color: var(--accent-2);
 }
 
-  /*/ bg color
-  /* ===== Projects: guaranteed color change on hover (overlay method) ===== */
+  /*/ bg color/*/
+
 .projects-list {
   display: flex;
   flex-direction: column;
@@ -302,22 +300,11 @@ header.site-header{
 .projects-list .project-block{
   position: relative;
   overflow: hidden;
-  border-radius: 14px;        /* rounded corners */
+  border-radius: 20px;        /* rounded corners */
   padding: 22px;
   border: 1px solid #eadfc9;
   background: var(--card, #fff);
   transition: transform .25s ease, box-shadow .25s ease;
-}
-
-.projects-list .project-block::before{
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;      /* keeps same rounded shape */
-  background: #f0e6d6;
-  opacity: 0;
-  transition: opacity .25s ease;
-  z-index: 0;
 }
 
 /* Lift + show tint on hover */
@@ -328,12 +315,6 @@ header.site-header{
 }
 .projects-list .project-block:hover::before{
   opacity: 1;                        /* tint fades in */
-}
-
-/* Ensure content stays above the overlay */
-.projects-list .project-block > *{
-  position: relative;
-  z-index: 1;
 }
 
 /* (Optional) title color shift on hover */
@@ -663,6 +644,7 @@ body{
 
 /* Optional tiny typography polish */
 .hero-text p, .muted{ color: var(--ink-soft); }
+
 
 
 
