@@ -941,7 +941,7 @@ body.no-scroll{ overflow:hidden; }
 
 /* =========================
    MOBILE POLISH PACK
-   Paste at the end of style.css
+   Paste at the end of style.css (replace your current block)
 ========================= */
 
 /* Respect users who prefer less motion */
@@ -958,6 +958,27 @@ body.no-scroll{ overflow:hidden; }
   .menu a{ padding: 8px 12px; }
   .grid.cols-2{ grid-template-columns: 1fr; }
   .grid.cols-3{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+
+  /* Stack About (top) → Contact (below) */
+  .about-contact{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+  .about-box,
+  .contact-box{
+    flex: none;
+    width: 100%;
+    margin: 0;                    /* remove old margins */
+  }
+  .about-box{ padding: 22px; }    /* lighter padding on mobile */
+  .about-box .hero-text{
+    max-width: 100%;
+    text-align: left;
+  }
+  .contact-box{ max-width: 100%; }
+  .contact-box.card{ align-self: auto; padding: 18px; }
 }
 
 /* Phone-first tweaks */
@@ -973,17 +994,36 @@ body.no-scroll{ overflow:hidden; }
   .name{ font-size: 22px; }
   .nav{ padding: 12px 16px; }
 
-  /* Make nav horizontally scrollable on tiny widths */
+  /* Header menu: horizontal scroll with snap + edge fade */
   .menu{
-    overflow-x: auto; white-space: nowrap; padding-bottom: 2px;
+    display: grid;
+    grid-auto-flow: column;             /* single row flow */
+    grid-auto-columns: max-content;     /* each item fits content */
+    gap: 8px;
+    padding: 0 12px 6px;
+    overflow-x: auto;
+    white-space: nowrap;
     -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    /* Edge fade to hint scrollability */
+    mask-image: linear-gradient(to right,
+                  transparent 0,
+                  black 24px,
+                  black calc(100% - 24px),
+                  transparent 100%);
   }
-  .menu a{ display: inline-block; }
+  .menu a{
+    display: inline-block;
+    scroll-snap-align: start;           /* snap each link to left edge */
+    padding: 9px 14px;                  /* comfy tap target */
+  }
+  /* Hide native scrollbar but keep scroll */
+  .menu::-webkit-scrollbar{ display: none; }
+  .menu{ scrollbar-width: none; }
 
   /* Hero */
   .about-box{ padding: 20px; margin: 22px 0 28px; gap: 16px; }
   .about-box .hero-text h1{ font-size: 28px; margin-bottom: 14px; }
-  .about-box .hero-text{ max-width: 100%; text-align: left; }
 
   /* Cards */
   .card{ padding: 16px; border-radius: 14px; }
@@ -991,7 +1031,7 @@ body.no-scroll{ overflow:hidden; }
   .project-block h3, .exp-block h3{ font-size: 20px; }
   .project-block p, .exp-block p.muted{ font-size: 14px; }
 
-  /* Skills: tiles turn into 2 cols then 1 col on very small */
+  /* Skills: tiles → 2 cols (then 1 col on ultra-small) */
   .zoom-list{
     grid-template-columns: repeat(2, minmax(0,1fr));
     gap: 12px;
@@ -1004,7 +1044,7 @@ body.no-scroll{ overflow:hidden; }
   /* Ensure scrolled-to cards don't hide under sticky header */
   .skill-card{ scroll-margin-top: 80px; }
 
-  /* Education flip cards: a bit taller on phones */
+  /* Education flip cards: taller on phones */
   .flip{ --flip-h: 360px; }
   .edu-level{ font-size: 24px; }
   .edu-degree{ font-size: 20px; }
@@ -1014,7 +1054,7 @@ body.no-scroll{ overflow:hidden; }
   .grid.cols-3{ grid-template-columns: 1fr; }
   .cert-grid{ grid-template-columns: 1fr; gap: 14px; }
 
-  /* Certifications cards */
+  /* Certification cards */
   .cert{ padding: 18px; }
   .cert h3{ font-size: 18px; margin: 0 0 6px; }
   .cert p{ font-size: 14px; }
@@ -1045,7 +1085,7 @@ body.no-scroll{ overflow:hidden; }
   .edu-degree{ font-size: 18px; }
 }
 
-/* Touch devices: remove heavy hover transforms */
+/* Touch devices: soften hover transforms */
 @media (hover: none){
   .card:hover,
   .project-block:hover,
@@ -1056,13 +1096,6 @@ body.no-scroll{ overflow:hidden; }
     box-shadow: 0 6px 14px var(--shadow);
   }
 }
-
-
-
-
-
-
-
 
 
 
