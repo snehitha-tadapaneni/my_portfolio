@@ -257,6 +257,90 @@ function initTiltCards() {
     tile.addEventListener('mouseleave', onLeave);
   });
 }
+function initCertModals(){
+  const cards = document.querySelectorAll('.cert');
+  if (!cards.length) return;
+
+  const modal = document.getElementById('cert-modal');
+  const backdrop = document.getElementById('cert-modal-backdrop');
+  const img = document.getElementById('cert-modal-img');
+  const title = document.getElementById('cert-modal-title');
+  const issuer = document.getElementById('cert-modal-issuer');
+  const issued = document.getElementById('cert-modal-issued');
+  const credId = document.getElementById('cert-modal-id');
+  const linkWrap = document.getElementById('cert-modal-link');
+  const cta = document.getElementById('cert-modal-cta');
+
+  let lastFocus = null;
+
+  function open(card){
+    lastFocus = document.activeElement;
+    const d = card.dataset;
+
+    title.textContent = d.title || card.querySelector('h3')?.textContent || 'Certification';
+    issuer.textContent = d.issuer || '—';
+    issued.textContent = d.issued || '—';
+    credId.textContent = d.id || '—';
+
+    if (d.img) {
+      img.src = d.img;
+      img.alt = `${title.textContent} badge`;
+      img.hidden = false;
+    } else {
+      img.removeAttribute('src');
+      img.hidden = true;
+    }
+
+    linkWrap.textContent = '—';
+    cta.hidden = true;
+    if (d.link) {
+      const a = document.createElement('a');
+      a.href = d.link; a.target = '_blank'; a.rel = 'noopener';
+      a.textContent = 'View on issuer site';
+      linkWrap.innerHTML = '';
+      linkWrap.appendChild(a);
+      cta.href = d.link;
+      cta.hidden = false;
+    }
+
+    backdrop.hidden = false;
+    modal.hidden = false;
+    document.body.classList.add('no-scroll');
+
+    requestAnimationFrame(() => {
+      backdrop.classList.add('is-open');
+      modal.classList.add('is-open');
+      (modal.querySelector('[data-close]') || modal).focus();
+    });
+  }
+
+  function close(){
+    backdrop.classList.remove('is-open');
+    modal.classList.remove('is-open');
+    setTimeout(() => {
+      backdrop.hidden = true;
+      modal.hidden = true;
+      document.body.classList.remove('no-scroll');
+      if (lastFocus) lastFocus.focus();
+    }, 180);
+  }
+
+  cards.forEach(card => {
+    const go = () => open(card);
+    card.addEventListener('click', go);
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); }
+    });
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target.matches('[data-close]')) close();
+  });
+  backdrop.addEventListener('click', close);
+  document.addEventListener('keydown', (e) => {
+    if (!modal.hidden && e.key === 'Escape') close();
+  });
+}
 
 
 
@@ -267,7 +351,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollReveal();
   initHeroTypewriter();
   initTiltCards();
+  initCertModals();
 });
+
 
 
 
