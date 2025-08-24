@@ -26,20 +26,90 @@
 
   <section class="section">
     <div class="container">
-      <h2>Certifications</h2>
+     <h2>Certifications</h2>
 
-      <div class="cert-grid">
-        <!-- 2025 -->
-        <div class="cert">IBM Agentic AI and RAG Professional Certificate — Coursera <span class="muted">(2025)</span></div>
-        <div class="cert">Databricks Fundamentals — Databricks <span class="muted">(2025)</span></div>
+<div class="cert-grid">
+<!-- IBM Generative AI Professional Certificate (Coursera) -->
+<div class="cert"
+     tabindex="0"
+     data-title="Generative AI Professional Certificate"
+     data-issuer="IBM · Coursera"
+     data-issued="Jun 27"
+     data-link="https://coursera.org/share/54e01fd8f24b7bc4c698b3b7e10b493c"
+  <h3>Generative AI Professional Certificate</h3>
+  <p>Issuer: IBM · Coursera — Jul 2025</p>
+</div>
+  
+  <!-- AWS -->
+  <div class="cert"
+       tabindex="0"
+       data-title="AWS Certified Cloud Practitioner"
+       data-issuer="Amazon Web Services"
+       data-issued="Jul 2023 - Aug 2026"
+       data-id="<!-- TODO: credential ID (optional) -->"
+       data-link="https://www.credly.com/badges/ce1d061a-52d8-4a67-a421-36cf4e04b4d7/linked_in_profile"
+    <h3>AWS Certified Cloud Practitioner</h3>
+    <p>Issued: Jul 2023</p>
+  </div>
 
-        <!-- 2023 -->
-        <div class="cert">Python for Data Science and ML Bootcamp — Udemy <span class="muted">(Nov 2023)</span></div>
-        <div class="cert">Foundations of Data Science — Google <span class="muted">(Aug 2023)</span></div>
-        <div class="cert">Business Analytics with Excel — Simplilearn <span class="muted">(Jun 2023)</span></div>
-        <div class="cert">AWS Certified Cloud Practitioner <span class="muted">(Jul 2023)</span></div>
-        <div class="cert">Web Developer Bootcamp — Udemy <span class="muted">(2023)</span></div>
-      </div>
+  <!-- Business Analytics with Excel -->
+  <div class="cert"
+       tabindex="0"
+       data-title="Business Analytics with Excel"
+       data-issuer="Simplilearn"
+       data-issued="Jun 2023"
+    <h3>Business Analytics with Excel</h3>
+    <p>Issued: Jun 2023</p>
+  </div>
+
+  <!-- Foundations of Data Science -->
+  <div class="cert"
+       tabindex="0"
+       data-title="Foundations of Data Science"
+       data-issuer="Google"
+       data-issued="Aug 2023"
+       data-link="https://drive.google.com/file/d/14TgnJ-EZwBkQWlkLq1pA5suzNcMcrOoa/view?usp=sharing"
+    <h3>Foundations of Data Science</h3>
+    <p>Issued: Aug 2023</p>
+  </div>
+
+  <!-- Python for DS & ML Bootcamp -->
+  <div class="cert"
+       tabindex="0"
+       data-title="Python for Data Science & ML Bootcamp"
+       data-issuer="Udemy"
+       data-issued="Nov 2023"
+       data-link="https://drive.google.com/file/d/1hW1md59f6pkt2LTiuKQGKOtckOILoZiW/view?usp=sharing"
+    <h3>Python for Data Science &amp; ML Bootcamp</h3>
+    <p>Issued: Nov 2023</p>
+  </div>
+</div>
+
+  
+
+<!-- Modal host (paste once near end of body) -->
+<div class="modal-backdrop" id="cert-modal-backdrop" hidden></div>
+<div class="modal" id="cert-modal" hidden role="dialog" aria-modal="true" aria-labelledby="cert-modal-title">
+  <div class="modal-dialog">
+    <div class="modal-head">
+      <img id="cert-modal-img" alt="" hidden>
+      <h3 class="modal-title" id="cert-modal-title"></h3>
+    </div>
+    <div class="modal-body">
+      <dl>
+        <dt>Issuer</dt><dd id="cert-modal-issuer">—</dd>
+        <dt>Issued</dt><dd id="cert-modal-issued">—</dd>
+        <dt>Credential ID</dt><dd id="cert-modal-id">—</dd>
+        <dt>Verify</dt><dd id="cert-modal-link">—</dd>
+      </dl>
+    </div>
+    <div class="modal-actions">
+      <button type="button" class="btn" data-close>Close</button>
+      <a id="cert-modal-cta" class="btn primary" href="#" target="_blank" rel="noopener" hidden>Open Credential</a>
+    </div>
+  </div>
+</div>
+
     </div>
   </section>
 
