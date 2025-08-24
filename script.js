@@ -267,7 +267,6 @@ function initCertModals(){
   const title = document.getElementById('cert-modal-title');
   const issuer = document.getElementById('cert-modal-issuer');
   const issued = document.getElementById('cert-modal-issued');
-  const credId = document.getElementById('cert-modal-id');
   const linkWrap = document.getElementById('cert-modal-link');
   const cta = document.getElementById('cert-modal-cta');
 
@@ -353,6 +352,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTiltCards();
   initCertModals();
 });
+
 
 
 
