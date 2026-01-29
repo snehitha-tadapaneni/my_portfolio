@@ -29,55 +29,52 @@
       <h2>Projects</h2>
 
      
+<div class="projects-list">
 
-        <div class="projects-list">
-
-  <!-- Personal Project -->
   <div class="project-block">
     <h3>
       <a href="https://github.com/snehitha-tadapaneni/Multi-Agent-RAG-Research-Assistant" target="_blank" rel="noreferrer">
         Multi-Agent RAG Research Assistant
       </a>
     </h3>
-    <p><strong>Tech:</strong> Python, IBM Watsonx, LangChain, ChromaDB, Gradio | <strong>Duration:</strong> Jun – Aug 2025</p>
+    <p><strong>Tech:</strong> Python, LangChain, IBM Watsonx, ChromaDB, SQL, Gradio | <strong>Duration:</strong> Jun – Aug 2025</p>
     <ul>
-      <li>Addressed the problem of researchers relying on unverified or incomplete information when reviewing large volumes of academic PDFs.</li>
-      <li>Worked with unclear requirements due to highly unstructured inputs (scanned PDFs, tables, mixed formats) and vague expectations of “answer quality.”</li>
-      <li>Decided to decompose a traditional RAG pipeline into specialized agents to improve traceability, accuracy, and trust in outputs.</li>
-      <li>Focused KPIs on answer groundedness, retrieval relevance, and verification success rate rather than generative creativity.</li>
-      <li>Enabled users to confidently decide whether information was suitable for citations, reports, or literature reviews.</li>
-      <li>Explained results to non-technical users through a single-page interface showing sources, verification status, and spoken summaries.</li>
+      <li>Worked on reducing the time researchers spend validating information across long, unstructured research PDFs.</li>
+      <li>Requirements were loosely defined due to variability in document formats and uncertainty around what constituted a “trustworthy” answer.</li>
+      <li>Decided to split a traditional RAG pipeline into specialized agents to improve traceability and reduce hallucinations.</li>
+      <li>Used SQL-backed storage for document metadata, retrieval logs, and agent outputs to support auditing and debugging.</li>
+      <li>Helped users decide whether generated answers were reliable enough to use in reports or literature reviews.</li>
+      <li>Explained results through a simple UI showing source passages, verification status, and spoken summaries for non-technical users.</li>
     </ul>
   </div>
 
-  <!-- Masters Projects -->
   <div class="project-block">
     <h3>Analysis of Google Play Store Apps</h3>
-    <p><strong>Tech:</strong> Python (Pandas, NumPy), Visualization | <strong>Duration:</strong> Oct – Dec 2024</p>
+    <p><strong>Tech:</strong> Python, SQL, Pandas, Data Visualization | <strong>Duration:</strong> Oct – Dec 2024</p>
     <ul>
-      <li>Analyzed what drives app success by studying installs, ratings, reviews, and pricing across thousands of Google Play Store apps.</li>
-      <li>Handled ambiguous definitions of “success” by aligning metrics with realistic product and business decisions.</li>
-      <li>Made key decisions around data cleaning (price formats, app sizes, genre inconsistencies) to avoid misleading insights.</li>
-      <li>Prioritized KPIs such as rating distribution, review volume, update frequency, and install buckets over raw download counts.</li>
-      <li>Provided insights that help teams decide where to invest effort (category focus, pricing strategy, update cadence).</li>
-      <li>Presented findings using simple comparisons and visuals that non-technical stakeholders could immediately interpret.</li>
+      <li>Analyzed factors influencing app performance such as ratings, installs, pricing, and update frequency.</li>
+      <li>Worked with unclear definitions of “success,” requiring alignment between technical metrics and real product decisions.</li>
+      <li>Used SQL to aggregate large app datasets and segment results by category, pricing model, and user feedback.</li>
+      <li>Focused on patterns that signal long-term performance rather than surface-level popularity.</li>
+      <li>Provided insights that help teams prioritize app categories, pricing strategies, and maintenance efforts.</li>
+      <li>Presented findings using straightforward charts and comparisons that non-technical stakeholders could interpret quickly.</li>
     </ul>
   </div>
 
   <div class="project-block">
     <h3>
       <a href="https://github.com/snehitha-tadapaneni/Data-mining-Project" target="_blank" rel="noreferrer">
-        Neighborhood Crime Rates vs Residential Property Risk (Washington DC)
+        Neighborhood Crime Rates & Residential Risk in Washington, DC
       </a>
     </h3>
-    <p><strong>Tech:</strong> Python, Geospatial Analysis, Random Forest, LightGBM | <strong>Duration:</strong> Oct – Dec 2024</p>
+    <p><strong>Tech:</strong> Python, SQL, Geospatial Analysis, Random Forest | <strong>Duration:</strong> Oct – Dec 2024</p>
     <ul>
-      <li>Studied how neighborhood-level crime patterns affect residential property risk using 46,000+ crime records.</li>
-      <li>Worked under unclear goals (prediction vs explanation), so delivered both interpretable insights and risk classification.</li>
-      <li>Chose geospatial alignment with census tracts to ensure meaningful neighborhood comparisons.</li>
-      <li>Used KPIs like hotspot stability, feature importance, and class-level model performance instead of raw accuracy.</li>
-      <li>Helped stakeholders identify high-risk areas and understand socio-economic drivers such as unemployment and housing vacancy.</li>
-      <li>Explained results through maps and plain-language summaries rather than technical model details.</li>
+      <li>Studied how crime patterns vary across neighborhoods and how they relate to residential property risk.</li>
+      <li>Requirements were open-ended, so the project balanced both exploratory insights and predictive analysis.</li>
+      <li>Used SQL to join crime records with census and geographic data for consistent neighborhood-level analysis.</li>
+      <li>Chose interpretable models and spatial visualizations to highlight meaningful risk drivers.</li>
+      <li>Helped identify high-risk areas and contributing socio-economic factors such as unemployment and housing vacancies.</li>
+      <li>Explained findings using maps and plain-language summaries instead of model-heavy explanations.</li>
     </ul>
   </div>
 
@@ -87,80 +84,79 @@
         Environmental Insights from NYC Street Tree Census & Air Quality Data
       </a>
     </h3>
-    <p><strong>Tech:</strong> Tableau, Geospatial Analysis | <strong>Duration:</strong> Mar – May 2025</p>
+    <p><strong>Tech:</strong> Tableau, SQL, Geospatial Analysis | <strong>Duration:</strong> Mar – May 2025</p>
     <ul>
-      <li>Analyzed how tree density and biodiversity relate to air quality across New York City neighborhoods.</li>
-      <li>Managed ambiguity caused by merging datasets from different sources, resolutions, and geographic boundaries.</li>
-      <li>Decided to aggregate insights at the community-district level to support real urban planning decisions.</li>
-      <li>Focused KPIs on PM2.5 levels, species diversity, tree health, and stewardship participation.</li>
-      <li>Generated insights showing how biodiversity correlates with reduced pollution, informing sustainability planning.</li>
-      <li>Communicated findings through an interactive Tableau dashboard designed for non-technical policy audiences.</li>
+      <li>Analyzed the relationship between tree biodiversity, stewardship, and air quality across NYC communities.</li>
+      <li>Worked with datasets collected at different geographic resolutions, requiring careful alignment and validation.</li>
+      <li>Used SQL to aggregate and filter tree and pollution data before visualization.</li>
+      <li>Identified trends showing how species diversity and community involvement relate to pollution levels.</li>
+      <li>Supported sustainability and urban planning discussions with district-level insights.</li>
+      <li>Communicated results through an interactive Tableau dashboard designed for policy and planning audiences.</li>
     </ul>
   </div>
 
   <div class="project-block">
     <h3>Customer Purchase Prediction</h3>
-    <p><strong>Tech:</strong> Python, Classification Models | <strong>Duration:</strong> Mar – May 2025</p>
+    <p><strong>Tech:</strong> Python, SQL, Classification Models | <strong>Duration:</strong> Mar – May 2025</p>
     <ul>
-      <li>Built models to predict customer purchase likelihood to improve targeting and reduce wasted marketing spend.</li>
-      <li>Worked with vague success criteria, so framed results around actionable customer ranking and threshold selection.</li>
-      <li>Made design choices to handle class imbalance and prioritize interpretability alongside performance.</li>
-      <li>Used KPIs such as precision-recall, ROC-AUC, and top-K lift rather than overall accuracy.</li>
-      <li>Helped stakeholders decide whom to target based on risk-reward tradeoffs.</li>
-      <li>Explained model outputs using business-oriented examples instead of algorithmic terminology.</li>
+      <li>Built predictive models to estimate customer purchase likelihood for targeted outreach.</li>
+      <li>Faced ambiguity around business goals, requiring tradeoffs between broad reach and precise targeting.</li>
+      <li>Used SQL to extract, clean, and aggregate transactional and behavioral data.</li>
+      <li>Evaluated model outputs based on how well they supported ranking and prioritization decisions.</li>
+      <li>Helped stakeholders decide where to focus marketing effort for higher conversion efficiency.</li>
+      <li>Explained predictions using simple examples rather than algorithmic details.</li>
     </ul>
   </div>
 
   <div class="project-block">
     <h3>Hourly Power Consumption Forecasting (Morocco)</h3>
-    <p><strong>Tech:</strong> Python, Time Series Analysis | <strong>Duration:</strong> Mar – May 2025</p>
+    <p><strong>Tech:</strong> Python, SQL, Time Series Analysis | <strong>Duration:</strong> Mar – May 2025</p>
     <ul>
-      <li>Forecasted hourly power demand to support operational planning and energy management.</li>
-      <li>Handled unclear forecasting horizons by evaluating multiple time windows and stability tradeoffs.</li>
-      <li>Chose time-aware validation strategies to avoid data leakage.</li>
-      <li>Tracked KPIs such as MAE and peak-hour error rather than average error alone.</li>
-      <li>Supported decisions around peak-load risk and operational preparedness.</li>
-      <li>Explained seasonality and demand drivers through simple trend visuals.</li>
+      <li>Forecasted hourly electricity demand to support operational and capacity planning.</li>
+      <li>Worked with flexible forecasting horizons due to changing operational needs.</li>
+      <li>Used SQL to aggregate historical consumption data and engineer time-based features.</li>
+      <li>Focused on forecast stability during peak demand periods rather than average error alone.</li>
+      <li>Supported decisions related to load balancing and peak-risk management.</li>
+      <li>Explained seasonal patterns using intuitive trend plots and timelines.</li>
     </ul>
   </div>
 
   <div class="project-block">
     <h3>Comparative Analysis: Threads vs Twitter Reviews</h3>
-    <p><strong>Tech:</strong> NLP, Sentiment Analysis, Topic Modeling | <strong>Duration:</strong> Oct – Dec 2025</p>
+    <p><strong>Tech:</strong> Python, SQL, NLP, Topic Modeling | <strong>Duration:</strong> Oct – Dec 2025</p>
     <ul>
-      <li>Analyzed user reviews to compare sentiment and recurring themes across Threads and Twitter.</li>
-      <li>Worked with noisy, unstructured text and unclear questions like “which platform is better.”</li>
-      <li>Decided to combine lexicon-based and model-based sentiment methods for robustness.</li>
-      <li>Focused KPIs on theme frequency, sentiment split, and trend consistency.</li>
-      <li>Helped product teams identify feature pain points and competitive advantages.</li>
-      <li>Summarized results as actionable themes with example quotes for non-technical stakeholders.</li>
+      <li>Analyzed user reviews to compare sentiment and discussion themes across Threads and Twitter.</li>
+      <li>Worked with noisy, unstructured text and loosely defined questions around platform preference.</li>
+      <li>Used SQL to organize, filter, and sample large volumes of review data for analysis.</li>
+      <li>Combined sentiment analysis and topic modeling to surface consistent user concerns.</li>
+      <li>Helped frame product-level strengths and weaknesses based on user feedback.</li>
+      <li>Summarized insights as clear themes with example quotes for non-technical audiences.</li>
     </ul>
   </div>
 
-  <!-- Bachelors Projects -->
   <div class="project-block">
     <h3>Deep Learning Model for Eye Diseases Prediction</h3>
-    <p><strong>Tech:</strong> Python, Deep Learning, Flask | <strong>Duration:</strong> May – Jul 2023</p>
+    <p><strong>Tech:</strong> Python, Deep Learning, SQL, Flask | <strong>Duration:</strong> May – Jul 2023</p>
     <ul>
-      <li>Built an end-to-end system to predict eye diseases from medical images.</li>
-      <li>Handled unclear real-world constraints such as image quality variation.</li>
-      <li>Chose to deploy the model via a Flask API to ensure usability beyond notebooks.</li>
-      <li>Tracked KPIs like accuracy, recall, and inference responsiveness.</li>
+      <li>Developed a system to predict eye diseases from medical images.</li>
+      <li>Handled variability in image quality and incomplete real-world data.</li>
+      <li>Used SQL to manage image metadata and prediction records.</li>
+      <li>Deployed the model as a web application to make it usable beyond experimentation.</li>
       <li>Demonstrated feasibility for preliminary screening workflows.</li>
-      <li>Explained outputs in simple terms suitable for non-technical users.</li>
+      <li>Presented results in a simple format suitable for non-technical users.</li>
     </ul>
   </div>
 
   <div class="project-block">
     <h3>Web App for Text Extraction & Summarization (GPT-3)</h3>
-    <p><strong>Tech:</strong> Python, LLM APIs | <strong>Duration:</strong> Jul – Dec 2023</p>
+    <p><strong>Tech:</strong> Python, SQL, LLM APIs | <strong>Duration:</strong> Jul – Dec 2023</p>
     <ul>
-      <li>Automated extraction and summarization of long documents to reduce reading time.</li>
-      <li>Handled ambiguous expectations of summary length and detail.</li>
-      <li>Designed a simple workflow prioritizing usability over technical complexity.</li>
-      <li>Focused KPIs on readability and time saved.</li>
-      <li>Helped users decide what content required deeper reading.</li>
-      <li>Presented results without exposing underlying model complexity.</li>
+      <li>Built a web app to extract and summarize long documents.</li>
+      <li>Worked with subjective expectations around summary length and detail.</li>
+      <li>Used SQL to store document text, extracted sections, and summaries.</li>
+      <li>Focused on clarity and usefulness rather than creative language generation.</li>
+      <li>Helped users quickly decide what content required deeper reading.</li>
+      <li>Kept the interface simple to encourage adoption by non-technical users.</li>
     </ul>
   </div>
 
@@ -168,24 +164,24 @@
     <h3>Data Hiding using Steganography & Visual Cryptography</h3>
     <p><strong>Tech:</strong> Python | <strong>Duration:</strong> Jul – Dec 2023</p>
     <ul>
-      <li>Developed a secure data-hiding system for sensitive information sharing.</li>
-      <li>Worked with open-ended requirements balancing security and usability.</li>
-      <li>Chose layered protection instead of relying on a single security technique.</li>
-      <li>Focused KPIs on extraction accuracy and robustness to noise.</li>
-      <li>Demonstrated reduced risk of single-point compromise.</li>
-      <li>Explained workflows using simple step-by-step logic.</li>
+      <li>Designed a system for securely hiding sensitive information within images.</li>
+      <li>Worked with open-ended security and usability requirements.</li>
+      <li>Chose layered protection techniques to reduce single points of failure.</li>
+      <li>Evaluated robustness against noise and partial data loss.</li>
+      <li>Demonstrated use cases in secure communication and digital forensics.</li>
+      <li>Explained workflows step-by-step to make the concept approachable.</li>
     </ul>
   </div>
 
   <div class="project-block">
     <h3>The Power of Data: ML in Cyber Attack Classification</h3>
-    <p><strong>Tech:</strong> Python, ML, Flask | <strong>Duration:</strong> Jan – May 2024</p>
+    <p><strong>Tech:</strong> Python, SQL, Machine Learning, Flask | <strong>Duration:</strong> Jan – May 2024</p>
     <ul>
-      <li>Classified cyberattacks to support faster detection and response.</li>
-      <li>Handled noisy and imbalanced security datasets.</li>
-      <li>Chose models prioritizing precision and recall over raw accuracy.</li>
-      <li>Focused KPIs on false positives and missed attack reduction.</li>
-      <li>Helped stakeholders understand detection reliability by attack type.</li>
+      <li>Built machine learning models to classify different types of cyber attacks.</li>
+      <li>Handled noisy and imbalanced security datasets with unclear operational thresholds.</li>
+      <li>Used SQL to organize logs, features, and labeled attack records.</li>
+      <li>Focused on reducing false alarms and missed detections.</li>
+      <li>Helped stakeholders understand detection reliability across attack types.</li>
       <li>Explained results in operational terms relevant to security teams.</li>
     </ul>
   </div>
@@ -206,3 +202,4 @@
   </script>
 </body>
 </html>
+
