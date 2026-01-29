@@ -1,142 +1,158 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Projects | Snehitha</title>
-  <link rel="stylesheet" href="style.css"/>
-</head>
-<body>
-  <!-- Header -->
-  <header class="site-header">
-    <nav class="nav container">
-      <div class="brand">
-        <div class="name">Snehitha Tadapaneni</div>
-      </div>
-      <div class="menu">
-        <a href="index.html">Home</a>
-        <a href="education.html">Education</a>
-        <a href="projects.html" class="active">Projects</a>
-        <a href="experience.html">Experience</a>
-        <a href="skills.html">Skills</a>
-        <a href="certifications.html">Certifications</a>
-      </div>
-    </nav>
-  </header>
+<div class="projects-list">
 
-  <section class="section">
-    <div class="container">
-      <h2>Projects</h2>
+  <div class="project-block">
+    <h3>
+      <a href="https://github.com/snehitha-tadapaneni/Multi-Agent-RAG-Research-Assistant" target="_blank" rel="noreferrer">
+        Multi-Agent RAG Research Assistant
+      </a>
+    </h3>
+    <p><strong>Tech:</strong> Python, LangChain, IBM Watsonx, ChromaDB, SQL, Gradio | <strong>Duration:</strong> Jun – Aug 2025</p>
+    <ul>
+      <li>Worked on reducing the time researchers spend validating information across long, unstructured research PDFs.</li>
+      <li>Requirements were loosely defined due to variability in document formats and uncertainty around what constituted a “trustworthy” answer.</li>
+      <li>Decided to split a traditional RAG pipeline into specialized agents to improve traceability and reduce hallucinations.</li>
+      <li>Used SQL-backed storage for document metadata, retrieval logs, and agent outputs to support auditing and debugging.</li>
+      <li>Helped users decide whether generated answers were reliable enough to use in reports or literature reviews.</li>
+      <li>Explained results through a simple UI showing source passages, verification status, and spoken summaries for non-technical users.</li>
+    </ul>
+  </div>
 
-      <div class="projects-list">
-        
-        <!-- Project 1 -->
-         <div class="project-block">
-          <h3><a href="https://github.com/snehitha-tadapaneni/Multi-Agent-RAG-Research-Assistant" target="_blank" rel="noreferrer">
-    Multi Agent RAG Research Assistant
-  </a></h3>
-          <p><strong>Tech:</strong> Python, LLM, Agentic AI | <strong>Duration:</strong> May – July 2025</p>
-          <ul>
-            <li>Developed a multimodal research assistant using IBM Watsonx, LangChain, and Gradio, with a clean single-page interface.</li>
-            <li>Reads research papers (PDFs), retrieves relevant content, generates structured answers, verifies them, and speaks them aloud.</li>
-            <li>Broke the traditional RAG pipeline into specialized agents for better accuracy, verification, and decision-making.</li>
-            <li>Architecture includes Document Parser Agent, Retriever Agent, Research Agent, Verification Agent, Decision Agent and text to Speech Agent.</li>
-            <li>Designed to handle noisy/unstructured PDFs, ensure factual grounding, and provide trustworthy outputs.</li>
-            <li>Built in Gradio, providing a seamless interactive experience for uploading PDFs, asking questions, and receiving both text and spoken responses.yr</li>
-          </ul>
-        </div>
+  <div class="project-block">
+    <h3>Analysis of Google Play Store Apps</h3>
+    <p><strong>Tech:</strong> Python, SQL, Pandas, Data Visualization | <strong>Duration:</strong> Oct – Dec 2024</p>
+    <ul>
+      <li>Analyzed factors influencing app performance such as ratings, installs, pricing, and update frequency.</li>
+      <li>Worked with unclear definitions of “success,” requiring alignment between technical metrics and real product decisions.</li>
+      <li>Used SQL to aggregate large app datasets and segment results by category, pricing model, and user feedback.</li>
+      <li>Focused on patterns that signal long-term performance rather than surface-level popularity.</li>
+      <li>Provided insights that help teams prioritize app categories, pricing strategies, and maintenance efforts.</li>
+      <li>Presented findings using straightforward charts and comparisons that non-technical stakeholders could interpret quickly.</li>
+    </ul>
+  </div>
 
-          <!--project 2 -->
-         <div class="project-block">
-          <h3><a href="https://drive.google.com/drive/folders/1rLxFjEWa-tIEoa6y9iB6vXMJ9DtsPCWl?usp=drive_link" target="_blank" rel="nonreferrer">Environmental Insights from the NYC Street Tree Census & Air Quality Data</h3>
-          <p><strong>Tech:</strong> Tableau | <strong>Duration:</strong> Mar – May 2025</p>
-          <ul>
-            <li>Conducted exploratory data analysis on NYC’s Street Tree Census and Community Air Survey datasets to identify spatial patterns in tree health, biodiversity, and air quality.
-</li>
-            <li>Developed an interactive Tableau dashboard visualizing tree density, species diversity, pollution levels, and stewardship impact across 59 community districts.
-</li>
-            <li>Performed regression analysis revealing a statistically significant negative correlation (R² = 0.557, p < 0.0001) between tree species diversity and PM2.5 air pollution.</li>
-            <li>Mapped tree health by stewardship levels, highlighting how local involvement improves urban forest vitality. Integrated geospatial data using latitude & longitude joins and community district shapefiles to align tree and pollution datasets.
-</li>
-            <li>Derived actionable insights to support urban sustainability planning, community engagement, and environmental equity.</li>
-          </ul>
-        </div>
+  <div class="project-block">
+    <h3>
+      <a href="https://github.com/snehitha-tadapaneni/Data-mining-Project" target="_blank" rel="noreferrer">
+        Neighborhood Crime Rates & Residential Risk in Washington, DC
+      </a>
+    </h3>
+    <p><strong>Tech:</strong> Python, SQL, Geospatial Analysis, Random Forest | <strong>Duration:</strong> Oct – Dec 2024</p>
+    <ul>
+      <li>Studied how crime patterns vary across neighborhoods and how they relate to residential property risk.</li>
+      <li>Requirements were open-ended, so the project balanced both exploratory insights and predictive analysis.</li>
+      <li>Used SQL to join crime records with census and geographic data for consistent neighborhood-level analysis.</li>
+      <li>Chose interpretable models and spatial visualizations to highlight meaningful risk drivers.</li>
+      <li>Helped identify high-risk areas and contributing socio-economic factors such as unemployment and housing vacancies.</li>
+      <li>Explained findings using maps and plain-language summaries instead of model-heavy explanations.</li>
+    </ul>
+  </div>
 
-        <!--Project 3-->
-        <div class="project-block">
-          <h3><a href="https://github.com/snehitha-tadapaneni/Data-mining-Project" target="_blank" rel="nonreferrer">Analysis of crime rates on residential property in Washington DC (2014–18)</h3>
-          <p><strong>Tech:</strong> Python | <strong>Duration:</strong> Oct – Dec 2024</p>
-          <ul>
-            <li>Analyzed 46,252 crime records with 30 attributes over a 5-year period to study residential property crime patterns.</li>
-            <li>Integrated datasets from Open DC Data and Kaggle, aligned with census tracts for spatial and temporal consistency.</li>
-            <li>Conducted EDA and geospatial analysis to identify crime hotspots, seasonal fluctuations, and neighborhood disparities.</li>
-            <li>Built regression models (Random Forest, LightGBM) to study socio-economic factors influencing crime rates.</li>
-            <li>Developed classification models (RF, XGBoost) to categorize neighborhoods into risk levels.</li>
-            <li>Derived insights showing links between unemployment, housing vacancies, and higher crime incidence, supporting urban safety planning.</li>
-          </ul>
-        </div>
+  <div class="project-block">
+    <h3>
+      <a href="https://drive.google.com/drive/folders/1rLxFjEWa-tIEoa6y9iB6vXMJ9DtsPCWl" target="_blank" rel="noreferrer">
+        Environmental Insights from NYC Street Tree Census & Air Quality Data
+      </a>
+    </h3>
+    <p><strong>Tech:</strong> Tableau, SQL, Geospatial Analysis | <strong>Duration:</strong> Mar – May 2025</p>
+    <ul>
+      <li>Analyzed the relationship between tree biodiversity, stewardship, and air quality across NYC communities.</li>
+      <li>Worked with datasets collected at different geographic resolutions, requiring careful alignment and validation.</li>
+      <li>Used SQL to aggregate and filter tree and pollution data before visualization.</li>
+      <li>Identified trends showing how species diversity and community involvement relate to pollution levels.</li>
+      <li>Supported sustainability and urban planning discussions with district-level insights.</li>
+      <li>Communicated results through an interactive Tableau dashboard designed for policy and planning audiences.</li>
+    </ul>
+  </div>
 
-        <!-- Project 4 -->
-        <div class="project-block">
-          <h3><a href="https://github.com/snehitha-tadapaneni/The-Power-of-Data-Ml-in-Cyber-Security" target="_blank" rel="nonreferrer">The Power of Data: ML in Cyber Attack Classification</h3>
-          <p><strong>Tech:</strong> Python, HTML, CSS, Flask | <strong>Duration:</strong> Jan – May 2024</p>
-          <ul>
-            <li>Implemented supervised machine learning models to classify and detect different types of cyberattacks, including malware, phishing, and DDoS.</li>
-            <li>Collected and curated diverse cybersecurity datasets to ensure balanced representation and improve model robustness.</li>
-            <li>Applied feature engineering and preprocessing techniques to handle high-dimensional data and reduce noise.</li>
-            <li>Evaluated multiple algorithms for accuracy, precision, and recall, optimizing models for reliable detection.</li>
-            <li>Designed a web-based demo interface for showcasing real-time classification results.</li>
-            <li>Published findings in IJNRD International Journal (ISSN: 2456-4184), highlighting the project’s academic contribution.=</li>
-          </ul>
-        </div>
+  <div class="project-block">
+    <h3>Customer Purchase Prediction</h3>
+    <p><strong>Tech:</strong> Python, SQL, Classification Models | <strong>Duration:</strong> Mar – May 2025</p>
+    <ul>
+      <li>Built predictive models to estimate customer purchase likelihood for targeted outreach.</li>
+      <li>Faced ambiguity around business goals, requiring tradeoffs between broad reach and precise targeting.</li>
+      <li>Used SQL to extract, clean, and aggregate transactional and behavioral data.</li>
+      <li>Evaluated model outputs based on how well they supported ranking and prioritization decisions.</li>
+      <li>Helped stakeholders decide where to focus marketing effort for higher conversion efficiency.</li>
+      <li>Explained predictions using simple examples rather than algorithmic details.</li>
+    </ul>
+  </div>
 
-        <!-- Project 5 -->
-        <div class="project-block">
-          <h3>Web App for Text Extraction and Summarization using GPT-3</h3>
-          <p><strong>Tech:</strong> Python | <strong>Duration:</strong> Jul – Dec 2023</p>
-          <ul>
-            <li>Built a web application in Python to automate text extraction and generate concise summaries using GPT-3.</li>
-            <li>Designed an easy-to-use interface enabling users to process lengthy documents into clear, context-aware summaries.</li>
-          </ul>
-        </div>
+  <div class="project-block">
+    <h3>Hourly Power Consumption Forecasting (Morocco)</h3>
+    <p><strong>Tech:</strong> Python, SQL, Time Series Analysis | <strong>Duration:</strong> Mar – May 2025</p>
+    <ul>
+      <li>Forecasted hourly electricity demand to support operational and capacity planning.</li>
+      <li>Worked with flexible forecasting horizons due to changing operational needs.</li>
+      <li>Used SQL to aggregate historical consumption data and engineer time-based features.</li>
+      <li>Focused on forecast stability during peak demand periods rather than average error alone.</li>
+      <li>Supported decisions related to load balancing and peak-risk management.</li>
+      <li>Explained seasonal patterns using intuitive trend plots and timelines.</li>
+    </ul>
+  </div>
 
-        <!-- Project 6 -->
-        <div class="project-block">
-          <h3><a href="https://github.com/smartinternz02/SPSGP-523574-Deep-learning-model-for-eye-diseases-prediction" target="_blank" rel="nonreferrer">Deep Learning Model for Eye Diseases Prediction</h3>
-          <p><strong>Tech:</strong> Python, Flask, HTML, CSS, JS | <strong>Duration:</strong> May – Jul 2023</p>
-          <ul>
-            <li>Developed an AI-powered application to predict eye diseases from medical images using deep learning models.</li>
-            <li>Implemented a REST API with Flask and built a user-friendly interface using HTML, CSS, and JavaScript.</li>
-            <li>Integrated backend and frontend workflows for real-time image upload and disease prediction.</li>
-            <li>Optimized model performance with preprocessing and fine-tuned neural networks for higher accuracy.</li>
-            <li>Published research in Sensors Imaging System and Techniques, CRC PRESS (SIST-5010).</li>
-          </ul>
-        </div>
+  <div class="project-block">
+    <h3>Comparative Analysis: Threads vs Twitter Reviews</h3>
+    <p><strong>Tech:</strong> Python, SQL, NLP, Topic Modeling | <strong>Duration:</strong> Oct – Dec 2025</p>
+    <ul>
+      <li>Analyzed user reviews to compare sentiment and discussion themes across Threads and Twitter.</li>
+      <li>Worked with noisy, unstructured text and loosely defined questions around platform preference.</li>
+      <li>Used SQL to organize, filter, and sample large volumes of review data for analysis.</li>
+      <li>Combined sentiment analysis and topic modeling to surface consistent user concerns.</li>
+      <li>Helped frame product-level strengths and weaknesses based on user feedback.</li>
+      <li>Summarized insights as clear themes with example quotes for non-technical audiences.</li>
+    </ul>
+  </div>
 
-        <!-- Project 7 -->
-        <div class="project-block">
-          <h3>Data Hiding using Steganography and Visual Cryptography</h3>
-          <p><strong>Tech:</strong> Python | <strong>Duration:</strong> Jul – Dec 2023</p>
-          <ul>
-            <li>Built a Python-based application combining steganography and visual cryptography for secure data hiding and retrieval.</li>
-            <li>Optimized image recognition techniques to accurately extract hidden text from low-quality or noisy images.</li>
-            <li>Integrated natural language generation (NLG) to summarize extracted content into human-readable form.</li>
-            <li>Enhanced security by implementing multi-layered encryption and decoding workflows.</li>
-            <li>Demonstrated applications in secure communication and digital forensics.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+  <div class="project-block">
+    <h3>Deep Learning Model for Eye Diseases Prediction</h3>
+    <p><strong>Tech:</strong> Python, Deep Learning, SQL, Flask | <strong>Duration:</strong> May – Jul 2023</p>
+    <ul>
+      <li>Developed a system to predict eye diseases from medical images.</li>
+      <li>Handled variability in image quality and incomplete real-world data.</li>
+      <li>Used SQL to manage image metadata and prediction records.</li>
+      <li>Deployed the model as a web application to make it usable beyond experimentation.</li>
+      <li>Demonstrated feasibility for preliminary screening workflows.</li>
+      <li>Presented results in a simple format suitable for non-technical users.</li>
+    </ul>
+  </div>
 
-  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
-</body>
-</html>
+  <div class="project-block">
+    <h3>Web App for Text Extraction & Summarization (GPT-3)</h3>
+    <p><strong>Tech:</strong> Python, SQL, LLM APIs | <strong>Duration:</strong> Jul – Dec 2023</p>
+    <ul>
+      <li>Built a web app to extract and summarize long documents.</li>
+      <li>Worked with subjective expectations around summary length and detail.</li>
+      <li>Used SQL to store document text, extracted sections, and summaries.</li>
+      <li>Focused on clarity and usefulness rather than creative language generation.</li>
+      <li>Helped users quickly decide what content required deeper reading.</li>
+      <li>Kept the interface simple to encourage adoption by non-technical users.</li>
+    </ul>
+  </div>
 
+  <div class="project-block">
+    <h3>Data Hiding using Steganography & Visual Cryptography</h3>
+    <p><strong>Tech:</strong> Python | <strong>Duration:</strong> Jul – Dec 2023</p>
+    <ul>
+      <li>Designed a system for securely hiding sensitive information within images.</li>
+      <li>Worked with open-ended security and usability requirements.</li>
+      <li>Chose layered protection techniques to reduce single points of failure.</li>
+      <li>Evaluated robustness against noise and partial data loss.</li>
+      <li>Demonstrated use cases in secure communication and digital forensics.</li>
+      <li>Explained workflows step-by-step to make the concept approachable.</li>
+    </ul>
+  </div>
 
+  <div class="project-block">
+    <h3>The Power of Data: ML in Cyber Attack Classification</h3>
+    <p><strong>Tech:</strong> Python, SQL, Machine Learning, Flask | <strong>Duration:</strong> Jan – May 2024</p>
+    <ul>
+      <li>Built machine learning models to classify different types of cyber attacks.</li>
+      <li>Handled noisy and imbalanced security datasets with unclear operational thresholds.</li>
+      <li>Used SQL to organize logs, features, and labeled attack records.</li>
+      <li>Focused on reducing false alarms and missed detections.</li>
+      <li>Helped stakeholders understand detection reliability across attack types.</li>
+      <li>Explained results in operational terms relevant to security teams.</li>
+    </ul>
+  </div>
 
-
-
-
-
-
+</div>
