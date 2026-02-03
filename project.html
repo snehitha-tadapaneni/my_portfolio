@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects | Snehitha</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <nav class="nav container">
+      <div class="brand">
+        <div class="name">Snehitha Tadapaneni</div>
+      </div>
+      <div class="menu">
+        <a href="index.html">Home</a>
+        <a href="education.html">Education</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="experience.html">Experience</a>
+        <a href="skills.html">Skills</a>
+        <a href="certifications.html">Certifications</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <h2>Projects</h2>
+
+
+      <!-- Filter Bar -->
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="python">Python</button>
+        <button class="filter-btn" data-filter="sql">SQL</button>
+        <button class="filter-btn" data-filter="ml">Machine Learning</button>
+        <button class="filter-btn" data-filter="nlp">NLP</button>
+        <button class="filter-btn" data-filter="viz">Visualization</button>
+        <button class="filter-btn" data-filter="genai">GenAI</button>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- 1. Multi-Agent RAG -->
+        <article class="project-card" data-tags="python genai nlp">
+          <div class="project-image-wrapper">
+            <img src="assets/projects/rag.jpg" alt="Multi-Agent RAG Research Assistant" loading="lazy">
+            <div class="project-image-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>Multi-Agent RAG Research Assistant</h3>
+            <p>Reduced researcher validation effort by breaking traditional RAG into specialized agents to improve
+              traceability and reduce hallucinations.</p>
+            <div class="project-tech-stack">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">LangChain</span>
+              <span class="tech-badge">Watsonx</span>
+              <span class="tech-badge">ChromaDB</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/snehitha-tadapaneni/Multi-Agent-RAG-Research-Assistant" target="_blank"
+                class="btn-icon btn-primary">
+                GitHub
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. Google Play Apps -->
+        <article class="project-card" data-tags="python sql viz">
+          <div class="project-image-wrapper">
+            <img src="assets/projects/app_analytics.jpg" alt="Google Play Store Analysis" loading="lazy">
+            <div class="project-image-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>Analysis of Google Play Store Apps</h3>
+            <p>Analyzed app performance factors like ratings, pricing, and updates to guide product decisions and
+              investment strategies.</p>
+            <div class="project-tech-stack">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">SQL</span>
+              <span class="tech-badge">Pandas</span>
+              <span class="tech-badge">Viz</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/snehitha-tadapaneni/Analysis-on-Google-Play-Store-Apps.git" target="_blank"
+                class="btn-icon btn-primary">
+                GitHub
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. DC Crime Rates -->
+        <article class="project-card" data-tags="python sql ml viz">
+          <div class="project-image-wrapper">
+            <img src="assets/projects/dc_crime.jpg" alt="DC Crime Analysis" loading="lazy">
+            <div class="project-image-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>Neighborhood Crime Rates & Residential Risk</h3>
+            <p>Studied crime patterns in Washington DC relative to residential property risk using geospatial analysis
+              and Random Forest modeling.</p>
+            <div class="project-tech-stack">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">SQL</span>
+              <span class="tech-badge">Random Forest</span>
+              <span class="tech-badge">Geospatial</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/snehitha-tadapaneni/Neighborhood-crime-rates-on-residential-property-in-Washington-DC.git"
+                target="_blank" class="btn-icon btn-primary">
+                GitHub
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. NYC Trees -->
+        <article class="project-card" data-tags="sql viz tableau">
+          <div class="project-image-wrapper">
+            <img src="assets/projects/nyc_trees.jpg" alt="NYC Trees & Air Quality" loading="lazy">
+            <div class="project-image-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>Environmental Insights: NYC Trees & Air Quality</h3>
+            <p>Analyzed how tree biodiversity correlates with air quality across NYC communities using Tableau and SQL
+              aggregation.</p>
+            <div class="project-tech-stack">
+              <span class="tech-badge">Tableau</span>
+              <span class="tech-badge">SQL</span>
+              <span class="tech-badge">Geospatial</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/snehitha-tadapaneni/Environmental-Insights-from-the-NYC-Street-Tree-Census-Air-Quality-Data-.git"
+                target="_blank" class="btn-icon btn-primary">
+                GitHub
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. Customer Purchase Prediction -->
+        <article class="project-card" data-tags="python ml">
+          <div class="project-image-wrapper">
+            <img src="assets/projects/customer_purchase.jpg" alt="Customer Purchase Prediction" loading="lazy">
+            <div class="project-image-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>Customer Purchase Prediction</h3>
+            <p>Built classification models to estimate purchase likelihood, helping stakeholders prioritize marketing
+              efforts effectively.</p>
+            <div class="project-tech-stack">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">Classification</span>
+              <span class="tech-badge">ML</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/snehitha-tadapaneni/Predicting-Instacart-customer-behavior-using-Machine-Learning.git"
+                target="_blank" class="btn-icon btn-primary">
+                GitHub
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6. Power Forecasting -->
+        <article class="project-card" data-tags="python ml">
+          <div class="project-image-wrapper">
+            <img src="assets/projects/morocco_power.jpg" alt="Power Consumption Forecasting" loading="lazy">
+            <div class="project-image-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>Hourly Power Consumption Forecasting</h3>
+            <p>Forecasted electricity demand for operational planning, focusing on stability during peak demand periods.
+            </p>
+            <div class="project-tech-stack">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">Time Series</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/snehitha-tadapaneni/Hourly-Power-Consumption-Forecasting-Morocco-.git"
+                target="_blank" class="btn-icon btn-primary">
+                GitHub
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 7. Image Colorization -->
+        <article class="project-card" data-tags="python ml deeplearning genai">
+          <div class="project-image-wrapper">
+            <img src="assets/projects/colorization.jpg" alt="Image Colorization" loading="lazy">
+            <div class="project-image-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>Grayscale Image Colorization (GANs)</h3>
+            <p>Extended ECCV-2016 model with PatchGAN and VGG Perceptual Loss to generate realistic colors for B&W
+              images.</p>
+            <div class="project-tech-stack">
+              <span class="tech-badge">PyTorch</span>
+              <span class="tech-badge">GANs</span>
+              <span class="tech-badge">Streamlit</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Naiskab/Final-Project-Group1.git" target="_blank"
+                class="btn-icon btn-primary">
+                GitHub
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 8. Threads vs Twitter -->
+        <article class="project-card" data-tags="python nlp">
+          <div class="project-image-wrapper">
+            <img src="assets/projects/threads_twitter.jpg" alt="Threads vs Twitter Analysis" loading="lazy">
+            <div class="project-image-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>Threads vs Twitter Review Analysis</h3>
+            <p>Combined sentiment analysis and topic modeling to compare user themes and concerns across social
+              platforms.</p>
+            <div class="project-tech-stack">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">NLP</span>
+              <span class="tech-badge">Topic Modeling</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/snehitha-tadapaneni/Comparative-Analysis-of-Threads-and-Twitter-Reviews.git"
+                target="_blank" class="btn-icon btn-primary">
+                GitHub
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 9. Customer Intel Platform -->
+        <article class="project-card" data-tags="python sql ml">
+          <div class="project-image-wrapper">
+            <img src="assets/projects/customer_intel.jpg" alt="Customer Intelligence Platform" loading="lazy">
+            <div class="project-image-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>Enterprise Customer Intelligence Platform</h3>
+            <p>End-to-end analytics system using XGBoost to predict high-value leads and churn risk, simulating business
+              impact.</p>
+            <div class="project-tech-stack">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">SQL</span>
+              <span class="tech-badge">XGBoost</span>
+              <span class="tech-badge">AWS</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/snehitha-tadapaneni/Enterprise-Customer-Intelligence-Growth-Analytics-Platform-.git"
+                target="_blank" class="btn-icon btn-primary">
+                GitHub
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 10. Eye Diseases -->
+        <article class="project-card" data-tags="python deeplearning ml">
+          <div class="project-image-wrapper">
+            <img src="assets/projects/eye_disease.jpg" alt="Eye Disease Prediction" loading="lazy">
+            <div class="project-image-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>Eye Disease Prediction Model</h3>
+            <p>Deep learning system to predict eye diseases from medical images, deployed as a Flask web app for
+              usability.</p>
+            <div class="project-tech-stack">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">Deep Learning</span>
+              <span class="tech-badge">Flask</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/smartinternz02/SPSGP-523574-Deep-learning-model-for-eye-diseases-prediction.git"
+                target="_blank" class="btn-icon btn-primary">
+                GitHub
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 11. Text Summarization -->
+        <article class="project-card" data-tags="python nlp genai">
+          <div class="project-image-wrapper">
+            <img src="assets/projects/text_summ.jpg" alt="Text Summarization App" loading="lazy">
+            <div class="project-image-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>Text Extraction & Summarization App</h3>
+            <p>Web app using LLM APIs to extract and summarize long documents, focusing on clarity and utility.</p>
+            <div class="project-tech-stack">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">LLM APIs</span>
+              <span class="tech-badge">GPT-3</span>
+            </div>
+            <div class="project-links">
+              <!-- No Link provided in source, kept empty or removed if broken -->
+              <span class="btn-icon btn-outline" style="cursor: default; opacity: 0.6;">Private</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 12. Steganography -->
+        <article class="project-card" data-tags="python security">
+          <div class="project-image-wrapper">
+            <img src="assets/projects/steganography.jpg" alt="Steganography" loading="lazy">
+            <div class="project-image-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>Data Hiding via Steganography</h3>
+            <p>Designed a system for securely hiding sensitive information within images using layered protection
+              techniques.</p>
+            <div class="project-tech-stack">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">Cryptography</span>
+              <span class="tech-badge">Security</span>
+            </div>
+            <div class="project-links">
+              <span class="btn-icon btn-outline" style="cursor: default; opacity: 0.6;">Private</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 13. Cyber Attack Classification -->
+        <article class="project-card" data-tags="python ml security">
+          <div class="project-image-wrapper">
+            <img src="assets/projects/cyber.jpg" alt="Cyber Attack Classification" loading="lazy">
+            <div class="project-image-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>ML for Cyber Attack Classification</h3>
+            <p>Built models to classify cyber attacks using noisy security datasets, focusing on reducing false alarms.
+            </p>
+            <div class="project-tech-stack">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">ML</span>
+              <span class="tech-badge">Flask</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/snehitha-tadapaneni/The-Power-of-Data-Ml-in-Cyber-Security.git"
+                target="_blank" class="btn-icon btn-primary">
+                GitHub
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Filter Script (Inline for simplicity) -->
+      <script>
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            // Remove active class
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filter = btn.getAttribute('data-filter');
+            document.querySelectorAll('.project-card').forEach(card => {
+              if (filter === 'all' || card.getAttribute('data-tags').includes(filter)) {
+                card.style.display = 'flex';
+              } else {
+                card.style.display = 'none';
+              }
+            });
+          });
+        });
+      </script>
+
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="y"></span> Snehitha Tadapaneni</small>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>
