@@ -1,0 +1,98 @@
+/* Dark Theme Variables & Styles */
+
+:root {
+    /* Light theme (default) - MORE VIBRANT */
+    --bg: #f8fafc;
+    --bg-2: #f1f5f9;
+    --card: #ffffff;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --accent: #f59e0b;
+    /* Brighter amber */
+    --accent-2: #d97706;
+    --border: #e2e8f0;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --radius: 12px;
+    --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+[data-theme="dark"] {
+    /* Dark theme - VIBRANT */
+    --bg: #0f172a;
+    --bg-2: #1e293b;
+    --card: #1e293b;
+    --text-main: #f1f5f9;
+    --text-muted: #94a3b8;
+    --accent: #fbbf24;
+    /* Bright yellow-amber */
+    --accent-2: #f59e0b;
+    --border: #334155;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+    position: fixed;
+    top: 80px;
+    right: 24px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+    background: var(--card);
+    color: var(--text-main);
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+}
+
+#theme-toggle:hover {
+    transform: rotate(20deg) scale(1.1);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent);
+}
+
+/* Smooth transitions for theme changes */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Dark mode specific adjustments */
+[data-theme="dark"] body {
+    background:
+        radial-gradient(800px 200px at 80% -50%, rgba(251, 191, 36, 0.15), transparent 70%),
+        radial-gradient(700px 240px at 10% -30%, rgba(251, 191, 36, 0.1), transparent 70%),
+        var(--bg);
+}
+
+[data-theme="dark"] .hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+}
+
+[data-theme="dark"] .badge {
+    background: var(--bg-2);
+    border-color: var(--border);
+}
+
+[data-theme="dark"] .card {
+    border-color: var(--border);
+}
+
+[data-theme="dark"] #hero-canvas {
+    opacity: 0.4;
+    /* Slightly dimmer in dark mode */
+}
+
+/* Make floating icons more visible in dark mode */
+[data-theme="dark"] .float-icon {
+    opacity: 0.25;
+}

@@ -1,11 +1,14 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Snehitha Tadapaneni | Portfolio</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="assets/css/home-enhanced.css" />
 </head>
+
 <body>
   <!-- Header -->
   <header class="site-header">
@@ -26,16 +29,48 @@
 
   <!-- Hero -->
   <section class="hero">
-    <div class="about-contact">   
+    <!-- Interactive Canvas -->
+    <canvas id="hero-canvas"></canvas>
+
+    <!-- Floating Icons -->
+    <div class="floating-icons-container">
+      <!-- Using FontAwesome or simple SVGs inline to avoid dependencies as requested -->
+      <div class="float-icon icon-1">📊</div>
+      <div class="float-icon icon-2">🤖</div>
+      <div class="float-icon icon-3">📓</div>
+      <div class="float-icon icon-4">✨</div>
+      <div class="float-icon icon-5">🖌️</div>
+      <div class="float-icon icon-6">☕</div>
+      <div class="float-icon icon-7">💡</div>
+      <div class="float-icon icon-8">🚀</div>
+      <div class="float-icon icon-9">📈</div>
+      <div class="float-icon icon-10">💻</div>
+      <div class="float-icon icon-11">📉</div>
+      <div class="float-icon icon-12">🎨</div>
+      <div class="float-icon icon-13">🔍</div>
+    </div>
+
+    <div class="about-contact">
 
       <!-- About -->
       <div class="card about-box">
         <div class="hero-text">
-          <h1 id="hero-title" data-text="👋 Hey, I'm Snehitha!">👋 Hey, I'm Snehitha!</h1>
+          <h1 id="hero-title">👋 Hey, I'm Snehitha!</h1>
+
+          <!-- Typewriter Line -->
+          <div class="typewriter-container">
+            <span>I love&nbsp;</span>
+            <span id="typewriter-text"></span>
+            <span class="cursor"></span>
+          </div>
+
           <p>
-            I'm pursuing my Master's in Data Science at The George Washington University. I hold a Bachelor's degree in Computer Sciece and Engineering from Vellore Institute of Technology.<br><br>
-            Originally brewed in Andhra Pradesh, India, and now brewing coffee while debugging code in Washington, DC.<br><br>
-            From leading student clubs to wrangling datasets, I've done a bit of everything: management, data analysis, ML pipelines, frontend design, and graphic design.
+            I'm pursuing my Master's in Data Science at The George Washington University. I hold a Bachelor's degree in
+            Computer Science and Engineering from Vellore Institute of Technology.<br><br>
+            Originally brewed in Andhra Pradesh, India, and now brewing coffee while debugging code in Washington,
+            DC.<br><br>
+            From leading student clubs to wrangling datasets, I've done a bit of everything: management, data analysis,
+            ML pipelines, frontend design, and graphic design.
           </p>
           <div class="badges">
             <span class="badge">Python</span>
@@ -47,7 +82,7 @@
         </div>
 
         <div class="hero-image">
-          <img src="profile.jpeg" alt="Profile Picture"/>
+          <img src="profile.jpeg" alt="Profile Picture" />
         </div>
       </div>
 
@@ -55,49 +90,60 @@
       <aside class="card contact-box">
         <h3 style="margin-top:0">Contact</h3>
         <p class="muted">
-          snehithat001@gmail.com<br/>
-          +1 (202) 768-4195<br/>
-          Arlington, VA
+          snehithat001@gmail.com<br />
+          +1 (202) 768-4195<br />
+          Open to relocate
         </p>
         <div class="badges">
-          <a class="badge" href="https://www.linkedin.com/in/snehithatadapaneni/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="badge" href="https://www.linkedin.com/in/snehithatadapaneni/" target="_blank"
+            rel="noreferrer">LinkedIn</a>
           <a class="badge" href="https://github.com/snehitha-tadapaneni" target="_blank" rel="noreferrer">GitHub</a>
-          <a class="badge" href="https://github.com/snehitha-tadapaneni/my_portfolio/blob/main/Snehitha_Tadapaneni_Resume.pdf">Resume ↓</a>
+          <a class="badge" href="Snehitha Tadapaneni Resume.pdf" download>Resume ↓</a>
         </div>
       </aside>
 
     </div>
   </section>
 
-  <!-- Resume Preview -->
-  <section id="resume" class="section">
-    <div class="container">
-      <h2>Resume</h2>
-      <p class="muted">Click inside to scroll / download.</p>
-      <div class="resume-box">
-        <iframe id="resume-embed" class="resume-frame" src="Snehitha Tadapaneni Resume.pdf#view=FitH"></iframe>
-        <div id="resume-fallback" class="resume-fallback" style="display:none">
-          <img src="resume-page1.png" alt="Resume preview"/>
-          <a class="badge" href="assets/resume.pdf" download>Download PDF</a>
-        </div>
+  <!-- Chat Widget -->
+  <button id="chat-toggle-btn" aria-label="Ask AI Assistant">
+    <svg viewBox="0 0 24 24">
+      <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z" />
+    </svg>
+  </button>
+
+  <div id="chat-widget" class="chat-widget">
+    <div class="chat-header">
+      <h3><span class="bot-avatar">AI</span> Snehitha's Assistant</h3>
+      <button id="close-chat-btn" class="close-btn">&times;</button>
+    </div>
+    <div id="chat-messages" class="chat-messages">
+      <div class="message bot">Hi! I'm an AI version of Snehitha. Ask me about my <strong>projects</strong>,
+        <strong>skills</strong>, or experience!
       </div>
     </div>
-  </section>
+    <div class="chat-input-area">
+      <div class="suggestions">
+        <span class="suggestion-chip" data-question="Summarize me in 20 seconds">Summarize me</span>
+        <span class="suggestion-chip" data-question="What are your strongest skills?">Top skills</span>
+        <span class="suggestion-chip" data-question="Which projects use ML?">ML Projects</span>
+        <span class="suggestion-chip" data-question="Give your elevator pitch">Elevator Pitch</span>
+      </div>
+      <div class="input-wrapper">
+        <input type="text" id="chat-input" placeholder="Ask a question..." autocomplete="off">
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
+  <script src="assets/js/interactive-bg.js"></script>
+  <script src="assets/js/typewriter.js"></script>
+  <script src="assets/js/assistant.js"></script>
+
   <script>
-    document.getElementById('y').textContent=new Date().getFullYear();
+    document.getElementById('y').textContent = new Date().getFullYear();
     showResumeFallback();
   </script>
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-

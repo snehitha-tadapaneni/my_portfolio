@@ -1,0 +1,228 @@
+{
+  "bio": {
+    "short": "I'm a Data Science Master's student at GWU with a passion for storytelling through data. I bridge the gap between complex ML models and actionable business insights.",
+    "long": "I'm Snehitha Tadapaneni, currently pursuing my Master's in Data Science at The George Washington University. I hold a Bachelor's in Computer Science from VIT. I describe myself as someone who loves analyzing data, storytelling with dashboards, sketching & journaling, art + design, and building agentic AI tools.",
+    "elevator_pitch": "Hi, I'm Snehitha! I'm a Data Scientist who specializes in turning messy datasets into clear, compelling stories. With a background in Computer Science and current Master's studies at GWU, I combine technical depth in ML/Python with a strong design sense for dashboards and visualization. I'm looking for roles where I can build intelligent data tools and drive decision-making."
+  },
+  "skills": {
+    "top": [
+      "Python",
+      "SQL",
+      "Machine Learning",
+      "Data Visualization",
+      "Tableau",
+      "Power BI"
+    ],
+    "languages": [
+      "Python",
+      "R",
+      "SQL",
+      "Java",
+      "C++",
+      "HTML/CSS",
+      "JavaScript"
+    ],
+    "tools": [
+      "Tableau",
+      "Power BI",
+      "Excel",
+      "Git",
+      "Docker",
+      "AWS",
+      "Jupyter"
+    ],
+    "libraries": [
+      "Pandas",
+      "NumPy",
+      "Scikit-learn",
+      "TensorFlow",
+      "PyTorch",
+      "Matplotlib",
+      "Seaborn",
+      "LangChain"
+    ]
+  },
+  "projects": [
+    {
+      "name": "Multi-Agent RAG Research Assistant",
+      "summary": "Reduced researcher validation effort by breaking traditional RAG into specialized agents to improve traceability and reduce hallucinations.",
+      "technologies": [
+        "Python",
+        "LangChain",
+        "Watsonx",
+        "ChromaDB"
+      ],
+      "category": "GenAI",
+      "link": "https://github.com/snehitha-tadapaneni/Multi-Agent-RAG-Research-Assistant"
+    },
+    {
+      "name": "Analysis of Google Play Store Apps",
+      "summary": "Analyzed app performance factors like ratings, pricing, and updates to guide product decisions and investment strategies.",
+      "technologies": [
+        "Python",
+        "SQL",
+        "Pandas",
+        "Visualization"
+      ],
+      "category": "Data Analysis",
+      "link": "https://github.com/snehitha-tadapaneni/Analysis-on-Google-Play-Store-Apps.git"
+    },
+    {
+      "name": "Neighborhood Crime Rates & Residential Risk",
+      "summary": "Studied crime patterns in Washington DC relative to residential property risk using geospatial analysis and Random Forest modeling.",
+      "technologies": [
+        "Python",
+        "SQL",
+        "Random Forest",
+        "Geospatial"
+      ],
+      "category": "Machine Learning",
+      "link": "https://github.com/snehitha-tadapaneni/Neighborhood-crime-rates-on-residential-property-in-Washington-DC.git"
+    },
+    {
+      "name": "Environmental Insights: NYC Trees & Air Quality",
+      "summary": "Analyzed how tree biodiversity correlates with air quality across NYC communities using Tableau and SQL aggregation.",
+      "technologies": [
+        "Tableau",
+        "SQL",
+        "Geospatial"
+      ],
+      "category": "Visualization",
+      "link": "https://github.com/snehitha-tadapaneni/Environmental-Insights-from-the-NYC-Street-Tree-Census-Air-Quality-Data-.git"
+    },
+    {
+      "name": "Customer Purchase Prediction",
+      "summary": "Built classification models to estimate purchase likelihood, helping stakeholders prioritize marketing efforts effectively.",
+      "technologies": [
+        "Python",
+        "Classification",
+        "ML"
+      ],
+      "category": "Machine Learning",
+      "link": "https://github.com/snehitha-tadapaneni/Predicting-Instacart-customer-behavior-using-Machine-Learning.git"
+    },
+    {
+      "name": "Hourly Power Consumption Forecasting",
+      "summary": "Forecasted electricity demand for operational planning, focusing on stability during peak demand periods.",
+      "technologies": [
+        "Python",
+        "Time Series"
+      ],
+      "category": "Machine Learning",
+      "link": "https://github.com/snehitha-tadapaneni/Hourly-Power-Consumption-Forecasting-Morocco-.git"
+    },
+    {
+      "name": "Grayscale Image Colorization (GANs)",
+      "summary": "Extended ECCV-2016 model with PatchGAN and VGG Perceptual Loss to generate realistic colors for B&W images.",
+      "technologies": [
+        "PyTorch",
+        "GANs",
+        "Streamlit"
+      ],
+      "category": "Deep Learning",
+      "link": "https://github.com/Naiskab/Final-Project-Group1.git"
+    },
+    {
+      "name": "Threads vs Twitter Review Analysis",
+      "summary": "Combined sentiment analysis and topic modeling to compare user themes and concerns across social platforms.",
+      "technologies": [
+        "Python",
+        "NLP",
+        "Topic Modeling"
+      ],
+      "category": "NLP",
+      "link": "https://github.com/snehitha-tadapaneni/Comparative-Analysis-of-Threads-and-Twitter-Reviews.git"
+    },
+    {
+      "name": "Enterprise Customer Intelligence Platform",
+      "summary": "End-to-end analytics system using XGBoost to predict high-value leads and churn risk, simulating business impact.",
+      "technologies": [
+        "Python",
+        "SQL",
+        "XGBoost",
+        "AWS"
+      ],
+      "category": "Machine Learning",
+      "link": "https://github.com/snehitha-tadapaneni/Enterprise-Customer-Intelligence-Growth-Analytics-Platform-.git"
+    },
+    {
+      "name": "Eye Disease Prediction Model",
+      "summary": "Deep learning system to predict eye diseases from medical images, deployed as a Flask web app for usability.",
+      "technologies": [
+        "Python",
+        "Deep Learning",
+        "Flask"
+      ],
+      "category": "Deep Learning",
+      "link": "https://github.com/smartinternz02/SPSGP-523574-Deep-learning-model-for-eye-diseases-prediction.git"
+    },
+    {
+      "name": "Text Extraction & Summarization App",
+      "summary": "Web app using LLM APIs to extract and summarize long documents, focusing on clarity and utility.",
+      "technologies": [
+        "Python",
+        "LLM APIs",
+        "GPT-3"
+      ],
+      "category": "GenAI",
+      "link": null
+    },
+    {
+      "name": "ML for Cyber Attack Classification",
+      "summary": "Built models to classify cyber attacks using noisy security datasets, focusing on reducing false alarms.",
+      "technologies": [
+        "Python",
+        "ML",
+        "Flask"
+      ],
+      "category": "Machine Learning",
+      "link": "https://github.com/snehitha-tadapaneni/The-Power-of-Data-Ml-in-Cyber-Security.git"
+    }
+  ],
+  "experience": [
+    {
+      "role": "Graduate Teaching Assistant",
+      "company": "George Washington University",
+      "summary": "Led data-focused lab sessions for 150+ students covering Python, data cleaning, EDA, data visualization, and linear regression.",
+      "dates": "Jan 2026 - Present",
+      "location": "On-site"
+    },
+    {
+      "role": "Graduate Research Assistant",
+      "company": "SMDIR LAB, GWU",
+      "summary": "Analyzed human-robot interaction data using Python and SQL to assess the impact of UI/UX decisions on user behavior and task outcomes.",
+      "dates": "Aug 2025 - Present",
+      "location": "On-site"
+    },
+    {
+      "role": "Data Science Intern",
+      "company": "Innomatics Research Labs",
+      "summary": "Analyzed datasets including thousands of internship applications, AMCAT employability data, and Domino's Pizza delivery records to uncover trends and insights.",
+      "dates": "Jul 2023 - Jul 2024",
+      "location": "Hyderabad, India"
+    },
+    {
+      "role": "Artificial Intelligence Extern",
+      "company": "Smart Bridge",
+      "summary": "Completed comprehensive training in artificial intelligence tools, workflows, and development practices. Built an AI-powered web application for eye disease prediction.",
+      "dates": "May - Jul 2023",
+      "location": "Remote"
+    }
+  ],
+  "education": [
+    {
+      "degree": "M.S. in Data Science",
+      "school": "George Washington University",
+      "year": "2024 - 2026",
+      "gpa": "4.0/4.0",
+      "coursework": "Data Warehousing, Data Visualization, Data Mining, Advanced Machine Learning, Time Series Analysis for Forecasting"
+    },
+    {
+      "degree": "B.Tech in Computer Science",
+      "school": "Vellore Institute of Technology",
+      "year": "2020 - 2024",
+      "gpa": "8.8/10",
+      "coursework": "Data Structures & Algorithms, Database Management Systems, Linear Algebra, Statistics, Machine Learning, Computer Vision, Image Processing, Human Computer Interaction, Deep Learning, Natural Language Processing"
+    }
+  ]
+}
