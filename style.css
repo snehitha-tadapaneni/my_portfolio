@@ -132,10 +132,13 @@ header.site-header {
 
 .contact-box {
   flex: 1;
-  text-align: left;
+  text-align: center;
   margin: 10px 0;
   max-width: 280px;
   margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .about-box {
@@ -207,7 +210,8 @@ header.site-header {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 10px
+  margin-top: 10px;
+  justify-content: center;
 }
 
 .badge {
@@ -218,19 +222,43 @@ header.site-header {
   font-size: 13px
 }
 
-/* Ensure Contact card doesn’t stretch too tall */
+/* Contact box image styling */
+.contact-box .contact-image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.contact-box .contact-image img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.2);
+}
+
+/* Ensure Contact card doesn't stretch too tall */
 .contact-box.card {
-  padding: 20px;
+  padding: 30px 20px;
   align-self: flex-start;
 }
 
+.contact-box h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
 .contact-box .muted {
-  text-align: left;
+  text-align: center;
   font-size: 15px;
+  margin-bottom: 15px;
 }
 
 .contact-box .badges {
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 /* Sections */
