@@ -236,7 +236,7 @@ header.site-header {
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid var(--accent);
-  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.2);
+  box-shadow: 0 4px 12px rgba(240, 199, 151);
 }
 
 /* Ensure Contact card doesn't stretch too tall */
@@ -1807,4 +1807,5 @@ body.no-scroll {
     transform: none;
     box-shadow: 0 6px 14px var(--shadow);
   }
+
 }
