@@ -52,7 +52,7 @@ function showResumeFallback() {
   const swap = () => {
     if (swapped) return;
     swapped = true;
-    try { iframe.remove(); } catch {}
+    try { iframe.remove(); } catch { }
     holder.style.display = 'flex';
   };
 
@@ -183,15 +183,6 @@ function initSkillsTabs() {
 }
 
 
-/* ---------- Scroll reveal (reuse your .reveal CSS) ---------- */
-function initScrollReveal() {
-  const items = document.querySelectorAll('.reveal');
-  if (!items.length) return;
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('is-visible'); });
-  }, { threshold: 0.15, rootMargin: '40px 0px -10% 0px' });
-  items.forEach(el => io.observe(el));
-}
 
 /* ---------- Typewriter for hero title (runs once per session) ---------- */
 function initHeroTypewriter() {
@@ -257,7 +248,7 @@ function initTiltCards() {
     tile.addEventListener('mouseleave', onLeave);
   });
 }
-function initCertModals(){
+function initCertModals() {
   const cards = document.querySelectorAll('.cert');
   if (!cards.length) return;
 
@@ -272,7 +263,7 @@ function initCertModals(){
 
   let lastFocus = null;
 
-  function open(card){
+  function open(card) {
     lastFocus = document.activeElement;
     const d = card.dataset;
 
@@ -313,7 +304,7 @@ function initCertModals(){
     });
   }
 
-  function close(){
+  function close() {
     backdrop.classList.remove('is-open');
     modal.classList.remove('is-open');
     setTimeout(() => {
@@ -347,7 +338,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initFlipCards();
   markActiveNav();
   initSkillsTabs();
-  initScrollReveal();
   initHeroTypewriter();
   initTiltCards();
   initCertModals();

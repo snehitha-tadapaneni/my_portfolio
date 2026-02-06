@@ -7,12 +7,10 @@
 .hero {
     position: relative;
     overflow: hidden;
-    /* Contain canvas */
     background: linear-gradient(135deg, #f8fafc 0%, #fffdf8 50%, #f1f5f9 100%);
     background-size: 200% 200%;
     animation: gradientShift 15s ease infinite;
     min-height: calc(100vh - 70px);
-    /* Full viewport minus header */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -32,45 +30,7 @@
     }
 }
 
-#hero-canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    /* Behind content */
-    opacity: 0.6;
-    /* Subtle */
-    pointer-events: none;
-    /* Let clicks pass through if needed, but we intercept mousemove on window */
-}
-
-/* Reduced Motion Support */
-@media (prefers-reduced-motion: reduce) {
-    #hero-canvas {
-        display: none;
-    }
-
-    .hero {
-        background: linear-gradient(135deg, var(--bg) 0%, #fffdf8 100%);
-    }
-
-    .float-icon,
-    .chat-toggle-btn {
-        animation: none !important;
-    }
-}
-
-/* Mobile viewport adjustments */
-@media (max-width: 768px) {
-    .hero {
-        min-height: calc(100vh - 60px);
-        padding: 10px;
-    }
-}
-
-/* Additional Background Motion - Subtle Orbs */
+/* Subtle Orbs scoped to Hero */
 .hero::before,
 .hero::after {
     content: '';
@@ -88,7 +48,6 @@
     background: radial-gradient(circle, var(--accent), transparent);
     top: -100px;
     right: -100px;
-    animation-delay: 0s;
 }
 
 .hero::after {
@@ -115,6 +74,33 @@
         transform: translate(-20px, 20px) scale(0.9);
     }
 }
+
+
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    #hero-canvas {
+        display: none;
+    }
+
+    .hero {
+        background: linear-gradient(135deg, var(--bg) 0%, #fffdf8 100%);
+    }
+
+    .float-icon,
+    .chat-toggle-btn {
+        animation: none !important;
+    }
+}
+
+/* Mobile viewport adjustments */
+@media (max-width: 768px) {
+    .hero {
+        min-height: calc(100vh - 60px);
+        padding: 10px;
+    }
+}
+
 
 /* --- Typewriter Effect --- */
 .typewriter-container {

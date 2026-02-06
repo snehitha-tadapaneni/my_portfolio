@@ -1,0 +1,81 @@
+/* --- Reveal System --- */
+.reveal,
+.reveal-item {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity 0.8s cubic-bezier(0.215, 0.61, 0.355, 1),
+        transform 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+    will-change: opacity, transform;
+}
+
+.reveal.is-visible,
+.reveal-item.is-visible {
+    opacity: 1 !important;
+    transform: translateY(0);
+    visibility: visible !important;
+}
+
+/* --- Hover Effects --- */
+.hover-lift {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+        box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1),
+        0 0 15px rgba(245, 158, 11, 0.15);
+    /* Subtle glow using accent color */
+}
+
+/* Specific for skill chips/icons: subtle tilt */
+.skill-item,
+.tech-badge {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+        background-color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.skill-item:hover,
+.tech-badge:hover {
+    transform: translateY(-2px) rotate(1deg);
+    border-color: var(--accent);
+}
+
+/* --- Click/Press Effects --- */
+.btn-press:active,
+button:active,
+.badge:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+}
+
+/* --- Magnetic Element Support --- */
+.magnetic-wrap {
+    display: inline-block;
+    transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* --- Accessibility (Reduced Motion) --- */
+@media (prefers-reduced-motion: reduce) {
+
+    .reveal,
+    .reveal-item {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    .hover-lift:hover,
+    .skill-item:hover,
+    .tech-badge:hover {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+
+    .btn-press:active,
+    button:active,
+    .badge:active {
+        transform: none !important;
+    }
+}

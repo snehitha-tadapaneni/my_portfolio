@@ -13,6 +13,7 @@
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
   --radius: 12px;
   --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Playfair Display', serif;
 }
 
 * {
@@ -25,9 +26,84 @@ body {
   padding: 0;
   font-family: var(--font-main);
   color: var(--text-main);
-  background: var(--bg);
+  background: radial-gradient(circle at 0% 0%, #fffdf8 0%, #f8fafc 50%, #f1f5f9 100%);
+  background-attachment: fixed;
   scroll-behavior: smooth;
-  line-height: 1.6;
+  line-height: 1.8;
+  /* Improved readability */
+  min-height: 100vh;
+  position: relative;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Global Background Orbs */
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.12;
+  animation: drift 20s ease-in-out infinite;
+  pointer-events: none;
+  z-index: -2;
+}
+
+body::before {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, var(--accent), transparent);
+  top: -100px;
+  right: -100px;
+}
+
+body::after {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, var(--accent-2), transparent);
+  bottom: -150px;
+  left: -150px;
+  animation-delay: 10s;
+}
+
+@keyframes drift {
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  33% {
+    transform: translate(30px, -30px) scale(1.1);
+  }
+
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+#hero-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.5;
 }
 
 img {
@@ -41,11 +117,49 @@ a {
   transition: color 0.2s;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Entrance Animations */
+.reveal {
+  opacity: 0 !important;
+  transform: translateY(35px) !important;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out !important;
+  pointer-events: none;
+  /* Prevent interaction before visible */
+}
+
+.reveal.is-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  pointer-events: auto !important;
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    pointer-events: auto !important;
+  }
+}
+
 .container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 32px 24px;
+  position: relative;
+  z-index: 1;
 }
 
 /* Header */
@@ -145,26 +259,17 @@ header.site-header {
   position: relative;
   display: flex;
   align-items: center;
-  padding-right: 220px;
-  min-height: 280px;
-}
-
-/* About box as flex container */
-.about-box {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
+  justify-content: center;
   padding: 40px;
   margin-top: 30px;
   margin-bottom: 30px;
 }
 
-/* Text area stays only on left */
+/* Text area centered */
 .about-box .hero-text {
   flex: 1;
-  max-width: 80%;
-  text-align: justify;
+  max-width: 100%;
+  text-align: center;
   margin-bottom: 10px;
 }
 
@@ -172,24 +277,18 @@ header.site-header {
 .about-box .hero-text h1 {
   font-size: 28px;
   margin-bottom: 15px;
-  text-align: justify;
+  text-align: center;
 }
 
-/* Profile image stays on right side */
-.about-box .hero-image {
-  flex-shrink: 0;
+/* Paragraph text centered */
+.about-box .hero-text p {
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.about-box .hero-image img {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid var(--bg);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
-}
-
-/* On small screens: wrap image neatly below text */
+/* On small screens: maintain center alignment */
 @media (max-width: 768px) {
   .about-box {
     flex-direction: column;
@@ -199,10 +298,6 @@ header.site-header {
 
   .about-box .hero-text {
     max-width: 100%;
-  }
-
-  .about-box .hero-image {
-    margin-top: 20px;
   }
 }
 
@@ -231,8 +326,8 @@ header.site-header {
 }
 
 .contact-box .contact-image img {
-  width: 120px;
-  height: 120px;
+  width: 125px;
+  height: 125px;
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid var(--accent);
@@ -267,9 +362,31 @@ header.site-header {
 }
 
 .section h2 {
-  font-size: 30px;
+  font-size: 2.2rem;
+  font-weight: 800;
   text-align: center;
-  margin: 0 0 20px
+  position: relative;
+  display: block;
+  margin: 0 auto 40px auto;
+  padding-bottom: 20px;
+  letter-spacing: -0.02em;
+  background: linear-gradient(to right, var(--text-main), var(--accent-2));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 60px;
+  height: 4px;
+  background: var(--accent);
+  border-radius: 2px;
+  transform: translateX(-50%);
+  box-shadow: 0 2px 10px rgba(245, 158, 11, 0.3);
 }
 
 .muted {
@@ -1043,26 +1160,6 @@ body {
     var(--bg);
 }
 
-/* Headings styling */
-.section h2 {
-  font-size: 32px;
-  letter-spacing: .3px;
-  position: relative;
-  display: inline-block;
-  padding-bottom: 8px;
-}
-
-.section h2::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 0;
-  width: 82px;
-  height: 3px;
-  background: linear-gradient(90deg, var(--accent-2), var(--accent));
-  border-radius: 3px;
-}
 
 /* Cards: softer, floaty */
 .card {
@@ -1177,17 +1274,6 @@ body {
 }
 
 
-/* ---- Scroll reveal ---- */
-.reveal {
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity .6s ease, transform .6s ease;
-}
-
-.reveal.is-visible {
-  opacity: 1;
-  transform: none;
-}
 
 /* ---- Subtle float for hero image (fun!) ---- */
 .hero-image img {
@@ -1231,36 +1317,6 @@ body {
 }
 
 /* slightly tighter overall */
-.section h2 {
-  font-size: 34px;
-  text-align: center;
-  /* ensure centered */
-  margin: 0 0 16px;
-  /* reduce gap under header */
-  letter-spacing: .3px;
-  position: relative;
-  display: inline-block;
-  left: 50%;
-  transform: translateX(-50%);
-  padding-bottom: 8px;
-  opacity: 0;
-  /* for entrance anim */
-  transform-origin: center;
-  animation: sectionTitleIn .7s ease forwards;
-}
-
-.section h2::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%) scaleX(0);
-  bottom: 0;
-  width: 92px;
-  height: 3px;
-  background: linear-gradient(90deg, var(--accent-2), var(--accent));
-  border-radius: 3px;
-  animation: underlineGrow .8s .25s ease forwards;
-}
 
 @keyframes sectionTitleIn {
   from {

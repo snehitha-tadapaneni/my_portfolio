@@ -7,35 +7,37 @@
   <title>Experience | Snehitha</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="assets/css/home-enhanced.css" />
+  <link rel="stylesheet" href="assets/css/animations.css" />
+  <script src="assets/js/scrollReveal.js" defer></script>
 </head>
 
 <body>
   <!-- Header -->
-  <header class="site-header">
+  <header class="site-header reveal">
     <nav class="nav container">
       <div class="brand">
         <div class="name">Snehitha Tadapaneni</div>
       </div>
       <div class="menu">
-        <a href="index.html">Home</a>
-        <a href="education.html">Education</a>
-        <a href="project.html">Projects</a>
-        <a href="experience.html" class="active">Experience</a>
-        <a href="skills.html">Skills</a>
-        <a href="certifications.html">Certifications</a>
+        <a href="index.html" class="magnetic">Home</a>
+        <a href="education.html" class="magnetic">Education</a>
+        <a href="project.html" class="magnetic">Projects</a>
+        <a href="experience.html" class="active magnetic">Experience</a>
+        <a href="skills.html" class="magnetic">Skills</a>
+        <a href="certifications.html" class="magnetic">Certifications</a>
       </div>
     </nav>
   </header>
 
   <section class="section">
     <div class="container">
-      <h2>Experience</h2>
+      <h2 class="reveal">Experience</h2>
 
       <div class="grid cols-1">
 
 
         <!-- GWU, TA -->
-        <div class="card exp-block">
+        <div class="card exp-block reveal-item hover-lift" data-delay="100">
           <h3>Graduate Teaching Assistant - GWU</h3>
           <p class="muted">Jan 2026 - Present • On-site</p>
           <ul>
@@ -54,7 +56,7 @@
 
 
         <!-- SMDIR LAB, GWU -->
-        <div class="card exp-block">
+        <div class="card exp-block reveal-item hover-lift" data-delay="100">
           <h3>Graduate Research Assistant - SMDIR LAB, GWU</h3>
           <p class="muted">August 2025 - Present • On-site</p>
           <ul>
@@ -73,7 +75,7 @@
 
 
         <!-- Innomatics Research Labs -->
-        <div class="card exp-block">
+        <div class="card exp-block reveal-item hover-lift" data-delay="100">
           <h3>Data Science Intern - Innomatics Research Labs</h3>
           <p class="muted">Jul 2023 - Jul 2024 • Hyderabad, India</p>
           <ul>
@@ -91,7 +93,7 @@
         </div>
 
         <!-- Smart Bridge -->
-        <div class="card exp-block">
+        <div class="card exp-block reveal-item hover-lift" data-delay="100">
           <h3>Artificial Intelligence Extern - Smart Bridge</h3>
           <p class="muted">May - Jul 2023 • Remote</p>
           <ul>
@@ -110,7 +112,13 @@
   </section>
 
   <script src="script.js"></script>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <script src="assets/js/pageTransitions.js"></script>
+  <script src="assets/js/microInteractions.js"></script>
+  <script>
+    if (document.getElementById('y')) {
+      document.getElementById('y').textContent = new Date().getFullYear();
+    }
+  </script>
 </body>
 
 </html>

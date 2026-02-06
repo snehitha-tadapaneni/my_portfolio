@@ -7,33 +7,35 @@
   <title>Education | Snehitha</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="assets/css/home-enhanced.css" />
+  <link rel="stylesheet" href="assets/css/animations.css" />
+  <script src="assets/js/scrollReveal.js" defer></script>
 </head>
 
 <body>
   <!-- Header -->
-  <header class="site-header">
+  <header class="site-header reveal">
     <nav class="nav container">
       <div class="brand">
         <div class="name">Snehitha Tadapaneni</div>
       </div>
       <div class="menu">
-        <a href="index.html">Home</a>
-        <a href="education.html">Education</a>
-        <a href="project.html">Projects</a>
-        <a href="experience.html">Experience</a>
-        <a href="skills.html">Skills</a>
-        <a href="certifications.html">Certifications</a>
+        <a href="index.html" class="magnetic">Home</a>
+        <a href="education.html" class="active magnetic">Education</a>
+        <a href="project.html" class="magnetic">Projects</a>
+        <a href="experience.html" class="magnetic">Experience</a>
+        <a href="skills.html" class="magnetic">Skills</a>
+        <a href="certifications.html" class="magnetic">Certifications</a>
       </div>
     </nav>
   </header>
 
   <section class="section">
     <div class="container">
-      <h2>Education</h2>
+      <h2 class="reveal">Education</h2>
 
       <div class="grid cols-2 edu-grid">
         <!-- Graduate -->
-        <div class="flip card edu-flip" data-flip>
+        <div class="flip card edu-flip reveal-item hover-lift" data-delay="100" data-flip>
           <div class="inner">
             <!-- FRONT -->
             <div class="face front">
@@ -65,7 +67,7 @@
         </div>
 
         <!-- Undergraduate -->
-        <div class="flip card edu-flip" data-flip>
+        <div class="flip card edu-flip reveal-item hover-lift" data-delay="100" data-flip>
           <div class="inner">
             <!-- FRONT -->
             <div class="face front">
@@ -101,6 +103,8 @@
   </section>
 
   <script src="script.js"></script>
+  <script src="assets/js/pageTransitions.js"></script>
+  <script src="assets/js/microInteractions.js"></script>
 </body>
 
 </html>
