@@ -4,11 +4,12 @@
  */
 
 const phrases = [
-    "analyzing data",
-    "storytelling with dashboards",
-    "sketching & journaling",
-    "art + design",
-    "building agentic AI tools"
+    "engineering data pipelines",
+    "building AI-powered data systems",
+    "working with LLMs & GenAI",
+    "turning data into intelligence",
+    "building intelligent analytics",
+    "sketching & journaling"
 ];
 
 const typingSpeed = 100;
